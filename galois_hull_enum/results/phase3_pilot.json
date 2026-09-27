@@ -1,0 +1,1327 @@
+{
+ "phase": "P3a pilot",
+ "records": [
+  {
+   "label": "X1 ",
+   "source": "P1 Ex. 4",
+   "q": 9,
+   "p": 3,
+   "e": 2,
+   "n": 3,
+   "k": 1,
+   "lam": 2,
+   "r": 2,
+   "P": 3,
+   "nu": 1,
+   "n_prime": 1,
+   "j": 1,
+   "B": 1,
+   "sum_a": 1,
+   "n_factors": 1,
+   "shapes": [
+    [
+     1,
+     1
+    ]
+   ],
+   "cycle_lengths": [
+    1
+   ],
+   "n_codes_predicted": 4,
+   "permutation_ok": true,
+   "e2_distribution": {
+    "0": 2,
+    "1": 2
+   },
+   "oracle_cycle_distribution": {
+    "0": 2,
+    "1": 2
+   },
+   "oracle_flat_distribution": {
+    "0": 2,
+    "1": 2
+   },
+   "comparison": {
+    "coefficients": [
+     {
+      "dim": 0,
+      "e2": 2,
+      "oracle_cycle": 2,
+      "oracle_flat": 2
+     },
+     {
+      "dim": 1,
+      "e2": 2,
+      "oracle_cycle": 2,
+      "oracle_flat": 2
+     }
+    ],
+    "n_coefficients_compared": 2,
+    "n_codes_compared": 4,
+    "n_mismatched_coefficients": 0,
+    "mismatches": [],
+    "max_abs_coefficient_diff": 0,
+    "complete_agreement": true
+   },
+   "structural": {
+    "sum_a": 1,
+    "n_factors": 1,
+    "sum_a_equals_n_factors": true,
+    "n_codes_E2_N1": 4,
+    "n_codes_predicted_E1": 4,
+    "n_codes_oracle_flat": 4,
+    "n_codes_match": true,
+    "lcd_count_E2": 2,
+    "lcd_count_oracle": 2,
+    "lcd_count_2^B": 2,
+    "lcd_match": true,
+    "all_coeffs_nonneg_int": true,
+    "support": [
+     0,
+     1
+    ]
+   },
+   "timings_seconds": {
+    "e2": 0.000136,
+    "oracle_cycle": 0.00025,
+    "oracle_flat": 0.000192,
+    "oracle_flat_stats": {
+     "n_factors": 1,
+     "n_codes": 4,
+     "n_codes_expected": 4,
+     "P": 3,
+     "n_codes_match_expected": true
+    }
+   },
+   "verified": true,
+   "_wall": 0.002
+  },
+  {
+   "label": "X2 ",
+   "source": "P1 Ex. 5",
+   "q": 25,
+   "p": 5,
+   "e": 2,
+   "n": 7,
+   "k": 1,
+   "lam": 7,
+   "r": 3,
+   "P": 1,
+   "nu": 0,
+   "n_prime": 7,
+   "j": 1,
+   "B": 3,
+   "sum_a": 3,
+   "n_factors": 3,
+   "shapes": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "cycle_lengths": [
+    1,
+    1,
+    1
+   ],
+   "n_codes_predicted": 8,
+   "permutation_ok": true,
+   "e2_distribution": {
+    "0": 8
+   },
+   "oracle_cycle_distribution": {
+    "0": 8
+   },
+   "oracle_flat_distribution": {
+    "0": 8
+   },
+   "comparison": {
+    "coefficients": [
+     {
+      "dim": 0,
+      "e2": 8,
+      "oracle_cycle": 8,
+      "oracle_flat": 8
+     }
+    ],
+    "n_coefficients_compared": 1,
+    "n_codes_compared": 8,
+    "n_mismatched_coefficients": 0,
+    "mismatches": [],
+    "max_abs_coefficient_diff": 0,
+    "complete_agreement": true
+   },
+   "structural": {
+    "sum_a": 3,
+    "n_factors": 3,
+    "sum_a_equals_n_factors": true,
+    "n_codes_E2_N1": 8,
+    "n_codes_predicted_E1": 8,
+    "n_codes_oracle_flat": 8,
+    "n_codes_match": true,
+    "lcd_count_E2": 8,
+    "lcd_count_oracle": 8,
+    "lcd_count_2^B": 8,
+    "lcd_match": true,
+    "all_coeffs_nonneg_int": true,
+    "support": [
+     0
+    ]
+   },
+   "timings_seconds": {
+    "e2": 0.00014,
+    "oracle_cycle": 0.000621,
+    "oracle_flat": 0.001067,
+    "oracle_flat_stats": {
+     "n_factors": 3,
+     "n_codes": 8,
+     "n_codes_expected": 8,
+     "P": 1,
+     "n_codes_match_expected": true
+    }
+   },
+   "verified": true,
+   "_wall": 0.002
+  },
+  {
+   "label": "X3 ",
+   "source": "P1 Ex. 6",
+   "q": 27,
+   "p": 3,
+   "e": 3,
+   "n": 15,
+   "k": 2,
+   "lam": 2,
+   "r": 2,
+   "P": 3,
+   "nu": 1,
+   "n_prime": 5,
+   "j": 1,
+   "B": 2,
+   "sum_a": 2,
+   "n_factors": 2,
+   "shapes": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     4
+    ]
+   ],
+   "cycle_lengths": [
+    1,
+    1
+   ],
+   "n_codes_predicted": 16,
+   "permutation_ok": true,
+   "e2_distribution": {
+    "0": 4,
+    "1": 4,
+    "4": 4,
+    "5": 4
+   },
+   "oracle_cycle_distribution": {
+    "0": 4,
+    "1": 4,
+    "4": 4,
+    "5": 4
+   },
+   "oracle_flat_distribution": {
+    "0": 4,
+    "1": 4,
+    "4": 4,
+    "5": 4
+   },
+   "comparison": {
+    "coefficients": [
+     {
+      "dim": 0,
+      "e2": 4,
+      "oracle_cycle": 4,
+      "oracle_flat": 4
+     },
+     {
+      "dim": 1,
+      "e2": 4,
+      "oracle_cycle": 4,
+      "oracle_flat": 4
+     },
+     {
+      "dim": 4,
+      "e2": 4,
+      "oracle_cycle": 4,
+      "oracle_flat": 4
+     },
+     {
+      "dim": 5,
+      "e2": 4,
+      "oracle_cycle": 4,
+      "oracle_flat": 4
+     }
+    ],
+    "n_coefficients_compared": 4,
+    "n_codes_compared": 16,
+    "n_mismatched_coefficients": 0,
+    "mismatches": [],
+    "max_abs_coefficient_diff": 0,
+    "complete_agreement": true
+   },
+   "structural": {
+    "sum_a": 2,
+    "n_factors": 2,
+    "sum_a_equals_n_factors": true,
+    "n_codes_E2_N1": 16,
+    "n_codes_predicted_E1": 16,
+    "n_codes_oracle_flat": 16,
+    "n_codes_match": true,
+    "lcd_count_E2": 4,
+    "lcd_count_oracle": 4,
+    "lcd_count_2^B": 4,
+    "lcd_match": true,
+    "all_coeffs_nonneg_int": true,
+    "support": [
+     0,
+     1,
+     4,
+     5
+    ]
+   },
+   "timings_seconds": {
+    "e2": 0.000184,
+    "oracle_cycle": 0.001597,
+    "oracle_flat": 0.001826,
+    "oracle_flat_stats": {
+     "n_factors": 2,
+     "n_codes": 16,
+     "n_codes_expected": 16,
+     "P": 3,
+     "n_codes_match_expected": true
+    }
+   },
+   "verified": true,
+   "_wall": 0.0038
+  },
+  {
+   "label": "X4 ",
+   "source": "P3 Ex. 3.6 / Table 1",
+   "q": 81,
+   "p": 3,
+   "e": 4,
+   "n": 21,
+   "k": 2,
+   "lam": 10,
+   "r": 10,
+   "P": 3,
+   "nu": 1,
+   "n_prime": 7,
+   "j": 2,
+   "B": 2,
+   "sum_a": 3,
+   "n_factors": 3,
+   "shapes": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "cycle_lengths": [
+    1,
+    2
+   ],
+   "n_codes_predicted": 64,
+   "permutation_ok": true,
+   "e2_distribution": {
+    "0": 4,
+    "1": 4,
+    "3": 8,
+    "4": 8,
+    "6": 12,
+    "7": 12,
+    "9": 8,
+    "10": 8
+   },
+   "oracle_cycle_distribution": {
+    "0": 4,
+    "1": 4,
+    "3": 8,
+    "4": 8,
+    "6": 12,
+    "7": 12,
+    "9": 8,
+    "10": 8
+   },
+   "oracle_flat_distribution": {
+    "0": 4,
+    "1": 4,
+    "3": 8,
+    "4": 8,
+    "6": 12,
+    "7": 12,
+    "9": 8,
+    "10": 8
+   },
+   "comparison": {
+    "coefficients": [
+     {
+      "dim": 0,
+      "e2": 4,
+      "oracle_cycle": 4,
+      "oracle_flat": 4
+     },
+     {
+      "dim": 1,
+      "e2": 4,
+      "oracle_cycle": 4,
+      "oracle_flat": 4
+     },
+     {
+      "dim": 3,
+      "e2": 8,
+      "oracle_cycle": 8,
+      "oracle_flat": 8
+     },
+     {
+      "dim": 4,
+      "e2": 8,
+      "oracle_cycle": 8,
+      "oracle_flat": 8
+     },
+     {
+      "dim": 6,
+      "e2": 12,
+      "oracle_cycle": 12,
+      "oracle_flat": 12
+     },
+     {
+      "dim": 7,
+      "e2": 12,
+      "oracle_cycle": 12,
+      "oracle_flat": 12
+     },
+     {
+      "dim": 9,
+      "e2": 8,
+      "oracle_cycle": 8,
+      "oracle_flat": 8
+     },
+     {
+      "dim": 10,
+      "e2": 8,
+      "oracle_cycle": 8,
+      "oracle_flat": 8
+     }
+    ],
+    "n_coefficients_compared": 8,
+    "n_codes_compared": 64,
+    "n_mismatched_coefficients": 0,
+    "mismatches": [],
+    "max_abs_coefficient_diff": 0,
+    "complete_agreement": true
+   },
+   "structural": {
+    "sum_a": 3,
+    "n_factors": 3,
+    "sum_a_equals_n_factors": true,
+    "n_codes_E2_N1": 64,
+    "n_codes_predicted_E1": 64,
+    "n_codes_oracle_flat": 64,
+    "n_codes_match": true,
+    "lcd_count_E2": 4,
+    "lcd_count_oracle": 4,
+    "lcd_count_2^B": 4,
+    "lcd_match": true,
+    "all_coeffs_nonneg_int": true,
+    "support": [
+     0,
+     1,
+     3,
+     4,
+     6,
+     7,
+     9,
+     10
+    ]
+   },
+   "timings_seconds": {
+    "e2": 0.000358,
+    "oracle_cycle": 0.008808,
+    "oracle_flat": 0.009753,
+    "oracle_flat_stats": {
+     "n_factors": 3,
+     "n_codes": 64,
+     "n_codes_expected": 64,
+     "P": 3,
+     "n_codes_match_expected": true
+    }
+   },
+   "verified": true,
+   "_wall": 0.0194
+  },
+  {
+   "label": "X5 ",
+   "source": "new (l=4 regime)",
+   "q": 81,
+   "p": 3,
+   "e": 4,
+   "n": 5,
+   "k": 3,
+   "lam": 1,
+   "r": 1,
+   "P": 1,
+   "nu": 0,
+   "n_prime": 5,
+   "j": 1,
+   "B": 2,
+   "sum_a": 5,
+   "n_factors": 5,
+   "shapes": [
+    [
+     1,
+     1
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "cycle_lengths": [
+    1,
+    4
+   ],
+   "n_codes_predicted": 32,
+   "permutation_ok": true,
+   "e2_distribution": {
+    "0": 4,
+    "1": 24,
+    "2": 4
+   },
+   "oracle_cycle_distribution": {
+    "0": 4,
+    "1": 24,
+    "2": 4
+   },
+   "oracle_flat_distribution": {
+    "0": 4,
+    "1": 24,
+    "2": 4
+   },
+   "comparison": {
+    "coefficients": [
+     {
+      "dim": 0,
+      "e2": 4,
+      "oracle_cycle": 4,
+      "oracle_flat": 4
+     },
+     {
+      "dim": 1,
+      "e2": 24,
+      "oracle_cycle": 24,
+      "oracle_flat": 24
+     },
+     {
+      "dim": 2,
+      "e2": 4,
+      "oracle_cycle": 4,
+      "oracle_flat": 4
+     }
+    ],
+    "n_coefficients_compared": 3,
+    "n_codes_compared": 32,
+    "n_mismatched_coefficients": 0,
+    "mismatches": [],
+    "max_abs_coefficient_diff": 0,
+    "complete_agreement": true
+   },
+   "structural": {
+    "sum_a": 5,
+    "n_factors": 5,
+    "sum_a_equals_n_factors": true,
+    "n_codes_E2_N1": 32,
+    "n_codes_predicted_E1": 32,
+    "n_codes_oracle_flat": 32,
+    "n_codes_match": true,
+    "lcd_count_E2": 4,
+    "lcd_count_oracle": 4,
+    "lcd_count_2^B": 4,
+    "lcd_match": true,
+    "all_coeffs_nonneg_int": true,
+    "support": [
+     0,
+     1,
+     2
+    ]
+   },
+   "timings_seconds": {
+    "e2": 0.000153,
+    "oracle_cycle": 0.001726,
+    "oracle_flat": 0.001879,
+    "oracle_flat_stats": {
+     "n_factors": 5,
+     "n_codes": 32,
+     "n_codes_expected": 32,
+     "P": 1,
+     "n_codes_match_expected": true
+    }
+   },
+   "verified": true,
+   "_wall": 0.004
+  },
+  {
+   "label": "X6 ",
+   "source": "new (l=4 regime)",
+   "q": 81,
+   "p": 3,
+   "e": 4,
+   "n": 17,
+   "k": 3,
+   "lam": 1,
+   "r": 1,
+   "P": 1,
+   "nu": 0,
+   "n_prime": 17,
+   "j": 1,
+   "B": 2,
+   "sum_a": 5,
+   "n_factors": 5,
+   "shapes": [
+    [
+     1,
+     1
+    ],
+    [
+     4,
+     4
+    ]
+   ],
+   "cycle_lengths": [
+    1,
+    4
+   ],
+   "n_codes_predicted": 32,
+   "permutation_ok": true,
+   "e2_distribution": {
+    "0": 4,
+    "4": 24,
+    "8": 4
+   },
+   "oracle_cycle_distribution": {
+    "0": 4,
+    "4": 24,
+    "8": 4
+   },
+   "oracle_flat_distribution": {
+    "0": 4,
+    "4": 24,
+    "8": 4
+   },
+   "comparison": {
+    "coefficients": [
+     {
+      "dim": 0,
+      "e2": 4,
+      "oracle_cycle": 4,
+      "oracle_flat": 4
+     },
+     {
+      "dim": 4,
+      "e2": 24,
+      "oracle_cycle": 24,
+      "oracle_flat": 24
+     },
+     {
+      "dim": 8,
+      "e2": 4,
+      "oracle_cycle": 4,
+      "oracle_flat": 4
+     }
+    ],
+    "n_coefficients_compared": 3,
+    "n_codes_compared": 32,
+    "n_mismatched_coefficients": 0,
+    "mismatches": [],
+    "max_abs_coefficient_diff": 0,
+    "complete_agreement": true
+   },
+   "structural": {
+    "sum_a": 5,
+    "n_factors": 5,
+    "sum_a_equals_n_factors": true,
+    "n_codes_E2_N1": 32,
+    "n_codes_predicted_E1": 32,
+    "n_codes_oracle_flat": 32,
+    "n_codes_match": true,
+    "lcd_count_E2": 4,
+    "lcd_count_oracle": 4,
+    "lcd_count_2^B": 4,
+    "lcd_match": true,
+    "all_coeffs_nonneg_int": true,
+    "support": [
+     0,
+     4,
+     8
+    ]
+   },
+   "timings_seconds": {
+    "e2": 0.000149,
+    "oracle_cycle": 0.005337,
+    "oracle_flat": 0.008345,
+    "oracle_flat_stats": {
+     "n_factors": 5,
+     "n_codes": 32,
+     "n_codes_expected": 32,
+     "P": 1,
+     "n_codes_match_expected": true
+    }
+   },
+   "verified": true,
+   "_wall": 0.014
+  },
+  {
+   "label": "X8a ",
+   "source": "new (even q, l=4)",
+   "q": 16,
+   "p": 2,
+   "e": 4,
+   "n": 5,
+   "k": 3,
+   "lam": 1,
+   "r": 1,
+   "P": 1,
+   "nu": 0,
+   "n_prime": 5,
+   "j": 1,
+   "B": 2,
+   "sum_a": 5,
+   "n_factors": 5,
+   "shapes": [
+    [
+     1,
+     1
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "cycle_lengths": [
+    1,
+    4
+   ],
+   "n_codes_predicted": 32,
+   "permutation_ok": true,
+   "e2_distribution": {
+    "0": 4,
+    "1": 24,
+    "2": 4
+   },
+   "oracle_cycle_distribution": {
+    "0": 4,
+    "1": 24,
+    "2": 4
+   },
+   "oracle_flat_distribution": {
+    "0": 4,
+    "1": 24,
+    "2": 4
+   },
+   "comparison": {
+    "coefficients": [
+     {
+      "dim": 0,
+      "e2": 4,
+      "oracle_cycle": 4,
+      "oracle_flat": 4
+     },
+     {
+      "dim": 1,
+      "e2": 24,
+      "oracle_cycle": 24,
+      "oracle_flat": 24
+     },
+     {
+      "dim": 2,
+      "e2": 4,
+      "oracle_cycle": 4,
+      "oracle_flat": 4
+     }
+    ],
+    "n_coefficients_compared": 3,
+    "n_codes_compared": 32,
+    "n_mismatched_coefficients": 0,
+    "mismatches": [],
+    "max_abs_coefficient_diff": 0,
+    "complete_agreement": true
+   },
+   "structural": {
+    "sum_a": 5,
+    "n_factors": 5,
+    "sum_a_equals_n_factors": true,
+    "n_codes_E2_N1": 32,
+    "n_codes_predicted_E1": 32,
+    "n_codes_oracle_flat": 32,
+    "n_codes_match": true,
+    "lcd_count_E2": 4,
+    "lcd_count_oracle": 4,
+    "lcd_count_2^B": 4,
+    "lcd_match": true,
+    "all_coeffs_nonneg_int": true,
+    "support": [
+     0,
+     1,
+     2
+    ]
+   },
+   "timings_seconds": {
+    "e2": 8.5e-05,
+    "oracle_cycle": 0.001018,
+    "oracle_flat": 0.001016,
+    "oracle_flat_stats": {
+     "n_factors": 5,
+     "n_codes": 32,
+     "n_codes_expected": 32,
+     "P": 1,
+     "n_codes_match_expected": true
+    }
+   },
+   "verified": true,
+   "_wall": 0.0023
+  },
+  {
+   "label": "X8c ",
+   "source": "new (even q, l=4)",
+   "q": 16,
+   "p": 2,
+   "e": 4,
+   "n": 17,
+   "k": 3,
+   "lam": 1,
+   "r": 1,
+   "P": 1,
+   "nu": 0,
+   "n_prime": 17,
+   "j": 1,
+   "B": 3,
+   "sum_a": 9,
+   "n_factors": 9,
+   "shapes": [
+    [
+     1,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "cycle_lengths": [
+    1,
+    4,
+    4
+   ],
+   "n_codes_predicted": 512,
+   "permutation_ok": true,
+   "e2_distribution": {
+    "0": 8,
+    "2": 96,
+    "4": 304,
+    "6": 96,
+    "8": 8
+   },
+   "oracle_cycle_distribution": {
+    "0": 8,
+    "2": 96,
+    "4": 304,
+    "6": 96,
+    "8": 8
+   },
+   "oracle_flat_distribution": {
+    "0": 8,
+    "2": 96,
+    "4": 304,
+    "6": 96,
+    "8": 8
+   },
+   "comparison": {
+    "coefficients": [
+     {
+      "dim": 0,
+      "e2": 8,
+      "oracle_cycle": 8,
+      "oracle_flat": 8
+     },
+     {
+      "dim": 2,
+      "e2": 96,
+      "oracle_cycle": 96,
+      "oracle_flat": 96
+     },
+     {
+      "dim": 4,
+      "e2": 304,
+      "oracle_cycle": 304,
+      "oracle_flat": 304
+     },
+     {
+      "dim": 6,
+      "e2": 96,
+      "oracle_cycle": 96,
+      "oracle_flat": 96
+     },
+     {
+      "dim": 8,
+      "e2": 8,
+      "oracle_cycle": 8,
+      "oracle_flat": 8
+     }
+    ],
+    "n_coefficients_compared": 5,
+    "n_codes_compared": 512,
+    "n_mismatched_coefficients": 0,
+    "mismatches": [],
+    "max_abs_coefficient_diff": 0,
+    "complete_agreement": true
+   },
+   "structural": {
+    "sum_a": 9,
+    "n_factors": 9,
+    "sum_a_equals_n_factors": true,
+    "n_codes_E2_N1": 512,
+    "n_codes_predicted_E1": 512,
+    "n_codes_oracle_flat": 512,
+    "n_codes_match": true,
+    "lcd_count_E2": 8,
+    "lcd_count_oracle": 8,
+    "lcd_count_2^B": 8,
+    "lcd_match": true,
+    "all_coeffs_nonneg_int": true,
+    "support": [
+     0,
+     2,
+     4,
+     6,
+     8
+    ]
+   },
+   "timings_seconds": {
+    "e2": 0.000149,
+    "oracle_cycle": 0.075712,
+    "oracle_flat": 0.080431,
+    "oracle_flat_stats": {
+     "n_factors": 9,
+     "n_codes": 512,
+     "n_codes_expected": 512,
+     "P": 1,
+     "n_codes_match_expected": true
+    }
+   },
+   "verified": true,
+   "_wall": 0.1566
+  },
+  {
+   "label": "X9 ",
+   "source": "P3 Ex. 3.1",
+   "q": 64,
+   "p": 2,
+   "e": 6,
+   "n": 20,
+   "k": 3,
+   "lam": 6,
+   "r": 9,
+   "P": 4,
+   "nu": 2,
+   "n_prime": 5,
+   "j": 3,
+   "B": 2,
+   "sum_a": 3,
+   "n_factors": 3,
+   "shapes": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "cycle_lengths": [
+    1,
+    2
+   ],
+   "n_codes_predicted": 125,
+   "permutation_ok": true,
+   "e2_distribution": {
+    "0": 4,
+    "1": 4,
+    "2": 10,
+    "3": 8,
+    "4": 16,
+    "5": 12,
+    "6": 22,
+    "7": 16,
+    "8": 18,
+    "9": 10,
+    "10": 5
+   },
+   "oracle_cycle_distribution": {
+    "0": 4,
+    "1": 4,
+    "2": 10,
+    "3": 8,
+    "4": 16,
+    "5": 12,
+    "6": 22,
+    "7": 16,
+    "8": 18,
+    "9": 10,
+    "10": 5
+   },
+   "oracle_flat_distribution": {
+    "0": 4,
+    "1": 4,
+    "2": 10,
+    "3": 8,
+    "4": 16,
+    "5": 12,
+    "6": 22,
+    "7": 16,
+    "8": 18,
+    "9": 10,
+    "10": 5
+   },
+   "comparison": {
+    "coefficients": [
+     {
+      "dim": 0,
+      "e2": 4,
+      "oracle_cycle": 4,
+      "oracle_flat": 4
+     },
+     {
+      "dim": 1,
+      "e2": 4,
+      "oracle_cycle": 4,
+      "oracle_flat": 4
+     },
+     {
+      "dim": 2,
+      "e2": 10,
+      "oracle_cycle": 10,
+      "oracle_flat": 10
+     },
+     {
+      "dim": 3,
+      "e2": 8,
+      "oracle_cycle": 8,
+      "oracle_flat": 8
+     },
+     {
+      "dim": 4,
+      "e2": 16,
+      "oracle_cycle": 16,
+      "oracle_flat": 16
+     },
+     {
+      "dim": 5,
+      "e2": 12,
+      "oracle_cycle": 12,
+      "oracle_flat": 12
+     },
+     {
+      "dim": 6,
+      "e2": 22,
+      "oracle_cycle": 22,
+      "oracle_flat": 22
+     },
+     {
+      "dim": 7,
+      "e2": 16,
+      "oracle_cycle": 16,
+      "oracle_flat": 16
+     },
+     {
+      "dim": 8,
+      "e2": 18,
+      "oracle_cycle": 18,
+      "oracle_flat": 18
+     },
+     {
+      "dim": 9,
+      "e2": 10,
+      "oracle_cycle": 10,
+      "oracle_flat": 10
+     },
+     {
+      "dim": 10,
+      "e2": 5,
+      "oracle_cycle": 5,
+      "oracle_flat": 5
+     }
+    ],
+    "n_coefficients_compared": 11,
+    "n_codes_compared": 125,
+    "n_mismatched_coefficients": 0,
+    "mismatches": [],
+    "max_abs_coefficient_diff": 0,
+    "complete_agreement": true
+   },
+   "structural": {
+    "sum_a": 3,
+    "n_factors": 3,
+    "sum_a_equals_n_factors": true,
+    "n_codes_E2_N1": 125,
+    "n_codes_predicted_E1": 125,
+    "n_codes_oracle_flat": 125,
+    "n_codes_match": true,
+    "lcd_count_E2": 4,
+    "lcd_count_oracle": 4,
+    "lcd_count_2^B": 4,
+    "lcd_match": true,
+    "all_coeffs_nonneg_int": true,
+    "support": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ]
+   },
+   "timings_seconds": {
+    "e2": 0.000341,
+    "oracle_cycle": 0.015126,
+    "oracle_flat": 0.013489,
+    "oracle_flat_stats": {
+     "n_factors": 3,
+     "n_codes": 125,
+     "n_codes_expected": 125,
+     "P": 4,
+     "n_codes_match_expected": true
+    }
+   },
+   "verified": true,
+   "_wall": 0.0298
+  },
+  {
+   "label": "X8b ",
+   "source": "new (even q, l=4)",
+   "q": 16,
+   "p": 2,
+   "e": 4,
+   "n": 15,
+   "k": 3,
+   "lam": 1,
+   "r": 1,
+   "P": 1,
+   "nu": 0,
+   "n_prime": 15,
+   "j": 1,
+   "B": 6,
+   "sum_a": 15,
+   "n_factors": 15,
+   "shapes": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "cycle_lengths": [
+    1,
+    1,
+    1,
+    4,
+    4,
+    4
+   ],
+   "n_codes_predicted": 32768,
+   "permutation_ok": true,
+   "e2_distribution": {
+    "0": 64,
+    "1": 1152,
+    "2": 7104,
+    "3": 16128,
+    "4": 7104,
+    "5": 1152,
+    "6": 64
+   },
+   "oracle_cycle_distribution": {
+    "0": 64,
+    "1": 1152,
+    "2": 7104,
+    "3": 16128,
+    "4": 7104,
+    "5": 1152,
+    "6": 64
+   },
+   "oracle_flat_distribution": {
+    "0": 64,
+    "1": 1152,
+    "2": 7104,
+    "3": 16128,
+    "4": 7104,
+    "5": 1152,
+    "6": 64
+   },
+   "comparison": {
+    "coefficients": [
+     {
+      "dim": 0,
+      "e2": 64,
+      "oracle_cycle": 64,
+      "oracle_flat": 64
+     },
+     {
+      "dim": 1,
+      "e2": 1152,
+      "oracle_cycle": 1152,
+      "oracle_flat": 1152
+     },
+     {
+      "dim": 2,
+      "e2": 7104,
+      "oracle_cycle": 7104,
+      "oracle_flat": 7104
+     },
+     {
+      "dim": 3,
+      "e2": 16128,
+      "oracle_cycle": 16128,
+      "oracle_flat": 16128
+     },
+     {
+      "dim": 4,
+      "e2": 7104,
+      "oracle_cycle": 7104,
+      "oracle_flat": 7104
+     },
+     {
+      "dim": 5,
+      "e2": 1152,
+      "oracle_cycle": 1152,
+      "oracle_flat": 1152
+     },
+     {
+      "dim": 6,
+      "e2": 64,
+      "oracle_cycle": 64,
+      "oracle_flat": 64
+     }
+    ],
+    "n_coefficients_compared": 7,
+    "n_codes_compared": 32768,
+    "n_mismatched_coefficients": 0,
+    "mismatches": [],
+    "max_abs_coefficient_diff": 0,
+    "complete_agreement": true
+   },
+   "structural": {
+    "sum_a": 15,
+    "n_factors": 15,
+    "sum_a_equals_n_factors": true,
+    "n_codes_E2_N1": 32768,
+    "n_codes_predicted_E1": 32768,
+    "n_codes_oracle_flat": 32768,
+    "n_codes_match": true,
+    "lcd_count_E2": 64,
+    "lcd_count_oracle": 64,
+    "lcd_count_2^B": 64,
+    "lcd_match": true,
+    "all_coeffs_nonneg_int": true,
+    "support": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   },
+   "timings_seconds": {
+    "e2": 0.000361,
+    "oracle_cycle": 4.853653,
+    "oracle_flat": 4.958009,
+    "oracle_flat_stats": {
+     "n_factors": 15,
+     "n_codes": 32768,
+     "n_codes_expected": 32768,
+     "P": 1,
+     "n_codes_match_expected": true
+    }
+   },
+   "verified": true,
+   "_wall": 9.8124
+  }
+ ],
+ "aggregate": {
+  "n_instances_run": 10,
+  "n_verified": 10,
+  "n_failed": 0,
+  "n_coefficients_compared": 47,
+  "n_codes_compared": 33593,
+  "n_mismatched_coefficients": 0,
+  "max_abs_coefficient_difference": 0,
+  "structural_failures": [],
+  "seconds": {
+   "e2": 0.002,
+   "oracle_cycle": 4.964,
+   "oracle_flat": 5.076,
+   "total": 10.042
+  },
+  "peak_rss_mb": 14.0
+ },
+ "regimes": {
+  "a=1": true,
+  "a=2": true,
+  "a>=3": true,
+  "P=1": true,
+  "P>1": true,
+  "odd characteristic": true,
+  "even characteristic": true
+ },
+ "max_codes_bound": 100000
+}

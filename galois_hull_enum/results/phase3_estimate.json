@@ -1,0 +1,106 @@
+{
+ "measured_from_pilot": {
+  "n_pilot_instances": 10,
+  "pilot_code_counts": [
+   4,
+   8,
+   16,
+   64,
+   32,
+   32,
+   32,
+   512,
+   125,
+   32768
+  ],
+  "pilot_oracle_flat_seconds": [
+   0.000192,
+   0.001067,
+   0.001826,
+   0.009753,
+   0.001879,
+   0.008345,
+   0.001016,
+   0.080431,
+   0.013489,
+   4.958009
+  ],
+  "pilot_oracle_cycle_seconds": [
+   0.00025,
+   0.000621,
+   0.001597,
+   0.008808,
+   0.001726,
+   0.005337,
+   0.001018,
+   0.075712,
+   0.015126,
+   4.853653
+  ],
+  "pilot_e2_seconds": [
+   0.000136,
+   0.00014,
+   0.000184,
+   0.000358,
+   0.000153,
+   0.000149,
+   8.5e-05,
+   0.000149,
+   0.000341,
+   0.000361
+  ],
+  "per_code_seconds_conservative": 0.00026078125,
+  "per_coefficient_seconds_conservative": 0.708287,
+  "per_code_oracle_cycle_seconds_conservative": 0.00016678125,
+  "per_instance_e2_seconds_conservative": 0.000361
+ },
+ "sweep": {
+  "n_candidate_instances": 4377,
+  "n_rejected": 376,
+  "total_codes": 14446825,
+  "max_codes_per_instance": 100000,
+  "sweep_construction_seconds": 645.256
+ },
+ "estimate_seconds": {
+  "oracle_flat": 3767.5,
+  "oracle_cycle": 2409.5,
+  "e2": 1.6,
+  "sweep_construction": 645.3,
+  "total": 6823.8,
+  "total_minutes": 113.7
+ },
+ "checkpoint_boundaries": [
+  {
+   "checkpoint": "CP3-1",
+   "n_instances": 34,
+   "codes": 2862411,
+   "estimated_seconds": 746.5
+  },
+  {
+   "checkpoint": "CP3-2",
+   "n_instances": 45,
+   "codes": 2871276,
+   "estimated_seconds": 748.8
+  },
+  {
+   "checkpoint": "CP3-3",
+   "n_instances": 80,
+   "codes": 2874847,
+   "estimated_seconds": 749.7
+  },
+  {
+   "checkpoint": "CP3-4",
+   "n_instances": 104,
+   "codes": 2874546,
+   "estimated_seconds": 749.6
+  },
+  {
+   "checkpoint": "CP3-5",
+   "n_instances": 4114,
+   "codes": 2963745,
+   "estimated_seconds": 772.9
+  }
+ ],
+ "complete_run_definition": "A COMPLETE RUN is: every instance produced by the frozen X14 sweep filter (q in the frozen field list, n <= 60, gcd(n',r)=1, r | (1+p^(e-k)), |C| <= 10^5) is run through E2, oracle_cycle and oracle_flat; all three distributions agree on EVERY coefficient; |C| = (P+1)^sum_a = the flat oracle's code count; #{dim=0} = 2^B; all coefficients are nonnegative integers. Instances with |C| > 10^5 are NOT verified -- they are recorded as enumerator-only, exactly as the frozen Blueprint's validation-scope amendment requires. The run is complete only when the recorded n_verified equals the number of sweep instances and n_failed = 0.",
+ "verdict": "PROCEED"
+}

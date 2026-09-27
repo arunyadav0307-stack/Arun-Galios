@@ -1,0 +1,50 @@
+{
+ "n_instances_total": 4377,
+ "a_ge_3": {
+  "n": 530,
+  "n_verified": 530,
+  "max_cycle_length": 7,
+  "codes": 5772336
+ },
+ "P_gt_1": {
+  "n": 1731,
+  "n_verified": 1731,
+  "P_values": [
+   2,
+   3,
+   4,
+   5,
+   7,
+   8,
+   9,
+   11,
+   16,
+   25,
+   27,
+   32,
+   49
+  ],
+  "codes": 7177871
+ },
+ "a_ge_3_and_P_gt_1": {
+  "n": 192,
+  "n_verified": 192,
+  "codes": 3240144
+ },
+ "general_lambda_r_not_1_or_2": {
+  "n": 984,
+  "n_verified": 984,
+  "r_values": [
+   3,
+   4,
+   5,
+   6,
+   8,
+   9,
+   10,
+   12,
+   17
+  ],
+  "codes": 3238429
+ }
+}

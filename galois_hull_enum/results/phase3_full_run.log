@@ -1,0 +1,233 @@
+==============================================================================
+P3c  FULL VALIDATION -- frozen section 5.5 grid + X14 sweep
+==============================================================================
+
+--- frozen grid X1-X10 ---
+X1     9    3   1  2   3  1x1                       4       OK    OK
+X2     25   7   1  3   1  1x1|1x3|1x3               8       OK    OK
+X3     27   15  2  2   3  1x1|1x4                   16      OK    OK
+X4     81   21  2  10  3  1x1|2x3                   64      OK    OK
+X5     81   5   3  1   1  1x1|4x1                   32      OK    OK
+X6     81   17  3  1   1  1x1|4x4                   32      OK    OK
+X7     81   25  3  1   1  1x1|4x1|4x5               512     OK    OK
+X8a    16   5   3  1   1  1x1|4x1                   32      OK    OK
+X8c    16   17  3  1   1  1x1|4x2|4x2               512     OK    OK
+X9     64   20  3  9   4  1x1|2x2                   125     OK    OK
+X8b    16   15  3  1   1  1x1|1x1|1x1|4x1|4x1|4x1   32768   OK    OK
+X10a   25   65  1  6   5  1x1|2x2|2x2|2x2           279936  ENUMERATOR ONLY
+X10b   25   65  1  3   5  1x1|2x2|2x2|2x2           279936  ENUMERATOR ONLY
+
+--- X14 sweep ---
+sweep produced 4377 certifiable instances (376 rejected) in 486.7 s
+  [25 new / 4377 to do] verified so far 36  elapsed 0s  (0.00s/instance, eta 0 min)  peak RSS 31 MB
+  [50 new / 4377 to do] verified so far 61  elapsed 0s  (0.01s/instance, eta 0 min)  peak RSS 31 MB
+  [75 new / 4377 to do] verified so far 86  elapsed 1s  (0.01s/instance, eta 1 min)  peak RSS 31 MB
+  [100 new / 4377 to do] verified so far 111  elapsed 17s  (0.17s/instance, eta 12 min)  peak RSS 32 MB
+  [125 new / 4377 to do] verified so far 136  elapsed 79s  (0.63s/instance, eta 45 min)  peak RSS 32 MB
+  [150 new / 4377 to do] verified so far 161  elapsed 149s  (1.00s/instance, eta 70 min)  peak RSS 33 MB
+  [175 new / 4377 to do] verified so far 186  elapsed 150s  (0.86s/instance, eta 60 min)  peak RSS 33 MB
+  [200 new / 4377 to do] verified so far 211  elapsed 152s  (0.76s/instance, eta 53 min)  peak RSS 33 MB
+  [225 new / 4377 to do] verified so far 236  elapsed 167s  (0.74s/instance, eta 51 min)  peak RSS 33 MB
+  [250 new / 4377 to do] verified so far 261  elapsed 261s  (1.04s/instance, eta 72 min)  peak RSS 33 MB
+  [275 new / 4377 to do] verified so far 286  elapsed 300s  (1.09s/instance, eta 75 min)  peak RSS 33 MB
+  [300 new / 4377 to do] verified so far 311  elapsed 355s  (1.18s/instance, eta 80 min)  peak RSS 33 MB
+  [325 new / 4377 to do] verified so far 336  elapsed 392s  (1.21s/instance, eta 82 min)  peak RSS 34 MB
+  [350 new / 4377 to do] verified so far 361  elapsed 398s  (1.14s/instance, eta 76 min)  peak RSS 34 MB
+  [375 new / 4377 to do] verified so far 386  elapsed 398s  (1.06s/instance, eta 71 min)  peak RSS 34 MB
+  [400 new / 4377 to do] verified so far 411  elapsed 400s  (1.00s/instance, eta 66 min)  peak RSS 34 MB
+  [425 new / 4377 to do] verified so far 436  elapsed 449s  (1.06s/instance, eta 70 min)  peak RSS 34 MB
+  [450 new / 4377 to do] verified so far 461  elapsed 517s  (1.15s/instance, eta 75 min)  peak RSS 34 MB
+  [475 new / 4377 to do] verified so far 486  elapsed 540s  (1.14s/instance, eta 74 min)  peak RSS 35 MB
+  [500 new / 4377 to do] verified so far 511  elapsed 555s  (1.11s/instance, eta 72 min)  peak RSS 35 MB
+  [525 new / 4377 to do] verified so far 536  elapsed 562s  (1.07s/instance, eta 69 min)  peak RSS 35 MB
+  [550 new / 4377 to do] verified so far 561  elapsed 562s  (1.02s/instance, eta 65 min)  peak RSS 35 MB
+  [575 new / 4377 to do] verified so far 586  elapsed 562s  (0.98s/instance, eta 62 min)  peak RSS 35 MB
+  [600 new / 4377 to do] verified so far 611  elapsed 562s  (0.94s/instance, eta 59 min)  peak RSS 35 MB
+  [625 new / 4377 to do] verified so far 636  elapsed 591s  (0.94s/instance, eta 59 min)  peak RSS 35 MB
+  [650 new / 4377 to do] verified so far 661  elapsed 592s  (0.91s/instance, eta 57 min)  peak RSS 36 MB
+  [675 new / 4377 to do] verified so far 686  elapsed 597s  (0.88s/instance, eta 55 min)  peak RSS 36 MB
+  [700 new / 4377 to do] verified so far 711  elapsed 599s  (0.86s/instance, eta 52 min)  peak RSS 36 MB
+  [725 new / 4377 to do] verified so far 736  elapsed 599s  (0.83s/instance, eta 50 min)  peak RSS 36 MB
+  [750 new / 4377 to do] verified so far 761  elapsed 806s  (1.07s/instance, eta 65 min)  peak RSS 36 MB
+  [775 new / 4377 to do] verified so far 786  elapsed 1191s  (1.54s/instance, eta 92 min)  peak RSS 37 MB
+  [800 new / 4377 to do] verified so far 811  elapsed 1261s  (1.58s/instance, eta 94 min)  peak RSS 37 MB
+  [825 new / 4377 to do] verified so far 836  elapsed 1276s  (1.55s/instance, eta 92 min)  peak RSS 37 MB
+  [850 new / 4377 to do] verified so far 861  elapsed 1390s  (1.63s/instance, eta 96 min)  peak RSS 37 MB
+  [875 new / 4377 to do] verified so far 886  elapsed 1682s  (1.92s/instance, eta 112 min)  peak RSS 37 MB
+  [900 new / 4377 to do] verified so far 911  elapsed 1683s  (1.87s/instance, eta 108 min)  peak RSS 38 MB
+  [925 new / 4377 to do] verified so far 936  elapsed 1683s  (1.82s/instance, eta 105 min)  peak RSS 38 MB
+  [950 new / 4377 to do] verified so far 961  elapsed 1687s  (1.78s/instance, eta 101 min)  peak RSS 38 MB
+  [975 new / 4377 to do] verified so far 986  elapsed 1689s  (1.73s/instance, eta 98 min)  peak RSS 38 MB
+  [1000 new / 4377 to do] verified so far 1011  elapsed 1741s  (1.74s/instance, eta 98 min)  peak RSS 38 MB
+  [1025 new / 4377 to do] verified so far 1036  elapsed 1868s  (1.82s/instance, eta 102 min)  peak RSS 38 MB
+  [1050 new / 4377 to do] verified so far 1061  elapsed 1895s  (1.80s/instance, eta 100 min)  peak RSS 38 MB
+  [1075 new / 4377 to do] verified so far 1086  elapsed 1906s  (1.77s/instance, eta 98 min)  peak RSS 39 MB
+  [1100 new / 4377 to do] verified so far 1111  elapsed 1945s  (1.77s/instance, eta 97 min)  peak RSS 39 MB
+  [1125 new / 4377 to do] verified so far 1136  elapsed 1945s  (1.73s/instance, eta 94 min)  peak RSS 39 MB
+  [1150 new / 4377 to do] verified so far 1161  elapsed 1945s  (1.69s/instance, eta 91 min)  peak RSS 39 MB
+  [1175 new / 4377 to do] verified so far 1186  elapsed 1954s  (1.66s/instance, eta 89 min)  peak RSS 39 MB
+  [1200 new / 4377 to do] verified so far 1211  elapsed 1954s  (1.63s/instance, eta 86 min)  peak RSS 39 MB
+  [1225 new / 4377 to do] verified so far 1236  elapsed 2006s  (1.64s/instance, eta 86 min)  peak RSS 39 MB
+  [1250 new / 4377 to do] verified so far 1261  elapsed 2007s  (1.61s/instance, eta 84 min)  peak RSS 39 MB
+  [1275 new / 4377 to do] verified so far 1286  elapsed 2031s  (1.59s/instance, eta 82 min)  peak RSS 40 MB
+  [1300 new / 4377 to do] verified so far 1311  elapsed 2206s  (1.70s/instance, eta 87 min)  peak RSS 40 MB
+  [1325 new / 4377 to do] verified so far 1336  elapsed 2235s  (1.69s/instance, eta 86 min)  peak RSS 40 MB
+  [1350 new / 4377 to do] verified so far 1361  elapsed 2239s  (1.66s/instance, eta 84 min)  peak RSS 40 MB
+  [1375 new / 4377 to do] verified so far 1386  elapsed 2282s  (1.66s/instance, eta 83 min)  peak RSS 40 MB
+  [1400 new / 4377 to do] verified so far 1411  elapsed 2282s  (1.63s/instance, eta 81 min)  peak RSS 40 MB
+  [1425 new / 4377 to do] verified so far 1436  elapsed 2282s  (1.60s/instance, eta 79 min)  peak RSS 41 MB
+  [1450 new / 4377 to do] verified so far 1461  elapsed 2282s  (1.57s/instance, eta 77 min)  peak RSS 41 MB
+  [1475 new / 4377 to do] verified so far 1486  elapsed 2283s  (1.55s/instance, eta 75 min)  peak RSS 41 MB
+  [1500 new / 4377 to do] verified so far 1511  elapsed 2284s  (1.52s/instance, eta 73 min)  peak RSS 41 MB
+  [1525 new / 4377 to do] verified so far 1536  elapsed 2284s  (1.50s/instance, eta 71 min)  peak RSS 41 MB
+  [1550 new / 4377 to do] verified so far 1561  elapsed 2293s  (1.48s/instance, eta 70 min)  peak RSS 41 MB
+  [1575 new / 4377 to do] verified so far 1586  elapsed 2365s  (1.50s/instance, eta 70 min)  peak RSS 42 MB
+  [1600 new / 4377 to do] verified so far 1611  elapsed 2379s  (1.49s/instance, eta 69 min)  peak RSS 42 MB
+  [1625 new / 4377 to do] verified so far 1636  elapsed 2381s  (1.47s/instance, eta 67 min)  peak RSS 42 MB
+  [1650 new / 4377 to do] verified so far 1661  elapsed 2391s  (1.45s/instance, eta 66 min)  peak RSS 42 MB
+  [1675 new / 4377 to do] verified so far 1686  elapsed 2391s  (1.43s/instance, eta 64 min)  peak RSS 42 MB
+  [1700 new / 4377 to do] verified so far 1711  elapsed 2393s  (1.41s/instance, eta 63 min)  peak RSS 42 MB
+  [1725 new / 4377 to do] verified so far 1736  elapsed 2430s  (1.41s/instance, eta 62 min)  peak RSS 43 MB
+  [1750 new / 4377 to do] verified so far 1761  elapsed 2455s  (1.40s/instance, eta 61 min)  peak RSS 43 MB
+  [1775 new / 4377 to do] verified so far 1786  elapsed 2458s  (1.39s/instance, eta 60 min)  peak RSS 43 MB
+  [1800 new / 4377 to do] verified so far 1811  elapsed 2633s  (1.46s/instance, eta 63 min)  peak RSS 43 MB
+  [1825 new / 4377 to do] verified so far 1836  elapsed 2927s  (1.60s/instance, eta 68 min)  peak RSS 44 MB
+  [1850 new / 4377 to do] verified so far 1861  elapsed 2976s  (1.61s/instance, eta 68 min)  peak RSS 44 MB
+  [1875 new / 4377 to do] verified so far 1886  elapsed 2976s  (1.59s/instance, eta 66 min)  peak RSS 44 MB
+  [1900 new / 4377 to do] verified so far 1911  elapsed 2976s  (1.57s/instance, eta 65 min)  peak RSS 44 MB
+  [1925 new / 4377 to do] verified so far 1936  elapsed 2976s  (1.55s/instance, eta 63 min)  peak RSS 44 MB
+  [1950 new / 4377 to do] verified so far 1961  elapsed 2977s  (1.53s/instance, eta 62 min)  peak RSS 44 MB
+  [1975 new / 4377 to do] verified so far 1986  elapsed 2980s  (1.51s/instance, eta 60 min)  peak RSS 44 MB
+  [2000 new / 4377 to do] verified so far 2011  elapsed 2982s  (1.49s/instance, eta 59 min)  peak RSS 44 MB
+  [2025 new / 4377 to do] verified so far 2036  elapsed 3014s  (1.49s/instance, eta 58 min)  peak RSS 44 MB
+  [2050 new / 4377 to do] verified so far 2061  elapsed 3015s  (1.47s/instance, eta 57 min)  peak RSS 44 MB
+  [2075 new / 4377 to do] verified so far 2086  elapsed 3024s  (1.46s/instance, eta 56 min)  peak RSS 45 MB
+  [2100 new / 4377 to do] verified so far 2111  elapsed 3478s  (1.66s/instance, eta 63 min)  peak RSS 45 MB
+  [2125 new / 4377 to do] verified so far 2136  elapsed 3525s  (1.66s/instance, eta 62 min)  peak RSS 45 MB
+  [2150 new / 4377 to do] verified so far 2161  elapsed 3528s  (1.64s/instance, eta 61 min)  peak RSS 45 MB
+  [2175 new / 4377 to do] verified so far 2186  elapsed 3547s  (1.63s/instance, eta 60 min)  peak RSS 45 MB
+  [2200 new / 4377 to do] verified so far 2211  elapsed 3548s  (1.61s/instance, eta 59 min)  peak RSS 46 MB
+  [2225 new / 4377 to do] verified so far 2236  elapsed 3552s  (1.60s/instance, eta 57 min)  peak RSS 46 MB
+  [2250 new / 4377 to do] verified so far 2261  elapsed 3617s  (1.61s/instance, eta 57 min)  peak RSS 46 MB
+  [2275 new / 4377 to do] verified so far 2286  elapsed 4781s  (2.10s/instance, eta 74 min)  peak RSS 46 MB
+  [2300 new / 4377 to do] verified so far 2311  elapsed 4787s  (2.08s/instance, eta 72 min)  peak RSS 46 MB
+  [2325 new / 4377 to do] verified so far 2336  elapsed 4787s  (2.06s/instance, eta 70 min)  peak RSS 46 MB
+  [2350 new / 4377 to do] verified so far 2361  elapsed 4788s  (2.04s/instance, eta 69 min)  peak RSS 47 MB
+  [2375 new / 4377 to do] verified so far 2386  elapsed 4788s  (2.02s/instance, eta 67 min)  peak RSS 47 MB
+  [2400 new / 4377 to do] verified so far 2411  elapsed 4788s  (2.00s/instance, eta 66 min)  peak RSS 47 MB
+  [2425 new / 4377 to do] verified so far 2436  elapsed 4789s  (1.97s/instance, eta 64 min)  peak RSS 47 MB
+  [2450 new / 4377 to do] verified so far 2461  elapsed 4874s  (1.99s/instance, eta 64 min)  peak RSS 47 MB
+  [2475 new / 4377 to do] verified so far 2486  elapsed 4875s  (1.97s/instance, eta 62 min)  peak RSS 47 MB
+  [2500 new / 4377 to do] verified so far 2511  elapsed 4994s  (2.00s/instance, eta 62 min)  peak RSS 47 MB
+  [2525 new / 4377 to do] verified so far 2536  elapsed 4998s  (1.98s/instance, eta 61 min)  peak RSS 48 MB
+  [2550 new / 4377 to do] verified so far 2561  elapsed 5009s  (1.96s/instance, eta 60 min)  peak RSS 48 MB
+  [2575 new / 4377 to do] verified so far 2586  elapsed 5064s  (1.97s/instance, eta 59 min)  peak RSS 48 MB
+  [2600 new / 4377 to do] verified so far 2611  elapsed 5316s  (2.04s/instance, eta 61 min)  peak RSS 48 MB
+  [2625 new / 4377 to do] verified so far 2636  elapsed 5338s  (2.03s/instance, eta 59 min)  peak RSS 48 MB
+==============================================================================
+P3c  FULL VALIDATION -- frozen section 5.5 grid + X14 sweep
+==============================================================================
+
+--- frozen grid X1-X10 ---
+X1     9    3   1  2   3  1x1                       4       OK    OK
+X2     25   7   1  3   1  1x1|1x3|1x3               8       OK    OK
+X3     27   15  2  2   3  1x1|1x4                   16      OK    OK
+X4     81   21  2  10  3  1x1|2x3                   64      OK    OK
+X5     81   5   3  1   1  1x1|4x1                   32      OK    OK
+X6     81   17  3  1   1  1x1|4x4                   32      OK    OK
+X7     81   25  3  1   1  1x1|4x1|4x5               512     OK    OK
+X8a    16   5   3  1   1  1x1|4x1                   32      OK    OK
+X8c    16   17  3  1   1  1x1|4x2|4x2               512     OK    OK
+X9     64   20  3  9   4  1x1|2x2                   125     OK    OK
+X8b    16   15  3  1   1  1x1|1x1|1x1|4x1|4x1|4x1   32768   OK    OK
+X10a   25   65  1  6   5  1x1|2x2|2x2|2x2           279936  ENUMERATOR ONLY
+X10b   25   65  1  3   5  1x1|2x2|2x2|2x2           279936  ENUMERATOR ONLY
+
+--- X14 sweep ---
+resuming: 2643 instances already checkpointed
+sweep produced 4377 certifiable instances (376 rejected) in 571.7 s
+  [25 new / 1734 to do] verified so far 36  elapsed 624s  (24.97s/instance, eta 711 min)  peak RSS 32 MB
+  [50 new / 1734 to do] verified so far 61  elapsed 638s  (12.76s/instance, eta 358 min)  peak RSS 32 MB
+  [75 new / 1734 to do] verified so far 86  elapsed 1130s  (15.07s/instance, eta 417 min)  peak RSS 33 MB
+  [100 new / 1734 to do] verified so far 111  elapsed 1140s  (11.40s/instance, eta 310 min)  peak RSS 33 MB
+  [125 new / 1734 to do] verified so far 136  elapsed 1140s  (9.12s/instance, eta 245 min)  peak RSS 33 MB
+  [150 new / 1734 to do] verified so far 161  elapsed 1141s  (7.60s/instance, eta 201 min)  peak RSS 33 MB
+  [175 new / 1734 to do] verified so far 186  elapsed 1166s  (6.66s/instance, eta 173 min)  peak RSS 33 MB
+  [200 new / 1734 to do] verified so far 211  elapsed 1185s  (5.93s/instance, eta 151 min)  peak RSS 33 MB
+  [225 new / 1734 to do] verified so far 236  elapsed 1187s  (5.28s/instance, eta 133 min)  peak RSS 33 MB
+  [250 new / 1734 to do] verified so far 261  elapsed 1227s  (4.91s/instance, eta 121 min)  peak RSS 33 MB
+  [275 new / 1734 to do] verified so far 286  elapsed 1532s  (5.57s/instance, eta 135 min)  peak RSS 34 MB
+  [300 new / 1734 to do] verified so far 311  elapsed 1586s  (5.29s/instance, eta 126 min)  peak RSS 34 MB
+  [325 new / 1734 to do] verified so far 336  elapsed 1659s  (5.11s/instance, eta 120 min)  peak RSS 34 MB
+  [350 new / 1734 to do] verified so far 361  elapsed 1714s  (4.90s/instance, eta 113 min)  peak RSS 34 MB
+  [375 new / 1734 to do] verified so far 386  elapsed 1714s  (4.57s/instance, eta 104 min)  peak RSS 34 MB
+  [400 new / 1734 to do] verified so far 411  elapsed 1714s  (4.28s/instance, eta 95 min)  peak RSS 34 MB
+  [425 new / 1734 to do] verified so far 436  elapsed 1714s  (4.03s/instance, eta 88 min)  peak RSS 34 MB
+  [450 new / 1734 to do] verified so far 461  elapsed 1721s  (3.83s/instance, eta 82 min)  peak RSS 34 MB
+  [475 new / 1734 to do] verified so far 486  elapsed 1783s  (3.75s/instance, eta 79 min)  peak RSS 35 MB
+  [500 new / 1734 to do] verified so far 511  elapsed 1861s  (3.72s/instance, eta 77 min)  peak RSS 35 MB
+  [525 new / 1734 to do] verified so far 536  elapsed 2001s  (3.81s/instance, eta 77 min)  peak RSS 35 MB
+  [550 new / 1734 to do] verified so far 561  elapsed 2055s  (3.74s/instance, eta 74 min)  peak RSS 35 MB
+  [575 new / 1734 to do] verified so far 586  elapsed 2295s  (3.99s/instance, eta 77 min)  peak RSS 35 MB
+  [600 new / 1734 to do] verified so far 611  elapsed 2769s  (4.62s/instance, eta 87 min)  peak RSS 35 MB
+  [625 new / 1734 to do] verified so far 636  elapsed 2769s  (4.43s/instance, eta 82 min)  peak RSS 36 MB
+  [650 new / 1734 to do] verified so far 661  elapsed 2769s  (4.26s/instance, eta 77 min)  peak RSS 36 MB
+  [675 new / 1734 to do] verified so far 686  elapsed 2769s  (4.10s/instance, eta 72 min)  peak RSS 36 MB
+  [700 new / 1734 to do] verified so far 711  elapsed 2769s  (3.96s/instance, eta 68 min)  peak RSS 36 MB
+  [725 new / 1734 to do] verified so far 736  elapsed 2769s  (3.82s/instance, eta 64 min)  peak RSS 36 MB
+  [750 new / 1734 to do] verified so far 761  elapsed 2770s  (3.69s/instance, eta 61 min)  peak RSS 36 MB
+  [775 new / 1734 to do] verified so far 786  elapsed 2770s  (3.57s/instance, eta 57 min)  peak RSS 36 MB
+  [800 new / 1734 to do] verified so far 811  elapsed 2771s  (3.46s/instance, eta 54 min)  peak RSS 36 MB
+  [825 new / 1734 to do] verified so far 836  elapsed 2772s  (3.36s/instance, eta 51 min)  peak RSS 37 MB
+  [850 new / 1734 to do] verified so far 861  elapsed 2772s  (3.26s/instance, eta 48 min)  peak RSS 37 MB
+  [875 new / 1734 to do] verified so far 886  elapsed 2773s  (3.17s/instance, eta 45 min)  peak RSS 37 MB
+  [900 new / 1734 to do] verified so far 911  elapsed 2775s  (3.08s/instance, eta 43 min)  peak RSS 38 MB
+  [925 new / 1734 to do] verified so far 936  elapsed 2777s  (3.00s/instance, eta 40 min)  peak RSS 38 MB
+  [950 new / 1734 to do] verified so far 961  elapsed 2778s  (2.92s/instance, eta 38 min)  peak RSS 38 MB
+  [975 new / 1734 to do] verified so far 986  elapsed 2781s  (2.85s/instance, eta 36 min)  peak RSS 38 MB
+  [1000 new / 1734 to do] verified so far 1011  elapsed 2858s  (2.86s/instance, eta 35 min)  peak RSS 38 MB
+  [1025 new / 1734 to do] verified so far 1036  elapsed 2869s  (2.80s/instance, eta 33 min)  peak RSS 38 MB
+  [1050 new / 1734 to do] verified so far 1061  elapsed 2869s  (2.73s/instance, eta 31 min)  peak RSS 38 MB
+  [1075 new / 1734 to do] verified so far 1086  elapsed 2869s  (2.67s/instance, eta 29 min)  peak RSS 39 MB
+  [1100 new / 1734 to do] verified so far 1111  elapsed 2869s  (2.61s/instance, eta 28 min)  peak RSS 39 MB
+  [1125 new / 1734 to do] verified so far 1136  elapsed 2870s  (2.55s/instance, eta 26 min)  peak RSS 39 MB
+  [1150 new / 1734 to do] verified so far 1161  elapsed 2870s  (2.50s/instance, eta 24 min)  peak RSS 39 MB
+  [1175 new / 1734 to do] verified so far 1186  elapsed 2870s  (2.44s/instance, eta 23 min)  peak RSS 39 MB
+  [1200 new / 1734 to do] verified so far 1211  elapsed 2904s  (2.42s/instance, eta 22 min)  peak RSS 39 MB
+  [1225 new / 1734 to do] verified so far 1236  elapsed 2944s  (2.40s/instance, eta 20 min)  peak RSS 39 MB
+  [1250 new / 1734 to do] verified so far 1261  elapsed 2948s  (2.36s/instance, eta 19 min)  peak RSS 39 MB
+  [1275 new / 1734 to do] verified so far 1286  elapsed 2957s  (2.32s/instance, eta 18 min)  peak RSS 40 MB
+  [1300 new / 1734 to do] verified so far 1311  elapsed 2957s  (2.27s/instance, eta 16 min)  peak RSS 40 MB
+  [1325 new / 1734 to do] verified so far 1336  elapsed 2961s  (2.23s/instance, eta 15 min)  peak RSS 40 MB
+  [1350 new / 1734 to do] verified so far 1361  elapsed 2963s  (2.19s/instance, eta 14 min)  peak RSS 40 MB
+  [1375 new / 1734 to do] verified so far 1386  elapsed 2963s  (2.16s/instance, eta 13 min)  peak RSS 40 MB
+  [1400 new / 1734 to do] verified so far 1411  elapsed 2964s  (2.12s/instance, eta 12 min)  peak RSS 41 MB
+  [1425 new / 1734 to do] verified so far 1436  elapsed 3059s  (2.15s/instance, eta 11 min)  peak RSS 41 MB
+  [1450 new / 1734 to do] verified so far 1461  elapsed 3283s  (2.26s/instance, eta 11 min)  peak RSS 41 MB
+  [1475 new / 1734 to do] verified so far 1486  elapsed 3283s  (2.23s/instance, eta 10 min)  peak RSS 41 MB
+  [1500 new / 1734 to do] verified so far 1511  elapsed 4218s  (2.81s/instance, eta 11 min)  peak RSS 41 MB
+  [1525 new / 1734 to do] verified so far 1536  elapsed 4352s  (2.85s/instance, eta 10 min)  peak RSS 42 MB
+  [1550 new / 1734 to do] verified so far 1561  elapsed 4354s  (2.81s/instance, eta 9 min)  peak RSS 42 MB
+  [1575 new / 1734 to do] verified so far 1586  elapsed 4354s  (2.76s/instance, eta 7 min)  peak RSS 42 MB
+  [1600 new / 1734 to do] verified so far 1611  elapsed 4387s  (2.74s/instance, eta 6 min)  peak RSS 42 MB
+  [1625 new / 1734 to do] verified so far 1636  elapsed 4581s  (2.82s/instance, eta 5 min)  peak RSS 42 MB
+  [1650 new / 1734 to do] verified so far 1661  elapsed 4624s  (2.80s/instance, eta 4 min)  peak RSS 43 MB
+  [1675 new / 1734 to do] verified so far 1686  elapsed 5095s  (3.04s/instance, eta 3 min)  peak RSS 43 MB
+  [1700 new / 1734 to do] verified so far 1711  elapsed 5249s  (3.09s/instance, eta 2 min)  peak RSS 43 MB
+  [1725 new / 1734 to do] verified so far 1736  elapsed 5256s  (3.05s/instance, eta 0 min)  peak RSS 43 MB
+
+--- aggregate ---
+instances run       : 4377
+verified            : 4377
+failed              : 0
+coefficients cmp    : 29803
+codes compared      : 14446825
+mismatched coeffs   : 0
+max |coeff diff|    : 0
+structural failures : []
+seconds             : {'e2': 2.151, 'oracle_cycle': 5670.711, 'oracle_flat': 5343.619, 'total': 11016.481}
+peak RSS (MB)       : 65.7
+
+wrote results/phase3_summary.json, phase3_full_instances.csv, phase3_full_coefficients.csv, phase3_full_rejected.csv
+
+P3c FULL-VALIDATION VERDICT: PASS (4377 verified, 0 failed)

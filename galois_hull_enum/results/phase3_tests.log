@@ -1,0 +1,15 @@
+........................................................................ [ 11%]
+........................................................................ [ 23%]
+..............................................s.............s.s......... [ 35%]
+........................................................................ [ 47%]
+........................................................................ [ 59%]
+........................................................................ [ 70%]
+................................ss...................................... [ 82%]
+........................................................................ [ 94%]
+..................................                                       [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_cycles.py:42: k out of range
+SKIPPED [2] tests/test_cycles.py:64: k out of range
+SKIPPED [1] tests/test_oracle.py:111: oracle unavailable (galois could not factor x^21-1 over GF(2^4): Failed to find a non-trivial factor after 1000 tries.); intrinsic certificate PASSED
+SKIPPED [1] tests/test_oracle.py:111: oracle unavailable (galois could not factor x^21-1 over GF(2^8): Failed to find a non-trivial factor after 1000 tries.); intrinsic certificate PASSED
+605 passed, 5 skipped in 47.58s
