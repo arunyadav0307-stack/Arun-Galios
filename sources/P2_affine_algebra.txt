@@ -1,0 +1,1634 @@
+<<<PAGE 1>>>
+arXiv:2412.08512v1  [cs.IT]  11 Dec 2024
+Galois hulls of constacyclic codes over aﬃne algebra rings
+Indibar Debnath
+Department of Mathematics, Indian Institute of Technology Patna, India.
+Habibul Islam
+Department of Mathematics, Indian Institute of Information Technology Bhopal, India.
+E. Mart´ınez-Moro
+Institute of Mathematics, University of Valladolid, Castilla, Spain.
+Om Prakash∗
+Department of Mathematics, Indian Institute of Technology Patna, India.
+Abstract
+Let A the aﬃne algebra given by the ring Fq[X1, X2, . . . , Xℓ]/I, where I is the ideal ⟨t1(X1), t2(X2), . . . , tℓ(Xℓ)⟩
+with each ti(Xi), 1 ≤i ≤ℓ, being a square-free polynomial over Fq. This paper studies the k-Galois hulls
+of λ-constacyclic codes over A regarding their idempotent generators. For this, ﬁrst, we deﬁne the k-Galois
+inner product over A and ﬁnd the form of the generators of the k-Galois dual and the k-Galois hull of a
+λ-constacyclic code over A. Then, we derive a formula for the k-Galois hull dimension of a λ-constacyclic
+code. Further, we provide a condition for a λ-constacyclic code to be k-Galois LCD. Finally, we give some
+examples of the use of these codes in constructing entanglement-assisted quantum error-correcting codes.
+Keywords:
+Constacyclic code, Galois inner product, Galois hull, Galois LCD code.
+2020 MSC: 94B05, 94B15, 94B60.
+1. Introduction
+The intersection of a linear code with its dual is known as the hull of that code, and it was introduced in
+[2] related to some properties of ﬁnite projective planes. Over the years, researchers have discovered various
+applications of the hull. The dimension of the hull has an important role in examining the complexities
+of the algorithms that are used to check the permutation equivalence of two linear codes and determining
+the automorphism group of a linear code since these algorithms fail when the dimension of the hull is
+large [23, 24, 25, 32, 36].
+In addition, the hull of linear codes is used to obtain entanglement-assisted
+∗Corresponding author
+Email addresses: indibar_1921ma07@iitp.ac.in (Indibar Debnath), habibul.islam@iiitbhopal.ac.in (Habibul Islam),
+edgar.martinez@uva.es (E. Mart´ınez-Moro), om@iitp.ac.in (Om Prakash)
+Preprint submitted to Submitted to Discrete Mathematics
+
+<<<PAGE 2>>>
+quantum error-correcting codes [11, 41]. Note that a linear code with a zero-dimensional hull is known as a
+linear complementary dual (LCD) code. LCD codes have been used in secret sharing schemes [42], and in
+cryptosystems as protection against side-channel attacks and fault injection attacks [8].
+Sendrier [37] studied the hull dimensions of linear codes and counted the number of q-ary linear codes of a
+given hull dimension. Later, in 2003, Skersys [38] studied the average dimension of the hull for the very ﬁrst
+time. He derived an expression for the average hull dimensions of cyclic codes over ﬁnite ﬁelds. Sangwisut et
+al. [35], in 2015, proposed formulas for the dimensions of the hulls for both cyclic and negacyclic codes and
+calculated the number of codes for a given dimension of the hull. Jitman et al. [20] considered constacyclic
+codes and derived a formula for the average dimension of their Hermitian hull over ﬁnite ﬁelds of square
+order.
+In 2017, the Galois inner product was introduced over ﬁnite ﬁelds in [13]. This product generalizes both
+the Euclidean and the Hermitian inner products. In [28], the Galois hulls of linear codes in ﬁnite ﬁelds were
+studied. Meanwhile, Ding et al. [10] studied the Galois hulls of cyclic codes over ﬁnite ﬁelds. Cao [7] and
+Li et al. [26] constructed MDS codes from arbitrary dimensions of the Galois hull. In 2023, Debnath et al.
+[9] presented a formula to calculate the Galois hull dimensions of constacyclic codes over ﬁnite ﬁelds. They
+also counted the number of constacyclic codes of a given Galois hull dimension.
+The study of codes over ﬁnite rings started in the early 1970s, and many optimal codes are obtained by
+considering diﬀerent ﬁnite rings as the code alphabets. In [31] it was established the structure of multivariate
+serial codes over a ﬁnite chain ring, and the authors investigated the structure of the dual codes in the serial
+Abelian case. In 2020, Goyal and Raka [14] studied polyadic constacyclic codes over the commutative ring
+Fq[u, v]/⟨f(u), g(v)⟩, where f(u) and g(v)are two polynomials that split into linear factors over Fq. In 2021,
+Islam et al. [17] studied the cyclic codes over a non-chain ring Re,q. They gave some necessary and suﬃcient
+conditions on cyclic codes over Re,q to be LCD and obtained many MDS cyclic codes as well as optimal LCD
+codes. Prakash et al. [34] presented the study of self-dual and LCD double circulant codes over a non-chain
+ring. In 2024, Yılmazg¨u¸c et al. [44] described the structure of the Abelian, consta-Abelian and polyadic
+codes over a polynomial serial ring.
+Although hulls of diﬀerent families of linear codes have been studied over ﬁnite ﬁelds, only a few works are
+available in the literature on hulls over ﬁnite rings. Jitman and Sangwisut [19] determined the hull dimension
+and the average hull dimension of cyclic codes over the ﬁnite non-chain ring F2[v]/⟨v2 −v⟩. Further, Jitman
+et al. [21] studied the hulls of cyclic codes over Z4 in 2020. Talbi et al. [40], in 2022, explored the hulls of
+cyclic serial codes over a ﬁnite chain ring and established the average dimensions of the Euclidean hulls of
+those codes. In 2023, Dougherty and Salt¨urk [12] investigated the hulls of both additive and linear codes
+over some ﬁnite rings of order 4 and enumerated these codes having hull of a given type. In 2024, Yadav
+et al. [43] studied the Hermitian hulls of constacyclic codes over a more general class of non-chain ring
+2
+
+<<<PAGE 3>>>
+Fq[u]/⟨ue −1⟩such that gcd(e, q) = 1. Besides ﬁnding the Hermitian hull dimensions of λ-constacyclic codes
+over the ring, they also obtained the conditions for these codes to be Hermitian LCD.
+Motivated by the above works, in this paper given Fq a ﬁnite ﬁeld with q = pe number of elements, where
+p is a prime and e is a positive integer, and ti(Xi) a square-free polynomial in Fq[Xi] for i = 1, 2, . . . , ℓ, we
+will consider the commutative aﬃne algebra ring
+A = Fq[X1, X2, . . . , Xℓ]/I where I = ⟨t1(X1), t2(X2), . . . , tℓ(Xℓ)⟩
+(1)
+as the code alphabet.
+Note that this type of algebras comprises, as particular examples, several of the
+rings that already were studied related to the construction of constacyclic codes, such as the two mentioned
+above F2[v]/⟨v2 −v⟩[19], Fq[u]/⟨ue −1⟩when gcd(e, q) = 1 [43, 1], and also Fq[u, v]/⟨u2 −1, v2 −v⟩in [30],
+Rk,m = Fpm[u1, u2, . . . , uk]/⟨u2
+i −1⟩1≤i≤k in [18]. More generally, when dealing with polycyclic codes, this
+type of ambient alphabet has been studied from a transform approach point of view in [4, 5].
+Our main objective is to derive a formula for the q-dimensions of the k-Galois hulls of λ-constacyclic
+codes over a serial ring A. For this purpose, ﬁrst, we decompose the ring A as a direct sum of simple
+ideals. Using this decomposition, we ﬁnd the form of generators of constacyclic codes, their Galois duals,
+and Galois hulls. Then, with the help of the factorization of xn −λ over Fq in which the irreducible factors
+are arranged in a suitable way as given in [9], we derive an expression for the Galois hull dimensions of
+constacyclic codes over A. Our study will rely on the factorization of the deﬁning constacyclic polynomial
+(as a Fq polynomial) when projected in each simple component copy of the decomposition of the ambient
+space. This will provide some properties that allow to compute the cardinality of the set of q-dimensions of
+k-Galois hulls of λ-constacyclic codes of length n over A, denoted as δk(n, q, λ).
+It is well-known that constructing entanglement-assisted quantum error-correcting codes (shortly, EAQECCs)
+does not require the orthogonality property of classical codes, unlike standard stabilizer codes [6]. However,
+the number of preshared entanglements between the sender and the receiver plays an important role in
+the construction of EAQECCs. Guenda et al. [16] proved that this number can be derived from the hull
+dimension of classical codes. As a result, studying the hull dimension of several important classical codes
+becomes relevant in the context of EAQECCs. For example, Fang et al. [29] studied Euclidean and Hermi-
+tian hull of generalized Reed-Solomon codes and explored many new MDS EAQECCs. Recently, the Galois
+hull dimension of linear codes has been used by Cao [7] in the context of EAQECCs. In fact, he provided
+nine families of new EAQECCs. In this article, we also use the Galois hull dimension of constacyclic codes
+over A and provide some new classes of EAQECCs.
+This paper is organized as follows. In Section 2 contains some preliminaries. We decompose the ring A
+as a direct sum of simple ideals and show the existence of the primitive orthogonal idempotent elements in
+A. Further, we recall a few deﬁnitions and results on the Galois inner product, constacyclic codes over A,
+3
+
+<<<PAGE 4>>>
+and the factorization of xn −λ over Fq. In Section 3, ﬁrst, we ﬁnd the form of generators of the Galois duals
+and the Galois hulls of constacyclic codes over A. We present a formula for the dimensions of the Galois
+hulls of constacyclic codes over A. Further, some conditions are provided on the constacyclic codes over A
+to be Galois self-dual, Galois dual-containing, and Galois LCD. Section 4 shows an application of our setting
+to the construction of entanglement-assisted quantum error-correcting codes over the ﬁeld Fq. We get some
+examples of MDS and Near MDS codes as well as Optimal and Near Optimal codes with respect to Grassl’s
+Table [15].
+2. Preliminaries
+Let F be a ﬁeld. A linear code of length n is an F-subspace of Fn. Let λ be a unit in F∗, a linear code
+C ⊆Fn is said to be a λ-constacyclic code if (c0, c1, . . . , cn−1) ∈C implies that (λcn−1, c0, c1, . . . , cn−2) ∈C.
+It is well known that we can identify a vector c ∈Fn with a polynomial c0 + c1x + · · · + cn−1xn−1 in
+F[x]
+⟨xn−λ⟩
+and λ-constacyclic codes are identiﬁed with ideals in
+F[x]
+⟨xn−λ⟩. Abusing the notation, we will use both the
+polynomial notation or the vector space one for constacyclic codes during the paper.
+As usual, the Hamming weight wH(x) of x = (x1, x2, . . . , xn) ∈Fn is wH(x) =
+| {i | xi̸ = 0} | and the
+Hamming distance dH(x, y) between x = (x1, x2, . . . , xn), y = (y1, y2, . . . , yn) ∈Fn is dH(x, y) = wH(x −y).
+The minimum Hamming distance dH(C) of a linear code C is deﬁned by dH(C) = min{dH(x, y) | x, y ∈
+C, x̸ = y}.
+We use the notation [n, k, d]q to represent a linear code of length n, dimension k, and minimum Hamming
+distance d over a ﬁnite ﬁeld Fq.
+2.1. The code alphabet and its decomposition
+Let A be an aﬃne algebra deﬁned as in Equation (1). It is well known, see [33] or more generally [31]
+for aﬃne algebras over chain rings and the proofs of the statements in this subsection, that A is a ring with
+a decomposition given by primitive idempotents related to the roots of the generators of the ideal I. More
+precisely, for each i = 1, 2, . . ., ℓ, we denote the set of roots of ti(Xi) in an extension ﬁeld of Fq where the
+polynomial ti(Xi) splits into linear factors by Hi, and let H = Qℓ
+i=1 Hi. Then for each ν = (ν1, ν2, . . . , νℓ) ∈
+H, one can deﬁne the class of ν as S(ν) = {(νqj
+1 , νqj
+2 , . . . , νqj
+ℓ) ∈H : j ∈N}. In this paper, the set of all
+those classes will be denoted by ˆS and its size by N, i.e., | ˆS |
+= N. The elements of ˆS form a partition of
+H, and the size of each class is given by | S(ν) |
+= lcm(d1, d2, . . . , dℓ) = [Fq(ν1, ν2, . . . , νℓ) : Fq], where di is
+the degree of Irr(νi, Fq), the irreducible polynomial of νi over Fq.
+We denote the polynomial Irr(νi, Fq) by pS(ν),i(Xi) and, for each i = 2, 3, . . ., ℓ, we denote by Irr(νi, Fq(ν1, ν2, . . . , νi−1)),
+the irreducible polynomial of νi over Fq(ν1, ν2, . . . , νi−1) by bS(ν),i(Xi). Applying the division algorithm on
+pS(ν),i(Xi) and bS(ν),i(Xi), we get that bS(ν),i(Xi) divides pS(ν),i(Xi). Note that the above polynomials do
+4
+
+<<<PAGE 5>>>
+not depend on the representative of the class S(ν) chosen for their computation. Let
+˜bS(ν),i(Xi) = pS(ν),i(Xi)
+bS(ν),i(Xi) ,
+wS(ν),i(X1, X2, . . . , Xi) and ˜wS(ν),i(X1, X2, . . . , Xi) for i = 2, 3, . . ., ℓ
+be the multivariable polynomials obtained from bS(ν),i(Xi) and ˜bS(ν),i(Xi), respectively, by substituting
+νj by Xj; j = 1, 2, . . . , i −1.
+Given the ideal IS(ν) = ⟨pS(ν),1, wS(ν),2, wS(ν),3, . . . , wS(ν),ℓ⟩, we have
+Fq[X1, X2, . . . , Xℓ]/IS(ν) ∼= Fq(ν1, ν2, . . . , νℓ), and by using the Chinese Remainder Theorem, we get
+R ∼= Fq[X1, X2, . . . , Xℓ]/
+\
+S(ν)∈ˆS
+IS(ν) ∼=
+M
+S(ν)∈ˆS
+Fq[X1, X2, . . . , Xℓ]/IS(ν) ∼=
+M
+S(ν)∈ˆS
+Fq(ν1, ν2, . . . , νℓ).
+Let us consider the polynomials
+hS(ν)(X1, X2, . . . , Xℓ) =
+ℓ
+Y
+i=1
+ti(Xi)
+pS(ν),i(Xi)
+ℓ
+Y
+i=2
+˜wS(ν),i,
+we have IS(ν) + I = Ann(⟨hS(ν) + I⟩), ⟨hS(ν) + I⟩∼= Fq[X1, X2, . . . , Xℓ]/IS(ν), and
+A ∼=
+M
+S(ν)∈ˆS
+⟨hS(ν) + I⟩.
+This decomposition of the ring A is equivalent to the existence of a set of primitive orthogonal idempotent
+elements in A denoted by eS(ν) such that P
+S(ν)∈ˆS eS(ν) = 1 and eS(ν)R ∼= Fq(ν1, ν2, . . . , νℓ). Moreover, each
+idempotent eS(ν) is the element gS(ν)hS(ν) + I such that gS(ν)hS(ν) + IS(ν) = 1 + IS(ν). In other words, this
+is equivalent to having a decomposition as a direct sum of ﬁnite ﬁelds, and thus, A is a ﬁnite commutative
+semi-simple ring.
+Example 1. Let us consider the ring A1 = F2[x1, x2]/⟨t1(x1), t2(x2)⟩, where t1(x1) = x5
+1 + x4
+1 + 1 =
+(x2
+1 + x1 + 1)(x3
+1 + x1 + 1), t2(x2) = x4
+2 + x2
+2 + x2 = x2(x2
+2 + x2 + 1). It is easy to compute that, over a
+suitable ﬁeld extension of F2, there are six equivalence conjugacy classes in the set of roots of t1(x1), t2(x2).
+5
+
+<<<PAGE 6>>>
+After dealing with the computations above, one can check that the primitive idempotents in A1 are given by
+eS1(x1, x2) = x4
+1x3
+2 + x3
+1x3
+2 + x4
+1x2 + x2
+1x3
+2 + x4
+1 + x3
+1x2 + x3
+1 + x2
+1x2 + x3
+2 + x2
+1 + x2 + 1,
+eS2(x1, x2) = x4
+1x3
+2 + x3
+1x3
+2 + x4
+1x2 + x2
+1x3
+2 + x3
+1x2 + x2
+1x2 + x3
+2 + x2,
+eS3(x1, x2) = x4
+1x3
+2 + x3
+1x3
+2 + x4
+1x2 + x2
+1x3
+2 + x4
+1 + x3
+1x2 + x3
+1 + x2
+1x2 + x2
+1,
+eS4(x1, x2) = x4
+1x3
+2 + x3
+1x3
+2 + x3
+1x2
+2 + x2
+1x3
+2 + x3
+1x2 + x2
+1x2 + x1x2 + x2
+2,
+eS5(x1, x2) = x4
+1x3
+2 + x4
+1x2
+2 + x3
+1x3
+2 + x2
+1x3
+2 + x2
+1x2 + x1x2
+2 + x1x2 + x2,
+eS6(x1, x2) = x4
+1x3
+2 + x4
+1x2
+2 + x3
+1x3
+2 + x4
+1x2 + x3
+1x2
+2 + x2
+1x3
+2 + x2
+1x2 + x1x2
+2 + x2
+2 + x2.
+2.2. Galois inner product
+The Galois inner product over Fn
+q was introduced in [13]. For any two elements α = (α0, α1, . . . , αn−1),
+β = (β0, β1, . . . , βn−1) in Fn
+q , and for any integer k, 0 ≤k < e where pe = q, the k-Galois inner product of
+α and β is denoted by ⟨α, β⟩k is deﬁned as
+⟨α, β⟩k =
+n−1
+X
+i=0
+αiβpk
+i .
+(2)
+Note that the Euclidean and Hermitian inner products are particular cases of the Galois inner product when
+k = 0, and k = e
+2 where e is even, respectively. If C ⊆Fn
+q is a linear code, its k-Galois dual is given by
+C⊥k =
+
+α ∈Fn
+q | ⟨α, c⟩k = 0 for all c ∈C
+	
+. Note that the k-Galois dual C⊥k is also a linear code of length
+n and dimFq(C) + dimFq(C⊥k) = n [27].
+For a linear code C the k-Galois hull of C is the linear code hullk(C) = C ∩C⊥k. In particular, C is
+said to be a k-Galois linear complementary dual (LCD) code if hullk(C) = {0}, k-Galois dual containing if
+hullk(C) = C⊥k, and k-Galois self-orthogonal if hullk(C) = C.
+For a constacyclic code of length n, C⊥k and hullk(C) both become constacyclic codes under certain
+conditions, as shown in the following two results.
+Lemma 1. [27] Let λ ∈F∗
+q and ord(λ) = r. Then, we have the following.
+1. If C is a λ-constacyclic code over Fq, then C⊥k is a λ−pe−k-constacyclic code over Fq.
+2. If C is a λ-constacyclic code over Fq and r divides (1 + pe−k), then both C⊥k and hullk(C) are λ-
+constacyclic codes over Fq.
+Theorem 1. [27] Let C = ⟨g(x)⟩be a λ-constacyclic code of dimension l in Fn
+q . Let h(x) = Pl
+i=0 hixi be
+the parity-check polynomial of C. Then the k-Galois dual C⊥k is generated by the polynomial
+h#(x) =
+l
+X
+i=0
+h−pe−k
+0
+hpe−k
+i
+xl−i.
+(3)
+6
+
+<<<PAGE 7>>>
+Moreover, hullk(C) is generated by lcm(g(x), h#(x)) and (hullk(C))⊥k is generated by gcd(g(x), h#(x)).
+From now on in this paper, for a given polynomial f(x) = Pn
+i=0 fixi ∈Fq[x], we will denote by f #(x)
+the polynomial Pn
+i=0 f −pe−k
+0
+f pe−k
+i
+xn−i.
+2.3. Constacyclic codes over A
+A linear code C of length n over A is an A-submodule of An. Since A = P
+S(ν)∈ˆS
+ eS(ν)Fq
+
+, each element
+a ∈A can be expressed as
+a =
+X
+S(ν)∈ˆS
+aS(ν)eS(ν),
+where aS(ν) ∈Fq for all S(ν) ∈ˆS. Also, for each ρ = (ρ0, ρ1, . . . , ρn−1) ∈An, the projection of ρ by eS(ν)
+is given by ρS(ν) = (ρ0,S(ν), ρ1,S(ν), . . . , ρn−1,S(ν)) ∈Fn
+q , where ρi = P
+S(ν)∈ˆS ρi,S(ν)eS(ν), ρi,S(ν) ∈Fq for
+i = 0, 1, . . . , n −1. For each linear codes C ⊆An and S(ν) ∈ˆS, we deﬁne the projection code over Fn
+q given
+by
+CS(ν) = {cS(ν) ∈Fn
+q | c ∈C}.
+(4)
+Thus, we have C = P
+S(ν)∈ˆS CS(ν)eS(ν).
+For any two elements ρ = (ρ0, ρ1, . . . , ρn−1), ρ′ = (ρ′
+0, ρ′
+1, . . . , ρ′
+n−1) ∈An, we deﬁne the k-Galois inner
+product of ρ and ρ′ as ⟨ρ, ρ′⟩k = Pn−1
+i−0 ρi(ρ′
+i)pk. and the k-Galois dual code C⊥k of a linear code C ⊆An
+as C⊥k = {c′ ∈An | ⟨c′, c⟩k = 0 for all c ∈C}. Note that, since the basis for A is a set of primitive
+idempotents, it is easy to check that if C = P
+S(ν)∈ˆS CS(ν)eS(ν) then
+C⊥k =
+X
+S(ν)∈ˆS
+C⊥k
+S(ν)eS(ν).
+For λ a unit in A, a linear code C ⊆An is said to be a λ-constacyclic code if it can identify with an ideal
+in
+A[x]
+⟨xn−λ⟩. The following results in [44] on constacyclic codes over A will be required later in this work.
+Lemma 2. An element λ = P
+S(ν)∈ˆS λS(ν)eS(ν) ∈A is a unit in A if and only if for each S(ν) ∈ˆS, λS(ν)
+is a unit in Fq.
+Theorem 2. Let λ = P
+S(ν)∈ˆS λS(ν)eS(ν) be a unit in A. Then C is a λ-constacyclic code in An if and only
+if for each S(ν) ∈ˆS, CS(ν) is a λS(ν)-constacyclic code of length n over Fq.
+Theorem 3. Let λ = P
+S(ν)∈ˆS λS(ν)eS(ν) be a unit in A. Let C be a λ-constacyclic code in An and g(x) be the
+generator polynomial of C. Then g(x) | xn −λ over A and g(x) is of the form g(x) = P
+S(ν)∈ˆS eS(ν)gS(ν)(x),
+where gS(ν)(x) is the generator polynomial of CS(ν) and gS(ν)(x) | xn −λS(ν) over Fq, for all S(ν) ∈ˆS.
+7
+
+<<<PAGE 8>>>
+2.4. Factorization of xn −λ in Fq[x]
+Let n be a positive integer of the form n = n′pe′ with gcd(n′, p) = 1 and e′ be a non-negative integer.
+Consider λ ∈F∗
+q and let r = ord(λ) be such that r | (1 + pe−k), where k is a positive integer satisfying
+0 ≤k < e. Let l′ be the least multiple of lcm(e, e −k) such that l =
+l′
+e−k is an even integer. Then, following
+[9] for f(x) ∈Fq[x], we have f l#(x) = uf(x), where u is a unit in Fq. Without loss of generality, we assume
+a1 = 1 and let a1, a2, . . . , as be the complete list of distinct positive divisors of l. From [9], we have the
+following factorization of xn −λ over Fq.
+xn −λ =
+s
+Y
+t=1
+Y
+j∈Dt
+βt(j)
+Y
+i=1
+n
+fij(x)f #
+ij (x) · · · f (at−1)#
+ij
+(x)
+ope′
+, where βt(j) =
+φ(j)
+atφ(r)ordj(q),
+(5)
+and Dt = A ∩Bat for t = 1, 2, . . ., s. For A and Bi deﬁned as follows
+A =
+n
+j ∈N | gcd(j, q) = 1, j divides n′r and gcd
+ n′r
+j , r
+
+= 1
+o
+,
+Bi =
+n
+j ∈N | i is the least positive integer with j | (pel1 + (−1)i−1pi(e−k)) for at least one
+non-negative integer l1
+o
+.
+3. Galois hulls of constacyclic codes over A
+In this section, we ﬁnd the form of the generator of the k-Galois dual as well as the k-Galois hull of a
+λ-constacyclic code of length n over A. We also derive a formula for the q-dimension of the k-Galois hull
+of a λ-constacyclic code. Further, we present a condition for a λ-constacyclic code over A to be a k-Galois
+LCD code.
+Theorem 4. Let λ be a unit in A. If C = P
+S(ν)∈ˆS CS(ν)eS(ν) is a λ-constacyclic code of length n over A
+then C⊥k is a (λ−pe−k)-constacyclic code of length n over A.
+Proof. The proof follows from Proposition 3 of [44] and Lemma 1.
+Theorem 5. Let λ = P
+S(ν)∈ˆS λS(ν)eS(ν) be a unit in A and let C = L
+S(ν)∈ˆS CS(ν)eS(ν) be a λ-constacyclic
+code of length n over A with g(x) = P
+S(ν)∈ˆS eS(ν)gS(ν)(x) being its generator polynomial, where gS(ν)(x)
+is the generator polynomial of CS(ν) for S(ν) ∈ˆS.
+Then C⊥k is generated by the polynomial ˜h(x) =
+P
+S(ν)∈ˆS eS(ν)h#
+S(ν)(x), where hS(ν)(x) =
+xn−λS(ν)
+gS(ν)(x) for S(ν) ∈ˆS.
+Proof. We know that C⊥k = L
+S(ν)∈ˆS C⊥k
+S(ν)eS(ν). Now, the result follows from Theorem 1 and Theorem
+3.
+8
+
+<<<PAGE 9>>>
+Lemma 3. Let λ ∈Fq be a unit and C = ⟨g(x)⟩be a λ-constacyclic code of length n over Fq. Then C
+contains its k-Galois dual if and only if
+xn −λ ≡0
+(mod g(x)g(l−1)#(x)),
+where l is the same integer mentioned in Section 2.4.
+Proof. First, let C be a λ-constacyclic code containing its k-Galois dual, i.e., C⊥k ⊆C. From Theorem 1, we
+know that C⊥k is generated by h#(x), where h(x) is the parity-check polynomial of C. Thus, g(x) | h#(x),
+and hence h#(x) = g(x)g1(x) for some g1(x) ∈Fq[x]. Now,
+h#(x) = g(x)g1(x)
+⇒hl#(x) = g(l−1)#(x)g(l−1)#
+1
+(x)
+⇒uh(x) = g(l−1)#(x)g(l−1)#
+1
+(x)
+(for some u ∈F∗
+q)
+⇒xn −1 = g(x)h(x) = u−1g(x)g(l−1)#(x)g(l−1)#
+1
+(x)
+⇒xn −λ ≡0
+(mod g(x)g(l−1)#(x)).
+Conversely, let xn −λ ≡0 (mod g(x)g(l−1)#(x)). Then g(x)g(l−1)#(x) divides xn −λ, i.e., g(x)g(l−1)#(x)
+divides g(x)h(x). This implies g(l−1)#(x) divides h(x), and hence h(x) = g(l−1)#(x)g2(x) for some g2(x) ∈
+Fq[x]. Now,
+h(x) = g(l−1)#(x)g2(x)
+⇒h#(x) = gl#(x)g#
+2 (x)
+⇒h#(x) = ug(x)g#
+2 (x),
+where u is a unit in Fq. Thus, g(x) | h#(x), and hence ⟨h#(x)⟩⊆⟨g(x)⟩. Therefore, C contains its k-Galois
+dual.
+Theorem 6. Let λ = P
+S(ν)∈ˆS λS(ν)eS(ν) be a unit in A and C = L
+S(ν)∈ˆS CS(ν)eS(ν) be a λ-constacyclic
+code of length n over A with generator polynomial g(x) = P
+S(ν)∈ˆS eS(ν)gS(ν)(x).
+Then C contains its
+k-Galois dual if and only if
+xn −λS(ν) ≡0
+(mod gS(ν)(x)g(l−1)#
+S(ν)
+(x))
+for all S(ν) ∈ˆS.
+Proof. Note that C⊥k = L
+S(ν)∈ˆS C⊥k
+S(ν)eS(ν), thus C⊥k ⊆C if and only if C⊥k
+S(ν) ⊆CS(ν) for all S(ν) ∈ˆS.
+Now, the proof follows from Lemma 3.
+9
+
+<<<PAGE 10>>>
+Corollary 3.1. Let λ = P
+S(ν)∈ˆS λS(ν)eS(ν) be a unit in A and C = L
+S(ν)∈ˆS CS(ν)eS(ν) be a λ-constacyclic
+code of length n over A. Then the following statements are true.
+1. C is a k-Galois self-dual code over A if and only if for each S(ν) ∈ˆS, CS(ν) is a k-Galois self-dual
+code over Fq.
+2. C is a k-Galois LCD code over A if and only if for each S(ν) ∈ˆS, CS(ν) is a k-Galois LCD code over
+Fq.
+Lemma 4. Let C1 and C2 be two k-Galois self-dual codes of lengths n1 and n2 over Fq. Then C1 × C2, the
+direct product of C1 and C2 is a k-Galois self-dual code of length n1 + n2 over Fq.
+Proof. Take (a1, a2), (b1, b2) ∈C1 × C2. Then ai, bi ∈Ci for i = 1, 2. Since C1 and C2 are k-Galois self-dual
+codes, we have ⟨a1, b1⟩k = 0 = ⟨a2, b2⟩k. Hence, ⟨(a1, a2), (b1, b2)⟩k = ⟨a1, b1⟩k + ⟨a2, b2⟩k = 0. This implies
+C1 × C2 ⊆(C1 × C2)⊥k.
+On the other side, since Ci is a k-Galois self-dual code, we have | Ci |
+= q
+ni
+2 =
+| C⊥k
+i
+| for i = 1, 2.
+Thus, | C1 × C2 |
+=
+| C1 | × | C2 |
+= q
+n1
+2 × q
+n2
+2 = q
+n1+n2
+2
+, and hence | (C1 × C2)⊥k |
+=
+qn1+n2
+|C1×C2| =
+q
+n1+n2
+2
+=
+| C1 × C2 |. Therefore, C1 × C2 = (C1 × C2)⊥k, i.e., C1 × C2 is a k-Galois self-dual code.
+Corollary 3.2. If there is a k-Galois self-dual code of length 2 over Fq, then there exists a k-Galois self-dual
+code of all even lengths over Fq.
+Proof. Take an even integer n = 2m for some positive integer m. Let C be a k-Galois self-dual code of length
+2 over Fq. Let us denote D =
+mtimes
+z
+}|
+{
+C × · · · × C. Then from Theorem 4, D is a k-Galois self-dual code of length
+2m.
+Thus, we get the following corollary directly from the above results.
+Corollary 3.3. If a k-Galois self-dual code of length 2 over Fq exists, then there exist k-Galois self-dual
+codes of all even lengths over A.
+Theorem 7. Let λ = P
+S(ν)∈ˆS λS(ν)eS(ν) be a unit in A and let C = L
+S(ν)∈ˆS CS(ν)eS(ν) be a λ-constacyclic
+code of length n over A with g(x) = P
+S(ν)∈ˆS eS(ν)gS(ν)(x) being its generator polynomial, where gS(ν)(x) is
+the generator polynomial of CS(ν) for S(ν) ∈ˆS. Then hullk(C) is given by
+hullk(C) =
+M
+S(ν)∈ˆS
+hullk(CS(ν))
+and it has as generator polynomial
+G(x) =
+X
+S(ν)∈ˆS
+eS(ν)lcm(gS(ν)(x), h#
+S(ν)(x)),
+10
+
+<<<PAGE 11>>>
+where hS(ν)(x) =
+xn−λS(ν)
+gS(ν)(x) for S(ν) ∈ˆS.
+Proof. The proof follows from Theorem 3 and Theorem 5.
+Let λ = P
+S(ν)∈ˆS λS(ν)eS(ν) be a unit in A. Then from Lemma 2, we know that λS(ν) is a unit in Fq for
+each S(ν) ∈ˆS. Let ord(λS(ν)) = rS(ν) and AS(ν) be the set
+AS(ν) =
+n
+j ∈N : gcd(j, q) = 1, j divides n′rS(ν) and gcd
+ n′rS(ν)
+j
+, rS(ν)
+
+= 1
+o
+,
+forS(ν) ∈ˆS.
+Then similar to Equation (5), xn −λS(ν) can be factorized over Fq as
+xn −λS(ν) =
+s
+Y
+t=1
+Y
+j∈DS(ν)t
+βS(ν)t(j)
+Y
+i=1
+n
+fij(x)f #
+ij (x) · · · f (at−1)#
+ij
+(x)
+ope′
+,
+(6)
+where
+βS(ν)t(j) =
+φ(j)
+atφ(rS(ν))ordj(q) and DS(ν)t = AS(ν) ∩Bat for 1 ≤t ≤s, (ν) ∈ˆS.
+From the factorization in Equation (6), we have
+s
+X
+t=1
+X
+j∈DS(ν)t
+βS(ν)t(j)
+X
+i=1
+n
+deg
+ fij(x)f #
+ij (x) · · · f (at−1)#
+ij
+(x)
+o
+= n′.
+If ∆S(ν)t = P
+j∈DS(ν)t
+PβS(ν)t(j)
+i=1
+deg(fij(x)), then
+s
+X
+t=1
+at∆S(ν)t = n′.
+(7)
+Now, we derive an expression for ∆S(ν)t, which will be used later.
+Lemma 5. With the notation above, ∆S(ν)t =
+X
+j∈DS(ν)t
+φ(j)
+atφ(rS(ν)).
+Proof. We know,
+s
+X
+t=1
+at∆S(ν)t = n′. Also, combining Lemma 3 and Lemma 4 in [9], we have
+s
+X
+t=1
+X
+j∈DS(ν)t
+φ(j)
+φ(rS(ν)) = n′.
+Thus,
+s
+X
+t=1
+at∆S(ν)t =
+s
+X
+t=1
+X
+j∈DS(ν)t
+φ(j)
+φ(rS(ν)) ⇒at∆S(ν)t =
+X
+j∈DS(ν)t
+φ(j)
+φ(rS(ν)) ⇒∆S(ν)t =
+X
+j∈DS(ν)t
+φ(j)
+atφ(rS(ν)).
+11
+
+<<<PAGE 12>>>
+This completes the proof.
+Lemma 6. Let λ = P
+S(ν)∈ˆS λS(ν)eS(ν) be a unit in A. Then ord(λS(ν)) divides ord(λ) for each S(ν) ∈ˆS.
+Proof. Let ord(λ) = r and ord(λS(ν)) = rS(ν). Hence, since there is a decomposition in primitive idempotents
+of A one has
+λr = 1
+⇒
+X
+S(ν)∈ˆ(S)
+λr
+S(ν)eS(ν) = 1
+⇒
+X
+S(ν)∈ˆ(S)
+λr
+S(ν)eS(ν) =
+X
+S(ν)∈ˆ(S)
+eS(ν)
+⇒λr
+S(ν) = 1
+∀S(ν) ∈ˆS,
+and so we have rS(ν) | r for each S(ν) ∈ˆS.
+Theorem 8. Let n be a positive integer of the form n′pe′, where gcd(n′, p) = 1, e′ being a non-negative
+integer and λ = P
+S(ν)∈ˆS λS(ν)eS(ν) be a unit in A such that gcd(ord(λ), n′) = 1 and ord(λ) divides 1+pe−k,
+where 0 ≤k < e. Then the q-dimension of the k-Galois hull of a λ-constacyclic code C of length n over A
+is of the form
+X
+S(ν)∈ˆS
+s
+X
+t=1
+X
+j∈DS(ν)t
+ordj(q) · bS(ν)tj,
+where bS(ν)tj =
+βS(ν)t(j)
+X
+i=1
+bS(ν)tij, bS(ν)tij = atpe′ −
+
+max{uS(ν)tij,0, pe′ −uS(ν)tij,at−1} + max{uS(ν)tij,1,
+pe′ −uS(ν)tij,0} + · · · + max{uS(ν)tij,at−1, pe′ −uS(ν)tij,at−2}
+
+and 0 ≤bS(ν)tj ≤βS(ν)t(j) · ⌊atpe′
+2
+⌋for 1 ≤
+t ≤s, S(ν) ∈ˆS.
+Proof. Let ord(λ) = r and ord(λS(ν)) = rS(ν). It is given that r | (1 + pe−k) and hence from Lemma 1, we
+get that hullk(C) is a λ-constacyclic code over A. Also, we know that C = L
+S(ν)∈ˆS CS(ν)eS(ν), where CS(ν)
+are λS(ν)-constacyclic codes over Fq. Then from Lemma 6 and Lemma 1, we get that for each S(ν) ∈ˆS,
+hullk(CS(ν)) is a λS(ν)-constacyclic code over Fq. Then from Theorem 7, the q-dimension of the k-Galois
+hull of the λ-constacyclic code C is given by
+dim(hullk(C)) =
+X
+S(ν)∈ˆS
+n −
+X
+S(ν)∈ˆS
+deg(lcm(gS(ν)(x), h#
+S(ν)(x)))
+=
+X
+S(ν)∈ˆS
+
+n −deg(lcm(gS(ν)(x), h#
+S(ν)(x)))
+	
+,
+(8)
+12
+
+<<<PAGE 13>>>
+where gS(ν)(x) and hS(ν)(x) are respectively the generator polynomial and the parity-check polynomial of
+CS(ν). Now, from Equation (6), for each S(ν) ∈ˆS, the generator polynomial of CS(ν) is given by
+gS(ν)(x) =
+s
+Y
+t=1
+Y
+j∈DS(ν)t
+βS(ν)t(j)
+Y
+i=1
+(fij(x))uS(ν)tij,0(f #
+ij (x))uS(ν)tij,1 · · · (f (at−1)#
+ij
+(x))uS(ν)tij,at −1,
+where 0 ≤uS(ν)tij,δ ≤pe′ for 0 ≤δ ≤at −1. The parity-check polynomial of CS(ν) is given by
+hS(ν)(x) =
+s
+Y
+t=1
+Y
+j∈DS(ν)t
+βS(ν)t(j)
+Y
+i=1
+h
+(fij(x))pe′ −uS(ν)tij,0(f #
+ij (x))pe′ −uS(ν)tij,1 × · · ·
+· · · × (f (at−1)#
+ij
+(x))pe′ −uS(ν)tij,at−1
+i
+.
+Then
+h#
+S(ν)(x) =
+s
+Y
+t=1
+Y
+j∈DS(ν)t
+βS(ν)t(j)
+Y
+i=1
+h
+(fij(x))pe′ −uS(ν)tij,at−1(f #
+ij (x))pe′ −uS(ν)tij,0 × · · ·
+· · · × (f (at−1)#
+ij
+(x))pe′ −uS(ν)tij,at−2
+i
+and
+lcm(gS(ν)(x), h#
+S(ν)(x))
+=
+s
+Y
+t=1
+Y
+j∈DS(ν)t
+βS(ν)t(j)
+Y
+i=1
+h
+(fij(x))max{uS(ν)tij,0,pe′ −uS(ν)tij,at−1}(fij(x))max{uS(ν)tij,1,pe′ −uS(ν)tij,0} × · · ·
+· · · × (f (at−1)#
+ij
+(x))max{uS(ν)tij,at−1,pe′ −uS(ν)tij,at−2}i
+.
+Again, from the proof of Theorem 3 in [9], for each S(ν) ∈ˆS, we have
+n −deg(lcm(gS(ν)(x), h#
+S(ν)(x)))
+=
+s
+X
+t=1
+X
+j∈DS(ν)t
+at · ordj(q) ·
+βS(ν)t(j)
+X
+i=1
+pe′
+−
+s
+X
+t=1
+X
+j∈DS(ν)t
+βS(ν)t(j)
+X
+i=1
+ordj(q)
+h
+max{uS(ν)tij,0, pe′ −uS(ν)tij,at−1} + max{uS(ν)tij,1, pe′ −uS(ν)tij,0}+
+· · · + max{uS(ν)tij,at−1, pe′ −uS(ν)tij,at−2}
+i
+13
+
+<<<PAGE 14>>>
+=
+s
+X
+t=1
+X
+j∈DS(ν)t
+ordj(q) ·
+βS(ν)t(j)
+X
+i=1
+bS(ν)tij
+=
+s
+X
+t=1
+X
+j∈DS(ν)t
+ordj(q) · bS(ν)tj,
+(9)
+where bS(ν)tj =
+βαt(j)
+X
+i=1
+bS(ν)tij, bS(ν)tij = atpe′ −
+
+max{uS(ν)tij,0, pe′ −uS(ν)tij,at−1} + max{uS(ν)tij,1,
+pe′ −uS(ν)tij,0}+· · ·+max{uS(ν)tij,at−1, pe′ −uS(ν)tij,at−2}
+
+and 0 ≤bS(ν)tj ≤βS(ν)t(j)·⌊atpe′
+2
+⌋for 1 ≤t ≤s.
+Now, combining Equations (8) and (9), we get the required form of the q-dimension of the k-Galois hull
+of a λ-constacyclic code C over A.
+The next result can be obtained directly from the above theorem when q and n are relative prime.
+Corollary 3.4. Let n be a positive integer relatively prime to q and λ = P
+S(ν)∈ˆS λS(ν)eS(ν) be a unit in A
+such that gcd(ord(λ), n) = 1 and ord(λ) divides 1 + pe−k, where 0 ≤k < e. Then the q-dimension of the
+k-Galois hull of a λ-constacyclic code C of length n over A is of the form
+X
+S(ν)∈ˆS
+s
+X
+t=2
+X
+j∈DS(ν)t
+ordj(q) · bS(ν)tj,
+where 0 ≤bS(ν)tj ≤βS(ν)t(j) · ⌊at
+2 ⌋for 2 ≤t ≤s.
+Proof. We know that a1 = 1 and thus for each S(ν) ∈ˆS, we have 0 ≤bS(ν)1j ≤βS(ν)1(j) ·
+j
+a1
+2
+k
+, and hence
+bS(ν)1j = 0. Now, the proof follows directly from Theorem 8.
+We deﬁne Dk(n, q, λ) as the set of all q-dimensions of k-Galois hulls of λ-constacyclic codes of length
+n over A. From Section 2.1, we recall that the number of equivalence classes S(ν) in ˆS is denoted by the
+notation N. Now, we have the following corollary on the cardinality of Dk(n, q, λ).
+Corollary 3.5. Let n be a positive integer of the form n′pe′, where gcd(n′, p) = 1, e′ being a non-negative
+integer and λ = P
+S(ν)∈ˆS λS(ν)eS(ν) be a unit in A such that gcd(ord(λ), n′) = 1 and ord(λ) divides 1+pe−k,
+where 0 ≤k < e.
+1. If p is odd and n′ = 1, then | Dk(n, q, λ) |
+= N(n−1)
+2
++ 1.
+2. If p = 2, e is even, and ord(λ)n′ | (2e −1), then | D e
+2 (n, 2e, λ) |
+= Nn
+2 + 1.
+Proof. We know that Dk(n, q, λ) ⊆{0, 1, 2, . . ., ⌊n
+2 ⌋}.
+Let ord(λ) = r and ord(λS(ν)) = rS(ν) for each
+S(ν) ∈ˆS.
+14
+
+<<<PAGE 15>>>
+1. Here, n is odd and so Dk(n, q, λ) ⊆{0, 1, 2, . . ., n−1
+2 }. Also, we have
+AS(ν) =
+n
+j ∈N : gcd(j, q) = 1, j divides rS(ν) and gcd
+ rS(ν)
+j
+, rS(ν)
+
+= 1
+o
+=
+n
+rS(ν)
+o
+,
+and recall the set
+Bi =
+n
+j ∈N : i is the least positive integer with j | (pel1 + (−1)i−1pi(e−k)) for at least one
+non-negative integer l1
+o
+.
+It is given that r divides 1 + pe−k, and combining with Lemma 6, we thus have rS(ν) divides 1 + pe−k
+for each S(ν) ∈ˆS. This implies that rS(ν) ∈B1 for each S(ν) ∈ˆS and hence DS(ν)1 = {rS(ν)}, and
+DS(ν)t = ∅for all S(ν) ∈ˆS and t = 2, 3, 4, . . ., s. Therefore, from Theorem 8, the q-dimension of the
+k-Galois hull of a λ-constacyclic code of length n over A is given by
+X
+S(ν)∈ˆS
+ordrS(ν)(q) · bS(ν)1rS(ν),
+where bS(ν)1rS(ν) =
+βS(ν)1(rS(ν))
+X
+i=1
+bS(ν)1irS(ν), and 0 ≤bS(ν)1rS(ν) ≤βS(ν)1(rS(ν)) · ⌊pe′
+2 ⌋for all S(ν) ∈ˆS.
+We know that λS(ν) ∈F∗
+q, which implies that rS(ν) divides q −1. Hence, ordrS(ν)(q) = 1. Also,
+βS(ν)1(rS(ν)) =
+φ(rS(ν))
+a1 · φ(rS(ν)) · ordrS(ν)(q) = 1.
+Thus,
+0 ≤bS(ν)1rS(ν) ≤pe′ −1
+2
+,
+i.e., 0 ≤bS(ν)1rS(ν) ≤n−1
+2 . So, the set {0, 1, 2, . . ., N( n−1
+2 )} represents all the possible elements of the
+set Dk(n, q, λ) and therefore,
+| Dk(n, q, λ) |
+= N(n −1)
+2
++ 1.
+2. It is given that rn′ | (2e −1) and since rS(ν) | r, we have rS(ν)n′ | (2e −1). Also, j ∈DS(ν)t implies
+that j ∈AS(ν). Thus, for all j ∈DS(ν)t, we have j | (2e −1). Hence, ordj(q) = 1 for all j ∈DS(ν)t.
+Further, we have e is an even integer and k = e
+2. This implies l = 2 and hence s = 2 with a1 = 1 and
+a2 = 2. Now, from Theorem 8, we have the q-dimension of the k-Galois hull of a λ-constacyclic code
+15
+
+<<<PAGE 16>>>
+of length n over A as
+X
+S(ν)∈ˆS
+2
+X
+t=1
+X
+j∈DS(ν)t
+bS(ν)tj,
+where 0 ≤bS(ν)tj ≤βS(ν)t(j) · ⌊atpe′
+2
+⌋for all j ∈DS(ν)t, t = 1, 2, and S(ν) ∈ˆS. Now,
+βS(ν)t(j)⌊atpe′
+2
+⌋=
+X
+S(ν)∈ˆS
+2
+X
+t=1
+X
+j∈DS(ν)t
+φ(j)
+atφ(rS(ν))
+jatpe′
+2
+k
+=
+X
+S(ν)∈ˆS
+2
+X
+t=1
+∆S(ν)t
+jatpe′
+2
+k
+[From Lemma 5]
+=
+X
+S(ν)∈ˆS
+{∆S(ν)1 · pe′
+2 + ∆S(ν)2 · 2pe′
+2 }
+=
+X
+S(ν)∈ˆS
+{∆S(ν)1 + 2∆S(ν)2} · pe′
+2
+=
+X
+S(ν)∈ˆS
+n′pe′
+2
+[From Equation (7)]
+= Nn
+2
+So, the set {0, 1, 2, . . ., N n
+2 } represents all the possible elements of the set D e
+2 (n, 2e, λ), and therefore,
+| D e
+2 (n, 2e, λ) |
+= Nn
+2
++ 1.
+The following result presents a suﬃcient condition for a constacyclic code over A to be Galois LCD.
+Theorem 9. Let n be a positive integer relatively prime to q and λ = P
+S(ν)∈ˆS λS(ν)eS(ν) be a unit in A
+with r = ord(λ) is such that gcd(r, n) = 1 and A divides 1 + pe−k, where 0 ≤k < e. Then a λ-constacyclic
+code C of length n over A is a k-Galois LCD code if nr ∈B1.
+Proof. Let ord(λS(ν)) = rS(ν) for S(ν) ∈ˆS. Then from Lemma 6, rS(ν) | r for each S(ν) ∈ˆS. Also, n being
+relatively prime to q, we have n = n′ as per the notations that are used in the statement of Theorem 8.
+Let nr ∈B1.
+From the deﬁnition of the set B1, it is easy to note that for each positive integer j
+dividing nr, we get j ∈B1.
+This implies that nrS(ν) ∈B1 for each S(ν) ∈ˆS.
+So, AS(ν) ⊆B1 and
+DS(ν)t = AS(ν) ∩Bat = ∅for each S(ν) ∈ˆS and 2 ≤t ≤s. Then, from Corollary 3.4, dimq(hullk(C)) = 0.
+Thus, C is a k-Galois LCD code.
+16
+
+<<<PAGE 17>>>
+4. Quantum Codes
+In this section, we derive entanglement-assisted quantum error-correcting codes (shortly, EAQECCs) as
+an application of our obtained results. Here, we use the Galois hull dimension to construct EAQECCs.
+Recall that by an [[n, k, d; c]]q-EAQECC, we refer to a q-ary standard quantum code of length n, distance
+d, dimension k, and the number of pre-shared entanglement c. Based on the hull dimension, EAQECCs can
+be constructed based on the next result.
+Lemma 7. [7] For a linear code C with parameters [n, k, d]q and k-Galois dual code C⊥k, there exists an
+EAQECC of parameters [[n, k −dim(hullk(C)), d; n −k −dim(hullk(C))]]q.
+The following lemma provides a bound on the parameters of an EAQECC.
+Lemma 8. [22] For any [[n, k, d; c]]q-EAQECC, if d ≤n+2
+2
+then we have
+2(d −1) ≤n −k + c.
+If the parameters of an [[n, k, d; c]]q-EAQECC achieve the bound given in Lemma 8, then we call it an
+EAQECC with relatively large minimum distance.
+4.1. Gray Map
+Let GLN (Fq) be the set of all invertible matrices of order N and transpose of M ∈GLN (Fq) is denoted
+by M T . Every a ∈A can be expressed as a = P
+S(ν)∈ˆS aS(ν)eS(ν), where aS(ν) ∈Fq for all S(ν) ∈ˆS. Then,
+we deﬁne the map
+ψ :
+A
+−→
+FN
+q
+a
+7→
+ψ(a) = (aS(ν1), aS(ν2), . . . , aS(νN ))M,
+(10)
+where | ˆS |
+= N, and M ∈GLN (Fq) is such that M(M (pk))T = γIN with γ ∈F∗
+q, where IN denotes the
+identity matrix of order N, and if M = (mij), then M (pk) = (mpk
+ij ), 0 ≤k < e.
+The map in Equation (10) can be extended componentwise over ψ : An −→FnN
+q
+. We deﬁne the Gray
+weight for an element a ∈An by wG(a) = wH(ψ(a)) where wH refers the Hamming weight in Fq. It is easy
+to verify that the map ψ is bijective linear isometry from An (Gray distance) to FnN
+q
+(Hamming distance).
+Lemma 9. For a linear code C over the ring A,
+1. ψ(C⊥k) = ψ(C)⊥k.
+2. ψ(hullk(C)) = hullk(ψ(C)).
+Proof.
+1. From [13], we know that C⊥k = (C(pe−k))⊥, and from [17], we have ψ(C) = ψ(C)⊥. Here,
+C(pe−k) = {cpe−k : c ∈C}, and (C(pe−k))⊥and ψ(C)⊥represent the Euclidean duals of C(pe−k) and
+17
+
+<<<PAGE 18>>>
+ψ(C), respectively. Then, we have
+ψ(C⊥k) = ψ((C(pe−k))⊥) = ψ(C(pe−k))⊥= (ψ(C)(pe−k))⊥= ψ(C)⊥k.
+2. First, we show that ψ(C∩C⊥k) = ψ(C)∩ψ(C⊥k). Take α ∈ψ(C∩C⊥k). Then there exists c ∈C∩C⊥k
+such that α = ψ(c). Now, c ∈C implies that ψ(c) ∈ψ(C), and c ∈C⊥k implies that ψ(c) ∈ψ(C⊥k).
+Thus, c ∈C ∩C⊥k implies that α = ψ(c) ∈ψ(C) ∩ψ(C⊥k), and hence ψ(C ∩C⊥k) ⊆ψ(C) ∩ψ(C⊥k).
+Again, take β ∈ψ(C) ∩ψ(C⊥k). Then there exist c ∈C and c′ ∈C⊥k such that ψ(c) = β = ψ(c′).
+Since ψ is an injective map, we have c = c′ ∈C ∩C⊥k. Thus, β = ψ(c) ∈ψ(C ∩C⊥k), and hence
+ψ(C)∩ψ(C⊥k) ⊆ψ(C ∩C⊥k). Therefore, ψ(C ∩C⊥k) = ψ(C)∩ψ(C⊥k). Now, the result follows from
+part 1.
+For a linear code C of length n over A, let ψ(C) = D. Then D is a linear code of length nN. Again,
+from Lemma 9, we have dim(hullk(D)) = dim(hullk(ψ(C))) = dim(ψ(hullk(C))) = dimq(hullk(C)). Based
+on the hull dimension of D, we construct EAQECCs as follows:
+Theorem 10. For a linear code C of length n over A, let ψ(C) = D be an [nN, k, d] linear code over Fq.
+Then there exists a EAQECC of parameters [[nN, k −dimq(hullk(C)), d; nN −k −dimq(hullk(C))]]q.
+Remark 1. Note that when M = IN the identity matrix of order N in the Gray map in Equation (10), the
+discussion in Section 3 above shows that the resulting codes are the direct sum of shorter codes related to the
+decomposition of the ring. Thus, the minimum distance is upper bounded by that of each component, and
+for that parameter, there is no gain in using the rings. Anyway, the underlying algebraic structure for their
+deﬁnition allows a compact way for dealing with this type of codes as well as for their ring operations. More-
+over, the ring structure adds some further symmetries (those provided by the deﬁning ideal I = ⟨{ti(xi)}ℓ
+i=1⟩)
+within the codes in ﬁeld representation given by the Gray map other than those given by the constacyclic shift.
+These extra symmetries could help in decoding those larger codes. In other words, the resulting codes are not
+just direct sums of constacyclic codes but also ti(xi)-polycyclic codes (i = 1, . . . , ℓ) when they are seen in Fq.
+4.2. Examples
+In this subsection, we apply Theorem 8 and the Gray map deﬁned in Section 4.1 to ﬁnd the dimensions of
+the Galois hulls of constacyclic codes over A. Then we use Lemma 9 and Theorem 10 to obtain EAQECCs
+over Fq.
+Example 2. Let us consider the ring R = F9[x1, x2]/⟨t1(x1), t2(x2)⟩, where t1(x1) = x2
+1 + x1 + ω, t2(x2) =
+x2
+2 + ω5x2 + 2. Let F9 = F3(ω) be the ﬁeld with 9 elements where ω2 + 2ω + 2 = 0. Here, p = 3, e = 2, ℓ= 2,
+18
+
+<<<PAGE 19>>>
+N = 2. Then, there are 2 idempotents eα, α = 1, 2, in the orthogonal idempotent decomposition of R. Take
+λ = e1 + ω2e2, n = 7, k = 1. Then n′ = 7, l = 2, and r = 4. Also, λ1 = 1, λ2 = ω2 and r1 = 1, r2 = 4. Let
+a1 = 1, and a2 = 2. Now, we have
+A1 =
+n
+j ∈N : gcd(j, 9) = 1, j divides 7 and gcd
+ 7
+j , 1
+
+= 1
+o
+= {1, 7};
+A2 =
+n
+j ∈N : gcd(j, 9) = 1, j divides 28 and gcd
+ 28
+j , 4
+
+= 1
+o
+= {4, 28};
+B1 =
+n
+j ∈N : j | (9l1 + 3) for at least one non-negative integer l1
+o
+= {1, 2, 3, 4, 6, 7, . . ., 28, . . .};
+B2 =
+n
+j ∈N \ B1 : j | (9l1 −9) for at least one non-negative integer l1
+o
+= {5, 8, 9, 10, . . .}.
+The factorization of the polynomials x7 −1 and x7 −ω2 over F9 are respectively
+x7 −1
+= (x + 2)(x3 + ωx2 + ω7x + 2)(x3 + ω3x2 + ω5x + 2)
+and
+x7 −ω2 = (x + ω2)(x3 + ωx2 + ωx + ω6)(x3 + ω7x2 + ω3x + ω6).
+Let C be the (e1+ω2e2)-constacyclic code generated by g(x) = P2
+α=1 eαgα(x), where g1(x) = x3+ω3x2+ω5x+
+2, g2(x) = x + ω2. Therefore, D11 = A1 ∩B1 = {1, 7}, D21 = A2 ∩B1 = {4, 28}, D12 = A1 ∩B2 = ∅= D22.
+Hence, ord1(9) = 1, ord7(9) = 3, ord4(9) = 1, ord28(9) = 3, β11(1) = 1, β11(7) = 3, β21(4) = 1, β21(28) = 3.
+Therefore, we have
+b111 = b1111
+= 1 −max{0, 1 −0} = 0;
+b117 = b1117 + b1127
+= [1 −max{0, 1 −0}] + [1 −max{1, 1 −1}] = 0;
+b214 = b2114
+= 1 −max{1, 1 −1} = 0;
+b2128 = b21128 + b21228
+= [1 −max{0, 1 −0}] + [1 −max{0, 1 −0}] = 0.
+19
+
+<<<PAGE 20>>>
+Thus, the 9-dimension of the 1-Galois hull of C is
+dim9(hull1(C)) = (ord1(9) × b111) + (ord7(9) × b117) + (ord4(9) × b214) + (ord28(9) × b2128) = 0.
+So, by Lemma 9, we have dim9(hull1(ψ(C))) = 0. Again, ψ(C) has the parameters [14, 10, 4]9 which is an
+optimal code [15]. For the Gray map ψ, we randomly choose an invertible matrix of order 2, given by
+M =
+
+ω
+ω3
+ω7
+ω5
+
+.
+Now, by Theorem 10, we have an EAQECC of parameters [[14, 10, 4; 4]]9.
+Example 3. Let us consider the ring R = F25[x1, x2]/⟨t1(x1), t2(x2)⟩, where t1(x1) = x2
+1 + x1 + ω13,
+t2(x2) = x2
+2 + ω3x2 + 1. Let F25 = F5(ω) be the ﬁeld with 25 elements where ω2 + 4ω + 2 = 0. Here, p = 5,
+e = 2, ℓ= 2, N = 2. So, there are 2 idempotents eα, α = 1, 2, in the orthogonal idempotent decomposition
+of R. Take λ = e1 + ω8e2, n = 13, k = 1. Then n′ = 13, l = 2, and r = 3. Also, λ1 = 1, λ2 = ω8 and
+r1 = 1, r2 = 3. Let a1 = 1, and a2 = 2. Now, we have
+A1 =
+n
+j ∈N : gcd(j, 25) = 1, j divides 13 and gcd
+ 13
+j , 1
+
+= 1
+o
+= {1, 13};
+A2 =
+n
+j ∈N : gcd(j, 25) = 1, j divides 39 and gcd
+ 39
+j , 3
+
+= 1
+o
+= {3, 39};
+B1 =
+n
+j ∈N : j | (25l1 + 5) for at least one non-negative integer l1
+o
+= {1, 2, 3, 5, 6, 7, 9, 10, 14, . . .};
+B2 =
+n
+j ∈N \ B1 : j | (25l1 −25) for at least one non-negative integer l1
+o
+= {4, 8, 11, 12, 13, . . ., 39, . . .}.
+The factorization of the polynomials x13 −1 and x13 −ω8 over F25 are respectively
+x13 −1
+= (x + 4)(x2 + ωx + 1)(x2 + ω2x + 1)(x2 + ω5x + 1)
+× (x2 + ω10x + 1)(x2 + ω19x + 1)(x2 + ω23x + 1)
+and
+x13 −ω8 = (x + ω20)(x2 + ω3x + ω16)(x2 + ω7x + ω16)(x2 + ω9x + ω16)
+× (x2 + ω10x + ω16)(x2 + ω13x + ω16)(x2 + 3x + ω16).
+Let C be the (e1 + ω8e2)-constacyclic code generated by g(x) = P2
+α=1 eαgα(x), where g1(x) = (x + 4)(x2 +
+ωx + 1), g2(x) = x + ω20. Thus, D11 = A1 ∩B1 = {1}, D12 = A1 ∩B2 = {13}, D21 = A2 ∩B1 = {3},
+20
+
+<<<PAGE 21>>>
+D22 = A2 ∩B2 = {39}. So, ord1(25) = 1, ord13(25) = 2, ord3(25) = 1, ord39(25) = 2, β11(1) = 1, β12(13) =
+3, β21(3) = 1, β22(39) = 3. Hence, we have
+b111 = b1111
+= 1 −max{1, 1 −1} = 0;
+b1213 = b12113 + b12213 + b12313
+= [2 −(max{1, 1 −0} + max{0, 1 −1})] + [2 −(max{0, 1 −0} + max{0, 1 −0})]
++ [2 −(max{0, 1 −0} + max{0, 1 −0})] = 1;
+b213 = b2113
+= 1 −max{1, 1 −1} = 0;
+b2239 = b22139 + b22239 + b22339
+= [2 −(max{0, 1 −0} + max{0, 1 −0})] + [2 −(max{0, 1 −0} + max{0, 1 −0})]
++ [2 −(max{0, 1 −0} + max{0, 1 −0})] = 0.
+Thus, the 25-dimension of the 1-Galois hull of C is
+dim25(hull1(C)) = (ord1(25) × b111) + (ord13(25) × b1213)
++ (ord3(25) × b213) + (ord39(25) × b2239) = 2.
+Hence, by Lemma 9, we have dim25(hull1(ψ(C))) = 2. Again, ψ(C) has the parameters [26, 22, 4]25 which is
+a Near MDS code, i.e., d = n −k. For the Gray map ψ, we randomly choose an invertible matrix of order 2
+over F25, given by
+M =
+
+ω
+ω2
+2
+ω13
+
+.
+Finally, by Theorem 10, we have an EAQECC of parameters [[26, 20, 4; 2]]25.
+In Table 1, we obtain a few EAQECCs over A. We obtain these codes from λ-constacyclic codes over A
+using the Gray map ψ. For q = 4, we consider A = F4[x1, x2]/⟨x2
+1 + x1 + ω, x2
+2 + ωx2 + ω⟩, where ω is a
+primitive element of F4, and randomly choose an invertible matrix of order 2, given by
+M =
+
+ω
+0
+0
+ω2
+
+.
+For q = 9, we consider the same ring A and the same invertible matrix M given in Example 2, and for
+q = 25, we consider A and M as given in Example 3. In the table, we use the identiﬁcation of polynomials
+21
+
+<<<PAGE 22>>>
+of degree at most n−1 with n-tuples as mentioned in Section 2.2 for representing the polynomials g1(x) and
+g2(x).
+An [n, k, d]-linear code is said to be a Maximum Distance Separable (MDS) code if the relation d = n−k+1
+is satisﬁed, and we will say that it is Near Maximum Distance Separable (Near MDS) code if d = n −k.
+Furthermore, we call a linear code Optimal if the code parameters match with those given in Grassl’s code
+table [15], and we use the term Near Optimal if for the same values of q, n, and k, the value of d of our code
+is one less than that given in Grassl’s code table [15].
+With the help of Theorem 10, we obtain the parameters of the EAQECCs from the 1-Galois hulls of
+codes. In Lemma 8, we have seen that 2(d −1) ≤n −k + c. The last column of Table 1 indicates how much
+the value 2(d −1) diﬀers from n −k + c. We use the notation [[n, k, d; c]]∗
+q when (n −k + c) −2(d −1) = 0,
+and [[n, k, d; c]]†
+q when (n −k + c) −2(d −1) = 2. As we mentioned after stating Lemma 8, each of the
+[[n, k, d; c]]∗
+q-EAQECCs given in the table is an EAQECC with relatively large minimum distance.
+Table 1: EAQECCs obtained from λ-constacyclic codes over A
+n
+λ
+g1(x)
+g2(x)
+ψ(C)
+Remark on ψ(C)
+EAQECC
+Diﬀ.
+5
+ωe1 + e2
+(ω, 1, 1)
+(1, ω, 1)
+[10, 6, 3]4
+Near Optimal [15]
+[[10, 2, 3; 0]]4
+4
+4
+2
+X
+i=1
+ei
+(ω2, ω7, 1)
+(ω6, ω, 1)
+[8, 4, 4]9
+Near MDS
+[[8, 4, 4; 4]]†
+9
+2
+5
+2
+X
+i=1
+ω2ei
+(2, ω5, 1)
+(ω6, 1)
+[10, 7, 4]9
+MDS
+[[10, 5, 4; 1]]∗
+9
+0
+5
+2
+X
+i=1
+ω2ei
+(ω2, ω5, ω7, 1)
+(2, ω3, 1)
+[10, 5, 6]9
+MDS
+[[10, 1, 6; 1]]∗
+9
+0
+5
+2e1 + e2
+(1, 2, 1, 2, 1)
+(2, ω3, ω7, 1)
+[10, 3, 8]9
+MDS
+[[10, 1, 8; 5]]∗
+9
+0
+6
+2
+X
+i=1
+ei
+(2, 2, 0, 1, 1)
+(2, 1)
+[12, 7, 4]9
+Near Optimal [15]
+[[12, 5, 4; 3]]9
+4
+7
+e1 + ω2e2
+(2, ω5, ω3, 1)
+(ω2, 1)
+[14, 10, 4]9
+Optimal [15]
+[[14, 10, 4; 4]]†
+9
+2
+7
+e1 + 2e2
+(1, ω7, 2, ω5, 1)
+(1, ω7, ω5, 1)
+[14, 7, 6]9
+Near Optimal [15]
+[[14, 7, 6; 7]]9
+4
+7
+e1 + 2e2
+(1, ω7, 2, ω5, 1)
+(1, 2, 1, 2, 1, 2, 1)
+[14, 4, 10]9
+Optimal [15]
+[[14, 4, 10; 10]]†
+9
+2
+13
+e1 + ω8e2
+(4, ω5, ω17, 1)
+(ω20, 1)
+[26, 22, 4]25
+Near MDS
+[[26, 20, 4; 2]]†
+25
+2
+16
+ω16e1 + e2
+(ω5, ω11, 1)
+(ω21, 1)
+[32, 29, 3]25
+Near MDS
+[[32, 27, 3; 1]]†
+25
+2
+20
+ω8e1 + e2
+(ω8, ω10, 1)
+(1, 1)
+[40, 37, 3]25
+Near MDS
+[[40, 35, 3; 1]]†
+25
+2
+26
+2
+X
+i=1
+ei
+(2, 1, 1, 0, 1)
+(1, 1)
+[52, 47, 3]9
+Near Optimal [15]
+[[52, 44, 3; 2]]9
+6
+Remark 2. In Table 1, we see that there is an EAQECC with parameters [[10, 1, 8; 5]]9. For this EAQECC,
+22
+
+<<<PAGE 23>>>
+even though d > n+2
+2 , its parameters achieve the bound given in Lemma 8. For this reason, we call it an
+EAQECC with relatively large minimum distance.
+5. Conclusion
+Hulls of linear codes are important in determining the complexity of the algorithms that are used for
+checking the permutation equivalence of two linear codes or ﬁnding the automorphism group of a linear
+code.
+It has also been found to be applicable to obtaining good entanglement-assisted quantum error-
+correcting codes. Due to these applications, researchers have extensively focused on studying the hulls and
+their properties. Hulls of diﬀerent families of linear codes have yet to be investigated with respect to various
+types of ﬁnite rings. Serial ring being one of them. In this work, we have considered a semisimple ring
+with aﬃne polynomial algebra representation A = Fq[X1, X2, . . . , Xℓ]/I as the code alphabet, where the
+ideal I is generated by monic single-variable polynomials. The code alphabets used in some recent research
+[14, 41, 43], can be obtained as particular cases of the ring A. Moreover, the mentioned works involve either
+the Euclidean or the Hermitian inner product, whereas, in our work, we use a more general inner product,
+namely the Galois inner product. Here, we study the Galois duals and the Galois hulls and derive a formula
+for the dimensions of the Galois hulls of constacyclic codes over A. Finally, as an application, we show how
+these codes can be used for constructing entanglement-assisted quantum error-correcting codes. As a future
+line of research, the enumeration of non-isometric constacyclic codes for a given Galois hull dimension is an
+interesting problem. This problem is still open over A. Therefore, it may be interesting to count the number
+of constacyclic codes for a given Galois hull dimension over A.
+Acknowledgment
+The ﬁrst and fourth authors would like to thank the CSIR, Govt. of India (under grant no. 09/1023
+(0030)/2019-EMR-I) and DST, Govt. of India (under SERB File Number: MTR/2022/001052, vide Diary
+No / Finance No SERB/F/8787/2022-2023 dated 29 December 2022), respectively for providing ﬁnancial
+support. The third author acknowledges the ﬁnancial support under Grant PID2022-138906NB-C21 funded
+by MICIU/AEI/10.13039/501100011033 and by ERDF/EU.
+Declarations
+Data Availability Statement: The authors declare that [the/all other] data supporting the ﬁndings of
+this study are available within the article. Any clariﬁcation may be requested from the corresponding author,
+provided it is essential.
+Competing interests: The authors declare that there is no conﬂict of interest regarding the publication
+23
+
+<<<PAGE 24>>>
+of this manuscript.
+Use of AI tools declaration: The authors declare that they have not used Artiﬁcial Intelligence (AI)
+tools in the creation of this article.
+References
+[1] A. Alahmadi, H. Islam, O. Prakash, P. Sol´e, A. Alkenani, N. Muthana, R. Hijazi, New quantum codes
+from constacyclic codes over a non-chain ring, Quantum Inf. Process. 20(2) (2021), Paper No. 60, 17
+pp.
+[2] E.F. Assmus Jr., J.D. Key, Aﬃne and projective planes, Discrete Math. 85(2 −3) (1990) 161–187.
+[3] M. Bajalan, A. Fotue Tabue, J. Kabore, E. Mart´ınez-Moro, Galois LCD codes over mixed alphabets,
+Finite Fields Appl. 85 (2023), Paper No. 102125, 22 pp.
+[4] M. Bajalan, E. Mart´ınez-Moro, S. Szabo, A transform approach to polycyclic and serial codes over
+rings, Finite Fields Appl. 80 (2022), 102014.
+[5] M. Bajalan, E. Mart´ınez-Moro, Polycyclic codes over serial rings and their annihilator CSS construction,
+Cryptogr. Commun. (2025), https://doi.org/10.1007/s12095-024-00757-4
+[6] T. Brun, I. Devetak, M.H. Hsieh, Correcting quantum errors with entanglement, Science 314(5798)
+(2006) 436 −439.
+[7] M. Cao, MDS Codes With Galois Hulls of Arbitrary Dimensions and the Related Entanglement-Assisted
+Quantum Error Correction, IEEE Trans. Inform. Theory 67(12) (2021) 7964 −7984.
+[8] C. Carlet, S. Guilley, Complementary dual codes for counter-measures to side-channel attacks, Adv.
+Math. Commun. 10(1) (2016) 131-150.
+[9] I. Debnath, O. Prakash, H. Islam, Galois hulls of constacyclic codes over ﬁnite ﬁelds, Cryptogr. Commun.
+15(1) (2023) 111 −127.
+[10] Y. Ding, X. Lu, Galois Hulls of Cyclic Codes over Finite Fields, IEICE Transactions on Fundamentals
+of Electronics, Communications and Computer Sciences 103 −A(1) (2020) 370 −375.
+[11] S.T. Dougherty, S. Sahinkaya, On cyclic and negacyclic codes with one-dimensional hulls and their
+applications, Adv. Math. Commun. 18(5) (2024) 1364 −1378.
+[12] S.T. Dougherty, E. Salt¨urk, The number of codes over rings of order 4 containing a hull of given type,
+Adv. Math. Commun. 19(1) (2025) 11 −35.
+24
+
+<<<PAGE 25>>>
+[13] Y. Fan, L. Zhang, Galois self-dual constacyclic codes, Des. Codes Cryptogr. 84(3) (2017) 473 −492.
+[14] M. Goyal, M. Raka, Polyadic constacyclic codes over a non-chain ring Fq[u, v]/⟨f(u), g(v), uv −vu⟩, J.
+Appl. Math. Comput. 62(1 −2) (2020) 425 −447.
+[15] M. Grassl: Table of bounds on linear codes, http://www.codetables.de. (Accessed 11 December 2024).
+[16] K. Guenda, S. Jitman, T.A. Gulliver, Constructions of good entanglement assisted quanutm error
+correcting codes, Des. Codes Cryptogr. 86(1) (2018) 121 −136.
+[17] H. Islam, E. Mart´ınez-Moro, O. Prakash, Cyclic codes over a non-chain ring Re,q and their application
+to LCD codes, Discrete Math. 344(10) (2021) Paper No. 112545, 11 pp.
+[18] H. Islam, O. Prakash, R.K. Verma, New quantum codes from constacyclic codes over the ring Rk,m,
+Adv. Math. Commun. 16(1) (2022) 17 −35, doi: 10.3934/amc.2020097
+[19] S. Jitman, E. Sangwisut, Hulls of Cyclic Codes over the Ring F2 + vF2, Thai. J. Math. 18 (2020)
+135 −144.
+[20] S. Jitman, E. Sangwisut, The average dimension of the Hermitian hull of constacyclic codes over ﬁnite
+ﬁelds of square order, Adv. Math. Commun. 12(3) (2018) 451 −463.
+[21] S. Jitman, E. Sangwisut, P. Udomkavanich, Hulls of cyclic codes over Z4, Discrete Math. 343(1) (2020)
+Paper No. 111621, 18 pp.
+[22] C.-Y. Lai, A. Ashikhmin, Linear programming bounds for entanglement-assisted quantum error-
+correcting codes by split weight enumerators, IEEE Trans. Inform. Theory. 64(1) (2018) 622 −639.
+[23] J.S. Leon, Computing automorphism groups of error-correcting codes, IEEE Trans. Inform. Theory.
+28(3) (1982) 496 −511.
+[24] J.S. Leon, Permutation Group Algorithms Based on Partitions, I: Theory and Algorithms. J. Symbolic
+Comput. 12(4 −5) (1991) 533 −583.
+[25] J.S. Leon, V. Pless, N.J.A. Sloane, On ternary self-dual codes of length 24, IEEE Trans. Inform. Theory
+27(2) (1981) 176 −180.
+[26] Y. Li, S. Zhu, P. Li, On MDS codes with Galois hulls of arbitrary dimensions, Cryptogr. Commun.
+15(3) (2023) 565 −587.
+[27] X. Liu, Y. Fan, H. Liu, Galois LCD codes over ﬁnite ﬁelds, Finite Fields Appl. 49 (2018) 227 −242.
+[28] H. Liu, X. Pan, Galois hulls of linear codes over ﬁnite ﬁelds, Des. Codes Cryptogr. 88(2) (2020) 241−255.
+25
+
+<<<PAGE 26>>>
+[29] W. Fang, F. Fu, L. Li, S. Zhu, Euclidean and Hermitian hulls of MDS codes and their applications to
+EAQECCs, IEEE Trans. Inf. Theory 66(6) (2020) 3527 −3537.
+[30] F. Ma, J. Gao, F.-W. Fu, New non-binary quantum codes from constacyclic codes over Fq[u, v]/⟨u2 −
+1, v2 −v, uv −vu⟩, Adv. Math. Commun. 13(3) (2019) 421 −434, doi: 10.3934/amc.2019027
+[31] E. Mart´ınez-Moro, I.F. R´ua, Multivariable codes over ﬁnite chain rings: serial codes, SIAM J. Discrete
+Math. 20(4) (2006) 947 −959.
+[32] E. Petrank, R.M. Roth, Is code equivalence easy to decide?, IEEE Trans. Inform. Theory 43(5) (1997)
+1602 −1604.
+[33] A. Poli, Important algebraic calculations for n-variables polynomial codes, Discrete Math. 56(2 −3)
+(1985) 255 −263.
+[34] O. Prakash, S. Yadav, H. Islam, P. Sol`e, Self-dual and LCD double circulant codes over a class of
+non-local rings, Comput. Appl. Math. 41(6) (2022) Paper No. 245, 16 pp.
+[35] E. Sangwisut, S. Jitman, S. Ling, P. Udomkavanich, Hulls of cyclic and negacyclic codes over ﬁnite
+ﬁelds, Finite Fields Appl. 33 (2015) 232 −257.
+[36] N. Sendrier, Finding the permutation between equivalent codes: the support splitting algorithm, IEEE
+Trans. Inform. Theory 46(4) (2000) 1193 −1203.
+[37] N. Sendrier, On the dimension of the hull, SIAM J. Discrete Math. 10(2) (1997) 282 −293.
+[38] G. Skersys, The average dimension of the hull of cyclic codes, Discrete Appl. Math. 128(1) (2003)
+275 −292.
+[39] L. Sok, On Linear Codes With One-Dimensional Euclidean Hull and Their Applications to EAQECCs,
+IEEE Trans. Inform. Theory 68(7) (2022) 4329 −4343.
+[40] S. Talbi, A. Batoul, A. Fotue Tabue, E. Mart´ınez-Moro, Hulls of cyclic serial codes over a ﬁnite chain
+ring, Finite Fields Appl. 77 (2022) Paper No. 101950, 27 pp.
+[41] Z. Tian, J. Gao, Y. Gao, Hulls of constacyclic codes over ﬁnite non-chain rings and their applications
+in quantum codes construction, Quantum Inf. Process. 23(1) 2024 Paper No. 9, 27 pp.
+[42] S. Yadav, I. Debnath, O. Prakash, Some constructions of l-Galois LCD codes, Adv. Math. Commun.
+19(1) (2025) 227 −244, Doi: 10.3934/amc.2023053
+[43] S. Yadav, A. Singh, H. Islam, O. Prakash, P. Sol´e, Hermitian hull of constacyclic codes over a class of
+non-chain rings and new quantum codes, Comput. Appl. Math. 43(5) (2024) Paper No. 269, 19 pp.
+26
+
+<<<PAGE 27>>>
+[44] G.G. Yilmazg¨u¸c, J. de la Cruz, E. Mart´ınez-Moro, Abelian and consta-Abelian polyadic codes over aﬃne
+algebras with a ﬁnite commutative chain coeﬃcient ring, Cryptogr. Commun. 16(4) (2024) 889 −907.
+27

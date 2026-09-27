@@ -1,0 +1,1144 @@
+<<<PAGE 1>>>
+Vol.:(0123456789)
+https://doi.org/10.1007/s12095-022-00591-6
+1 3
+Galois hulls of constacyclic codes over finite fields
+Indibar Debnath1 · Om Prakash1   · Habibul Islam1
+© The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature 2022
+Abstract
+This paper presents a formula for the dimension of Galois hulls of constacyclic codes. For 
+this, we have arranged the irreducible factors of xn − λ over the finite field 픽q in a suitable 
+way. Also, considering some restrictions on q, the number of constacyclic codes of length 
+n over 픽q is calculated for a given Galois hull dimension.
+Keywords  Constacyclic codes · Galois inner product · Galois hulls · Cyclotomic 
+polynomials · LCD codes
+Mathematics Subject Classification  94B05 · 94B15 · 94B60
+1  Introduction
+The hull of a linear code is the intersection of the code with its dual. Linear complemen-
+tary dual (shortly LCD) codes are linear codes with zero hull dimension. These codes have 
+many useful applications in cryptography, see [2]. Although, the Euclidean hull of a linear 
+code was introduced by Assmus Jr. and Key [1] in 1990. In 1997, Sendrier [21] studied the 
+dimension of the hull and showed that the asymptotic proportion of q-ary codes having 
+hull dimension l is a positive constant depending only on q and l. Testing the permutation 
+equivalence of two linear codes is an interesting problem in coding theory and this prob-
+lem was investigated by Leon et al. [11] and also by Petrank and Roth [15]. Hulls of linear 
+codes play a key role in determining the complexity of algorithms for checking permuta-
+tion equivalence of two linear codes, and we refer [10, 19, 20]. The fact is that most of 
+the algorithms do not work if the hull size is large. Recently, Guenda et al. [6] applied the 
+hulls of linear codes in constructing good entanglement-assisted quantum error-correcting 
+codes. Due to this wide range of applications, the hulls of linear codes and their properties 
+have been extensively studied.
+ *	 Om Prakash 
+	
+om@iitp.ac.in
+	
+Indibar Debnath 
+	
+indibar_1921ma07@iitp.ac.in
+	
+Habibul Islam 
+	
+habibul.pma17@iitp.ac.in
+1	
+Department of Mathematics, Indian Institute of Technology Patna, Patna 801 106, India
+Cryptography and Communications (2023) 15:111–127
+Received: 23 October 2021 / Accepted: 16 May 2022 / Published online: 23 June 2022
+
+<<<PAGE 2>>>
+1 3
+On the other hand, constacyclic codes are an important class of linear codes which have 
+various applications in information technology. Moreover, this family of codes contains 
+cyclic codes with rich algebraic structures and well-known applications, see [7, 16]. The 
+study on hulls of cyclic and constacyclic codes has recently attracted many researchers. In 
+2015, the hull dimensions of cyclic and negacyclic codes of length n over 픽q were deter-
+mined for both the Euclidean and Hermitian inner products by Sangwisut et al. [18]. They 
+have also calculated the number of cyclic codes of length n over 픽q having hulls of a given 
+dimension. Later, the average hull dimension of cyclic codes by using Euclidean inner prod-
+ucts was studied by Skersys in [22]. Jitman and Sangwisut [9] derived the average dimen-
+sion of the Hermitian hull of cyclic codes over finite fields of square order. Consequently, 
+in 2018, they calculated the average dimension of the Hermitian hull of constacyclic codes 
+over finite fields of square order in [8].
+The notion of k-Galois inner product, which is a generalization of both the Euclidean 
+and Hermitian inner products, was introduced by Fan and Zhang [5] in 2017. In 2018, 
+Liu and Pan [14] studied the Galois hulls of linear codes over finite fields. Recently, in 
+2020, Ding and Lu [4] studied the Galois hulls of cyclic codes over finite fields. However, 
+the investigation of Galois hulls of constacyclic codes is not available in the literature yet. 
+Hence, this motivates us to study the Galois hulls of constacyclic codes over finite fields.
+The paper is organized as follows. In Section 2, we have recalled a few basic definitions 
+and some well-known results. Section 3 contains the rearrangement of irreducible factors 
+of xn − λ. We use this particular form of factorization to propose a formula for the dimen-
+sions of the k-Galois hulls of a specific class of λ-constacyclic codes of length n over finite 
+fields. Further, we have calculated the number of λ-constacyclic codes of a given Galois 
+hull dimension over certain finite fields. Section 4 concludes our work.
+2  Preliminaries
+In this section, we state a few basic definitions and some well-known results on constacy-
+clic codes, Galois duals and Galois hulls of linear codes and the generator polynomial for 
+the Galois hull of a constacyclic code.
+A linear code of length n over a finite field 픽q is an 픽q-subspace of the vec-
+tor space 픽n
+q . Any linear code C is said to be a λ-constacyclic code, for 휆∈픽q ⧵{0} , if 
+(a0, a1, … , an−1) ∈C implies that (휆an−1, a0, … , an−2) ∈C.
+It is noted that we can identify each vector (a0, a1, … , an−1) in 픽n
+q with a polynomial a(x) 
+= a0 + a1x + ⋯ + an− 1xn− 1 in 픽q[x]∕⟨xn −휆⟩= Rn,휆 . Under this identification, one can eas-
+ily verify that a λ-constacyclic code of length n over 픽q is an ideal of Rn,λ and the following 
+well-known result also establishes this fact.
+Theorem 1  [3] A code C in Rn,λ is a λ-constacyclic code if and only if C satisfies the fol-
+lowing two conditions:
+	
+(i)	 If a(x),b(x) ∈ C, then a(x) + b(x) ∈ C,
+	 (ii)	 If r(x) ∈ Rn,λ and a(x) ∈ C, then r(x)a(x) ∈ C.
+The following result is helpful in constructing λ-constacyclic codes over a finite field of 
+any given length n.
+112
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 3>>>
+1 3
+Theorem 2  [3] Let C be a non-zero λ-constacyclic code in Rn,λ. Then
+1.	 there exists a unique monic polynomial g(x) of smallest degree in C;
+2.	 C = 〈g(x)〉;
+3.	 g(x) is a factor of xn − λ over 픽q.
+Next, we define the generator polynomial and the parity-check polynomial of a consta-
+cyclic code.
+Definition 1  The unique monic polynomial of the smallest degree of a λ-constacyclic 
+code C in Rn,λ is called the generator polynomial of C.
+Definition 2  Let g(x) be the generator polynomial of a λ-constacyclic code C in Rn,λ. 
+Then the polynomial h(x) = xn−휆
+g(x) is called the parity-check polynomial of C.
+Now, we recall the definition of the k-Galois inner product. Let 픽q be a field with q = pe elements 
+where p is a prime and e is a positive integer. Fan and Zhang [5] introduced an inner product on 픽n
+q 
+as follows: for x = (x0, x1, … , xn−1) , y = (y0, y1, … , yn−1)∈픽n
+q and each integer k with 0 ≤ k < e,
+ is known as the k-Galois inner product. One can easily observe that it is the Euclidean inner prod-
+uct for k = 0 and Hermitian inner product when e is even and k = e
+2 . Considering the k-Galois 
+inner product, the definitions of k-Galois dual and k-Galois hull of a linear code are as follows:
+Definition 3  [13] The k-Galois dual code of a linear code C over 픽q is denoted by C⟂k and 
+defined as
+Definition 4  [14] The k-Galois hull of a linear code C over 픽q is denoted by hullk(C) and 
+defined as
+The following lemma can be found in [13, Lemma 3.4.(2)] and it will play an important 
+role in the proof of Theorem 3 to derive the formula for the Galois hull dimensions of con-
+stacyclic codes.
+Lemma 1  Let C be a λ-constacyclic code over 픽q of length n and dimension m. Let 
+h(x) = ∑m
+i=0hixi be the parity-check polynomial of C. Then C⟂k is a 휆−pe−k-constacyclic code 
+generated by the polynomial
+Using this lemma, we have the following two remarks from [13] and [18], 
+respectively.
+[x, y]k =
+n−1
+∑
+i=0
+xiypk
+i
+C⟂k = {x ∈픽n
+q | [c, x]k = 0, ∀c ∈C}.
+hullk(C) = C ∩C⟂k.
+h#(x) =
+m
+∑
+i=0
+h−pe−k
+0
+hpe−k
+i
+xm−i.
+113
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 4>>>
+1 3
+Remark 1  For a λ-constacyclic code C over 픽q , its k-Galois dual code C⟂k is also a 
+λ-constacyclic code if 휆1+pe−k = 1.
+Remark 2  Let g(x) be the generator polynomial of a λ-constacyclic code C over 픽q and 
+휆1+pe−k = 1 . If h(x) is the parity-check polynomial of C, then the k-Galois hull of C, denoted 
+by hullk(C), is also a λ-constacyclic code generated by the polynomial lcm(g(x),h#(x)).
+3  Galois hulls of constacyclic codes
+In this section, we first obtain the factorization of xn − λ by rearranging its irreducible factors 
+in our desired form. Then by using this factorization, we derive a formula for the Galois hull 
+dimension of constacyclic codes. Further, we find the total number of constacyclic codes 
+with a given Galois hull dimension subject to some restrictions on the alphabet size of code.
+3.1  Factorization of xn − λ over 픽q
+Let λ be a non-zero element in 픽q where q = pe such that the order of the element λ, denoted 
+by ord(λ), is r and n be a positive integer of the form n = np휈 , with gcd(p, n) = 1 where ν 
+is a non-negative integer. From [17], we have the following factorization of xn − λ over 픽q.
+where A = {j ∈ℕ∣gcd(j, q) = 1, j divides n′r and gcd( nr
+j , r) = 1} , ℕ denotes the set of 
+positive integers, Qj(x) denote the j th cyclotomic polynomial over 픽q and α is the primitive 
+(nr)-th root of unity in 픽qs where s is the smallest positive integer such that nr ∣(qs −1).
+Now, we introduce a few constructions in order to rearrange irreducible factors of xn − 
+λ. Let f(x) = ∑m
+i=0fixi be a polynomial of degree m over 픽q where q = pe. Continuing with 
+the notation used in Lemma 1 in the previous section, we have f #(x) = ∑m
+i=0f −pe−k
+0
+f pe−k
+i
+xm−i . 
+Denote T(x) = f #(x) , then we represent T#(푥) by f 2#(x) and similarly f i#(x) = (f (i−1)#(x))# for 
+all positive integers i. Also, we represent f 0#(x) by f(x) . Thus,
+Similarly, for any positive integer j, we have
+ Here, we provide an example to illustrate the map #.
+Example 1  Consider the field 픽8 =
+픽2[x]
+<1+x+x3> . Let α be a primitive element of 픽8 , i.e., 
+픽8 = {0, 훼, 훼2, … , 훼7} where α7 = 1. Let f(x) = 훼x2 + 훼2x + 훼2 ∈픽8[x] . Here, p = 2,e = 3 
+and consider k = 1. Then
+(1)
+xn −휆=
+{
+∏
+j∈A
+gcd(Qj(x), xn −훼n)
+}p휈
+f 2#(x) =
+m
+∑
+i=0
+f −p2(e−k)
+m
+f p2(e−k)
+i
+xi, f 3#(x) =
+m
+∑
+i=0
+f −p3(e−k)
+0
+f p3(e−k)
+i
+xm−i.
+f j#(x) =
+∑m
+i=0f −pj(e−k)
+0
+f pj(e−k)
+i
+xm−i
+if j is odd
+∑m
+i=0f −pj(e−k)
+m
+f pj(e−k)
+i
+xi
+if j is even
+.
+114
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 5>>>
+1 3
+It can be easily seen that if 휉∈픽q (the algebraic closure of 픽q ) is a root of f(x), then 
+휉−pe−k is a root of f #(푥) and more generally, 휉(−1)jpj(e−k) is a root of f j#(x) for any positive 
+integer j. Also, it should be noted that deg f j#(x) = deg f(x) and f j#(x) is irreducible over 
+픽q if f(x) is irreducible over the same field. Moreover, in Example 1, we observe that 
+f 6#(x) = 훼6f(x) and now we will see that it is not a coincidence.
+Let l′ be the least positive multiple of lcm(e,e − k) such that l =
+l
+e−k is an even integer 
+and l = el for some positive integer l′′ . Then f l#(x) = 푢f(x) for some unit u ∈픽q and for 
+all f(x) ∈픽q[x] . For each positive integer i, we define a set
+Equivalently, we can also define the sets Bi as follows:
+Now, we have the following observations on the sets Bi, 1 ≤ i ≤ l:
+1.	 Bi ∩ Bj = ϕ for i≠j.
+2.	 A ⊆
+l⋃
+i=1
+Bi = ℕ.
+3.	 If i is not a divisor of l, then A ∩ Bi = ϕ, for 2 ≤ i ≤ l − 1.
+Proof 
+1.	 This follows trivially from the definition of the set Bi.
+2.	 Let j ∈ A. From (1), we can claim that there is an irreducible factor f(x) ∈픽q[x] of xn 
+− λ such that all the roots of f(x) has order j in the multiplicative group of 픽q ⧵{0} . Let 
+deg f(x) = m and 휉∈픽q be a root of f(x). Then the set B = {휉, 휉q, 휉q2, … , 휉qm−1} com-
+prises all the roots of f(x). We know that f l#(x) = uf(x) for some unit u in 픽q and hence 
+two polynomials f(x) and f l#(x) have same roots. This implies that 휉(−1)lpl(e−k) ∈B . Thus,
+f #(x) = (훼2)−23−1((훼2)23−1x2 + (훼2)23−1x + 훼23−1) = x2 + x + 훼3,
+f 2#(x) = 훼−22(3−1)((훼2)22(3−1) + (훼2)22(3−1)x + 훼22(3−1)x2) = x2 + 훼2x + 훼2,
+f 3#(x) = (훼2)−23(3−1)((훼2)23(3−1)x2 + (훼2)23(3−1)x + 훼23(3−1)) = x2 + x + 훼6,
+f 4#(x) = 훼−24(3−1)((훼2)24(3−1) + (훼2)24(3−1)x + 훼24(3−1)x2) = x2 + 훼4x + 훼4,
+f 5#(x) = (훼2)−25(3−1)((훼2)25(3−1)x2 + (훼2)25(3−1)x + 훼25(3−1)) = x2 + x + 훼5,
+f 6#(x) = 훼−26(3−1)((훼2)26(3−1) + (훼2)26(3−1)x + 훼26(3−1)x2) = x2 + 훼x + 훼.
+Bi =
+{j ∈ℕ∣i is the least positive integer with j ∣(pel1 + (−1)i−1pi(e−k)) for
+at least one non-negative integer l1}.
+B1 = {j ∈ℕ∣there is at least one non-negative integer l1 for which j
+∣(pel1 + pe−k)}
+and for i > 1,
+Bi = {j ∈ℕ⧵∪i−1
+t=1Bt ∣there is at least one non-negative integer l1 for which j
+∣(pel1 + (−1)i−1pi(e−k))}.
+휉pel1 = 휉(−1)lpl(e−k)
+for an integer l1 satisfying 0 ≤l1 ≤m −1
+⇒
+휉pel1+(−1)(l−1)pl(e−k) = 1
+⇒
+ord(휉) = j ∣(pel1 + (−1)(l−1)pl(e−k))
+⇒
+j ∈Bi
+for an integer i satisfying 1 ≤i ≤l.
+115
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 6>>>
+1 3
+	
+  Therefore, A ⊆
+l⋃
+i=1
+Bi . Again, since l is even and l(e −k) = l being a multiple of e, we 
+claim that (pel1 + (−1)(l−1)pl(e−k)) = 0, for some integer l1. Hence, any positive integer j 
+must belong to one of the sets B1, B2,…, Bl.
+3.	 If possible, let j ∈ A ∩ Bi. Since j ∈ A, by using the same arguments as in the proof of 
+part (2), we have the set B = {휉, 휉q, 휉q2, … , 휉qm−1} which comprises all the roots of f(x) 
+and ξ j = 1. Again, since j ∈ Bi , we have j ∣(pel1 + (−1)(i−1)pi(e−k)) and hence
+ We know that 휉pel1 and 휉(−1)ipi(e−k) are roots of f(x) and f i#(x) , respectively and since both 
+f(x) and f i#(x) are irreducible polynomials over 픽q, we have
+Also, we know that for some unit u in 픽q,
+Let d = gcd(i, l) . Then there exist two integers a and b such that d = ai + bl. Note that 
+a and b are of opposite signs. Without loss of generality, suppose a > 0 and b < 0. Now,
+	
+  Thus, f(x) and f d#(x) have the same roots and hence
+	
+  which contradicts j ∈ Bi.
+Next, we give a few examples to show the existence of the sets Bi and also verify the 
+above mentioned properties of these sets.
+Example 2  Consider the field 픽4 =
+픽2[x]
+<1+x+x2> . Then 픽4 = {0, 훼, 훼2, 훼3} where α is a root of 
+the polynomial 1 + x + x2. Here e = 2 and if we consider k = 1, we have l = 2. Let n = 10 
+and λ = α. So r = ord(α) = 3. Then A = {3,15}. Now,
+We find the members of the sets Bis by using the congruence modulo relation. We 
+know that 4 ≡ 1 (mod 3) implies that 4l1 ≡1 (mod 3) for all non-negative integers l1 
+휉pel1+(−1)(i−1)pi(e−k) = 1 ⇒휉pel1 = 휉(−1)ipi(e−k).
+(2)
+f i#(x) = f(x).
+(3)
+f l#(x) = uf(x).
+f l#(x) = uf(x)
+⇒f (−b)l#(x) = u1f(x)
+for some units u1
+⇒f (d−bl)#(x) = u2f d#(x)
+for some units u2
+⇒f ai#(x) = u2f d#(x)
+⇒f(x) = u3f d#(x)
+[From (2)].
+𝜉pel2 = 𝜉(−1)dpd(e−k)
+for an integer l2 satisfying 0 ≤l2 ≤m −1
+⇒
+𝜉pel2+(−1)(d−1)pd(e−k) = 1
+⇒
+ord(𝜉) = j ∣(pel2 + (−1)(d−1)pd(e−k))
+⇒
+j ∈Bt,
+for an integer t satisfying 1 ≤t ≤d < i
+B1
+= {j ∈ℕ∣there is at least one non-negative integer l1 for which j ∣(4l1 + 2)}
+= {1, 2, ퟑ, 6, 9, 11, …};
+B2 = {j ∈ℕ⧵B1 ∣there is at least one non-negative integer l1 for which j ∣(4l1 −4)}
+= {4, 5, 7, 8, 10, 12, 13, 14, ퟏퟓ, …};
+and Bi
+= 휙
+for i = 3, 4, 5, … .
+116
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 7>>>
+1 3
+and hence 3 divides 4l1 + 2 . Therefore, 3 ∈ B1. Note that 1,2 are the only factors of l and 
+A ⊆B1 ∪B2, A ∩B1 = {3}, A ∩B2 = {15} . Also, 4l1 −4 = 0 for l1 = 1 and this implies that 
+B1 ∪B2 = ℕ . Therefore, the properties of the set Bi are verified.
+Example 3  Consider the field 픽8 =
+픽2[x]
+<1+x+x3> . Then 픽8 = {0, 훼, 훼2, ⋯, 훼7} where α is a root 
+of the polynomial 1 + x + x3. Here, e = 3 and if we consider k = 2, then l = 6. Let n = 30 
+and λ = α2. Therefore, r = ord(α2) = 7. Hence, A = {7,21,35,105}. By using the congru-
+ence modulo relation, we have
+Again, 
+note 
+that 
+1,2,3,6 
+are 
+the 
+only 
+factors 
+of 
+l 
+and 
+A ⊆B1 ∪B2 ∪B3 ∪B6, A ∩B6 = A, A ∩Bi = 𝜙 for i = 1,2,3,4,5. Also, 8l1 −64 = 0 for l1 
+= 2 and this implies that ∪6
+i=1Bi = ℕ . Thus, the properties of the set Bi are verified.
+From the above observations, we can conclude that
+ where a1, a2, … , as is the complete list of distinct factors of l.
+Further, we have the following definition from [18].
+Definition 5  Let j and i be positive integers such that gcd(j, i) = 1 and ℤ×
+j denote the 
+group of units in the ring ℤj . The order of i in ℤ×
+j is the smallest positive integer m′ such 
+that j ∣(im −1) and is denoted by ­ordj(i).
+Now, we state a lemma which is analogous to [18, Lemma 3] and crucial for rearranging 
+irreducible factors of xn − λ over 픽q in our desired form.
+Lemma 2  Let 픽q be a finite field and j be a positive integer such that gcd(j, q) = 1 . Then
+1.	 The j th cyclotomic polynomial Qj(x) factors into a product of 휙(j)
+m number of distinct 
+monic irreducible polynomials over 픽q and each one of them have the same degree m = 
+­ordj(q) where ϕ is the Euler’s Totient function.
+2.	 If j ∈A ∩Bai, then all irreducible factors of Qj(x) can be partitioned into sets of the form
+B1
+= {j ∈ℕ∣there is at least one non-negative integer l1 for which j ∣(8l1 + 2)}
+= {1, 2, 3, 5, 6, 10, 11, 17, …};
+B2
+= {j ∈ℕ⧵B1 ∣there is at least one non-negative integer l1 for which j ∣(8l1 −4)}
+= {4, 12, 15, 20, …};
+B3 = {j ∈ℕ⧵∪2
+t=1Bt ∣there is at least one non-negative integer l1 for which j ∣(8l1 + 8)}
+= {8, 9, 13, 16, 18, 19, …};
+B4 = {j ∈ℕ⧵∪3
+t=1Bt ∣there is at least one non-negative integer l1 for which j ∣(8l1 −16)}
+= {48, … , 496, …};
+B5 = {j ∈ℕ⧵∪4
+t=1Bt ∣there is at least one non-negative integer l1 for which j ∣(8l1 + 32)}
+= {32, … , 480, …};
+B6 = {j ∈ℕ⧵∪5
+t=1Bt ∣there is at least one non-negative integer l1 for which j ∣(8l1 −64)}
+= {ퟕ, 14, ퟐퟏ, 28, ퟑퟓ, … , ퟏퟎퟓ, …};
+and Bi
+= 휙
+for i = 7, 8, 9, … .
+A =
+s⋃
+i=1
+(A ∩Bai)
+Sf = {f(x), f #(x), f 2#(x), … , f (ai−1)#(x)}.
+117
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 8>>>
+1 3
+Proof 
+1.	 This follows from [12, Theorem 2.47 (ii)].
+2.	 We know that if f(x) ∈픽q[x] is irreducible over 픽q , then so is f #(x) and both of them are 
+of the same degree. Also, if ξ is a root of a polynomial f(x) of degree m in some exten-
+sion of 픽q , then the set
+ comprises of all the roots of f(x).
+	
+  Let, j ∈A ∩Bai . Then from (1), there is an irreducible factor f(x) of xn − λ 
+over 픽q such that f(x)∣Qj(x). Thus, if ξ is a root of f(x), then ord(ξ) = j. Now, 
+j ∈Bai ⇒j ∣[pel1 + (−1)(ai−1)pai(e−k)] for some non-negative integer l1. This implies that
+	
+  We know that 휉pel1 is a root of f(x) and 휉(−1)aipai(e−k) is a root of f ai#(x) . Since both the 
+polynomials f(x) and f ai#(x) are irreducible and they have a common root, we thus have 
+f(x) = f ai#(x).
+	
+  Also, 휉(−1)i0pi0(e−k) is a root of f i0#(x) and if deg f(x) = m , then similar to the set R1, the 
+set R2 = {(휉(−1)i0pi0(e−k))qt ∣0 ≤t ≤m −1} comprises of all the roots of f i0#(x) for all 
+positive integers i0. Since ord(ξ) = j and gcd(j, q) = 1, ord((휉(−1)i0pi0(e−k))qt) = j for 0 ≤ t 
+≤ m − 1. Hence, for each positive integer i0, f i0#(x) is a factor of Qj(x) provided f(x) is a 
+factor of Qj(x).
+	
+  Finally, we prove that f i1#(x) ≠f i2#(x) for 1 ≤i1 < i2 ≤ai . Let α be a root of f i1#(x) . 
+Then R3 = {훼qt ∣0 ≤t ≤m −1} is the set of all roots of f i1#(x) and consequently, 
+R4 = {(훼(−1)(i2−i1)p(i2−i1)(e−k))qt ∣0 ≤t ≤m −1} is the set of all roots of f i2#(x) . If possible, 
+let f i1#(x) = f i2#(x) . Then
+	
+  Thus, j ∈Bi for some integer i′ satisfying 1 ≤i ≤i2 −i1 < ai . But this contradicts 
+j ∈Bai . This completes the proof.
+We denote Di = A ∩Bai for 1 ≤ i ≤ s. From (1), we can arrange irreducible factors of 
+xn − λ over 픽q by using Lemma 2 and we obtain
+where βt(j) =
+휙(j)
+at⋅휙(r)⋅ordj(q) for all j ∈ Dt and t = 1, 2, … , s.
+3.2  Dimensions of hulls of constacyclic codes
+Let C be a linear code over 픽q . Then C is said to be a k-Galois LCD (linear complementary 
+dual) code if C ∩C⟂k = {0} or equivalently if the dimension of the k-Galois hull of C over 픽q 
+R1 = {휉qt ∣0 ≤t ≤m −1}
+휉pel1 +(−1)(ai−1)pai(e−k) = 1
+⇒
+휉pel1 = 휉(−1)ai pai(e−k).
+훼(−1)(i2−i1)p(i2−i1)(e−k) = 훼qt for some 0 ≤t ≤m −1
+⇒
+훼pet+(−1)(i2−i1)p(i2−i1−1)(e−k) = 1
+⇒
+j = ord(훼) ∣{pet + (−1)(i2−i1−1)p(i2−i1)(e−k)}.
+(4)
+xn −휆=
+{
+∏
+j∈A
+gcd(Qj(x), xn −훼n)
+}pv
+=
+s
+∏
+t=1
+∏
+j∈Dt
+훽t(j)
+∑
+i=1
+{
+fij(x) ⋅f #
+ij (x) ⋯f(훼t−1)#
+ij
+(x)
+}pv
+,
+118
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 9>>>
+1 3
+is zero. Also, it is easy to observe that C is self-orthogonal if and only if the dimension of C 
+is equal to its k-Galois hull dimension over 픽q . On the other hand, C is a dual containing code, 
+i.e., it contains its k-Galois dual if and only if the dimension of C⟂k is equal to its k-Galois 
+hull dimension over 픽q . Therefore, prior information on the hull dimension is very helpful in 
+determining whether a code is LCD, self-orthogonal or dual containing. Here, first we state 
+and prove a few results and then give a formula for the dimensions of the Galois hulls of cons-
+tacyclic codes over finite fields.
+Lemma 3  Suppose x, y, z are three positive integers such that z∣xy and gcd( xy
+z , y) = 1 . If 
+gcd(x, y) = 1, then y∣z and 휙( z
+y) = 휙(z)
+휙(y) where ϕ is the Euler’s Totient function.
+Proof  The fact that y∣z follows trivially from gcd( xy
+z , y) = 1 . Let z = my where m is a posi-
+tive integer. Then z∣xy implies that m∣x and since gcd(x, y) = 1 , we thus have gcd(m, y) = 1 . 
+Also, we know that ϕ(my) = ϕ(m)ϕ(y) when gcd(m, y) = 1 . Hence, 
+Lemma 4  If gcd(n, r) = 1, then 
+s∑
+t=1
+∑
+j∈Dt
+휙( j
+r) = n.
+Proof  We know that 
+∑
+j∣n
+휙(j) = n . In order to prove the result it is enough to show that j
+r in 
+the summation 
+s∑
+t=1
+∑
+j∈Dt
+휙( j
+r) , are all the factors of n′ counted exactly once. Let d be a factor 
+of n′ . Then dr ∣nr and gcd( nr
+dr , r) = gcd( n
+d , r) = 1 since gcd(n, r) = 1 . Also, gcd(n, p) = 1 
+implies that gcd(d, q) = 1 and r being the order of λ, we have gcd(r, q) = 1 . Thus 
+gcd(q, dr) = 1 and hence dr ∈ A. Therefore, dr ∈ Dt for some t = 1,2,…,s. Since Dts are 
+disjoint and r is a constant, j
+r takes each of the factors of n′ exactly once. On the other hand, 
+j ∈ Dt implies that j ∣nr and r∣j since gcd(n, r) = 1 . Thus, j
+r ∣n and hence j
+r are all the fac-
+tors of n′ counted exactly once. □
+Following (4), we note that the generator polynomial of a λ-constacyclic code of length n 
+over 픽q is given by
+where 0 ≤ utij,m ≤ pν for 0 ≤ m ≤ at − 1. From Remark 2, we know that the k-Galois hull of 
+a λ-constacyclic code is also a λ-constacyclic code if 휆1+pe−k = 1 . We use this fact to find a 
+formula for the dimension of the k-Galois hull of a λ-constacyclic code.
+Theorem 3  Let 픽q be a finite field of order q = pe and n be a positive integer of the form 
+n = np휈 where p = char(픽q) , gcd(p, n) = 1 and ν ≥ 0. Let λ be a unit in 픽q such that ord(λ) = r, 
+r∣(1 + pe−k) and gcd(n, r) = 1 . If C is a λ-constacyclic code of length n over 픽q with the genera-
+tor polynomial g(x) as given in (5), then the dimensions of k-Galois hulls of C are of the form
+휙(z)
+휙(y) = 휙(my)
+휙(y) = 휙(m)휙(y)
+휙(y)
+= 휙(m) = 휙( z
+y).
+(5)
+g(x) =
+s
+∏
+t=1
+∏
+j∈Dt
+훽j(j)
+∏
+i=1
+{(fij(x))utij,0 ⋅(f #
+ij (x))utij,1 ⋯(f (at−1)#
+ij
+(x))utij,at−1},
+119
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 10>>>
+1 3
+ where btj = ∑βt(j)
+i=1 btij, btij = atp휈 − [ max{utij,0, p휈−utij,at−1} + max{utij,1, p휈−utij,0} + ⋯ + 
+max{utij,at−1, p휈−utij,at−2}] and 0 ≤btj ≤βt(j) ⋅⌊atp휈
+2 ⌋ for 1 ≤ t ≤ s.
+Proof  The parity-check polynomial h(x) is given by
+Hence, the k-Galois dual code C⟂k of C is generated by
+ Therefore, the k-Galois hull C ∩C⟂k of C is generated by lcm(g(x),h#(x)) and
+ The dimension of the k-Galois hull of C over 픽q is given by
+s∑
+t=1
+∑
+j∈Dt
+ordj(q) ⋅btj
+h(x) = xn −휆
+g(x)
+=
+s
+∏
+t=1
+∏
+j∈Dt
+훽t(j)
+∏
+t=1
+{(fij(x)
+)pv−utij,0 ⋅
+(
+f #
+ij (x)
+)pv−utij,1 ⋯
+(
+f(훼t−1)#
+ij
+(x)
+)pv−utij,훼t−1}
+.
+h#(x) =
+s
+∏
+t=1
+∏
+j∈Dt
+훽t(j)
+∏
+i=1
+{(fij(x))p휈−utij,at−1
+× (f #
+ij (x))p휈−utij,0 × ⋯× (f (at−1)#
+ij
+(x))p휈−utij,at−2}.
+lcm(g(x), h#(x)) =
+∏s
+t=1
+∏
+j∈Dt
+∏βt(j)
+i=1 {(fij(x))max{utij,0,p휈−utij,at−1}×
+⋯× (f (at−1)#
+ij
+(x))max{utij,at−1,p휈−utij,at−2}}.
+n −deg lcm(g(x), h#(x))
+=
+np휈−deg lcm(g(x), h#(x))
+=
+s∑
+t=1
+∑
+j∈Dt
+휙( j
+r) ⋅p휈−deg lcm(g(x), h#(x))
+[From Lemma 4]
+=
+s∑
+t=1
+∑
+j∈Dt
+휙(j)
+휙(r) ⋅p휈−deg lcm(g(x), h#(x))
+[Applying Lemma 3]
+=
+s∑
+t=1
+∑
+j∈Dt
+at ⋅ordj(q) ⋅
+βt(j)
+∑
+i=1
+p휈
+−
+s∑
+t=1
+∑
+j∈Dt
+βt(j)
+∑
+i=1
+ordj(q)[max{utij,0, p휈−utij,at−1} + max{utij,1, p휈−utij,0}+
+⋯+ max{utij,at−1, p휈−utij,at−2}]
+=
+s∑
+t=1
+∑
+j∈Dt
+ordj(q) ⋅
+βt(j)
+∑
+i=1
+btij
+120
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 11>>>
+1 3
+One can easily conclude that for all t = 1, 2, … , s,
+Therefore, 0 ≤btij ≤⌊atp휈
+2 ⌋for t = 1, 2, … , s.
+Thus, the dimensions of the k-Galois hulls of λ-constacyclic codes are of the form
+ where btj = ∑βt(j)
+i=1 btij and 0 ≤btj ≤βt(j)⌊atp휈
+2 ⌋. 
+The following corollary is a special case of the above theorem when q and n are coprime.
+Corollary 1  Let 픽q be a finite field of order q = pe where p = char(픽q) and n be a posi-
+tive integer such that gcd(q, n) = 1 . Let λ be a unit in 픽q such that ord(λ) = r, r∣(1 + pe−k) 
+and gcd(n, r) = 1 . If we consider a1 = 1, then the dimensions of the k-Galois hulls of 
+λ-constacyclic codes of length n over 픽q are of the form
+ where 0 ≤btj ≤βt(j) ⋅⌊atp휈
+2 ⌋ for 1 ≤ t ≤ s. Moreover,
+0 ≤∑s
+t=1
+∑
+j∈Dtordj(q) ⋅btj ≤n
+2.
+Proof  In Theorem  3, if we consider gcd(q, n) = 1 and a1 = 1, then we have 
+0 ≤b1j ≤β1(j)⌊a1
+2 ⌋= 0 . This implies that b1j = 0. The first part of the corollary now fol-
+lows from Theorem 3.
+Again, we have
+Now, we give some examples where we find the dimension of the Galois hull of a 
+constacyclic code by applying Theorem 3 and retaining the same notations.
+where btij = atp휈−[ max{utij,0, p휈−utij,at−1} + max{utij,1, p휈−utij,0} +
+⋯+ max{utij,at−1, p휈−utij,at−2}] .
+⌈atp휈
+2 ⌉≤max{utij,0, p휈−utij,at−1} +
+max{utij,1, p휈−utij,0} +
+⋯+ max{utij,at−1, p휈−utij,at−2} ≤atp휈.
+s∑
+t=1
+∑
+j∈Dt
+ordj(q) ⋅btj
+s∑
+t=2
+∑
+j∈Dt
+ordj(q) ⋅btj
+0 ≤btj ≤훽t(j)
+⌊훼t
+2
+⌋
+⇒
+0 ≤ordj(q) ⋅btj ≤ordj(q) ⋅훽t(j)
+⌊훼t
+2
+⌋
+=
+⌊
+훼t
+2
+⌋
+⋅휙(j)
+훼t휙(r)
+=
+⌊
+훼t
+2
+⌋
+훼t
+휙
+( j
+r
+)
+≤1
+2 ⋅휙
+( j
+r
+)
+⇒
+0 ≤
+s∑
+t=1
+∑
+j∈Dt
+ordj(q) ⋅btj ≤1
+2
+s∑
+t=1
+∑
+j∈Dt
+휙
+( j
+r
+)
+= n
+2.
+121
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 12>>>
+1 3
+Example 4  Let 픽9 = 픽3[x]∕⟨1 + x2⟩ be the field with 9 elements. Over this field, the poly-
+nomial x3 − 2 has the factorization
+ Then C = 〈1 + 2x + x2〉 is a 2-constacyclic code of length 3 in 픽9[x]∕⟨x3 −2⟩ . Now, 
+we calculate the dimension of the 1-Galois hull of C. Here, q = 9, pν = 3, e = 2, k = 1, 
+l = 2, a1 = 1, a2 = 2. A = {2}, D1 = A ∩ B1 = {2}, D2 = A ∩ B2 = ϕ and ­ord2(9) = 1. 
+Then, we have β1(2) = 1. The generator polynomial g(x) of C is given by (x + 1)2. There-
+fore, b112 = 3 −max{2, 3 −2} = 1 and consequently b12 = 1. Thus, the dimension of the 
+1-Galois hull of C is 1.
+Example 5  Let 픽25 = {0, 훼, 훼2, 훼3, … , 훼24} be the field with 25 elements where α is a root 
+of the polynomial x2 + 2x + 3 and α24 = 1. Let λ = α8. Then the order of α8 is 3. Now, the 
+factorization of the polynomial x7 − α8 over 픽25 is
+ Then the code C = 〈x3 + α9x2 + α9x + 4〉 is an α8-constacyclic code of length 7 in 
+픽25[x]∕⟨x2 −훼8⟩ . We calculate the dimension of the 1-Galois hull of C. Here, q = 25, pν 
+= 1, e = 2, k = 1, l = 2, a1 = 1, a2 = 2. A = {3,21}, D1 = A ∩ B1 = {3,21}, D2 = A ∩ B2 = ϕ 
+and ­ord3(25) = 1,ord21(25) = 3. Then β1(3) = 1,β1(21) = 2 and since x3 + α9x2 + α9x + 4 is 
+the generator polynomial of C, we have
+and hence b1,3 = b1,1,3 = 0,b1,21 = b1,1,21 + b1,2,21 = 0. Thus, the dimension of the 
+1-Galois hull of C is 0 and C is a 1-Galois LCD code.
+Example 6  Let 픽27 = {0, 훼, 훼2, 훼3, … , 훼26} be the field with 27 elements where α is a root 
+of the polynomial x3 + 2x + 1 and α26 = 1. Let λ = α13. Then the order of α13 is 2. Also, the 
+factorization of the polynomial x15 − α13 over 픽27 is
+ Hence, the code C = 〈(x + 1)2(x4 + 2x3 + x2 + 2x + 1)〉 is an α13-constacyclic code of 
+length 15 in 픽27[x]∕⟨x15 −훼13⟩ . Now, to calculate the dimension of the 2-Galois hull of 
+C, we have q = 27, pν = 3, e = 3, k = 2, l = 6, a1 = 1,a2 = 2,a3 = 3,a4 = 6. A = {2,10}, D1 = 
+A ∩ B1 = {2,10}, Di = A ∩ Bi = ϕ for i = 2,3,6 and ­ord2(27) = 1,ord10(27) = 4. Then β1(2) 
+= 1,β1(10) = 1 and since (x + 1)2(x4 + 2x3 + x2 + 2x + 1) is the generator polynomial of C, 
+we have
+Thus, the dimension of the 2-Galois hull of C is 2.
+x3 −2 = (x + 1)(x2 + 2x + 1) = (x + 1)3.
+x7 −훼8 = (x + 훼20)(x3 + 훼9x2 + 훼9x + 4)(x3 + 훼13x2 + 훼5x + 4).
+b1,1,3 = 1 −max{0, 1 −0} = 0;
+b1,1,21 = 1 −max{1, 1 −1} = 0;
+b1,2,21 = 1 −max{0, 1 −0} = 0
+x15 −훼13 = (x + 1)3(x4 + 2x3 + x2 + 2x + 1)3.
+b1,2 = b1,1,2 = 3 −max{2, 3 −2} = 1;
+b1,10 = b1,1,10 = 3 −max{1, 3 −1} = 1.
+122
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 13>>>
+1 3
+3.3  Number of constacyclic codes of a given hull dimension
+Here, we calculate the number of λ-constacyclic codes that have a fixed k-Galois hull 
+dimension over a finite field 픽q with some restrictions on q. Now, we introduce a few 
+notations that will be used in our next result. First, we consider a few intervals. Let, 
+I1 = [0,⌊pν/2⌋], I2 = [0,pν), I3 = [p휈, ⌊4
+3p휈⌋] , I4 = [⌈4
+3p휈⌉, ⌊3
+2p휈⌋] , I5 = [⌈3
+2p휈⌉, ⌊5
+3p휈⌋] , 
+I6 = [⌈5
+3p휈⌉, ⌊7
+4p휈⌋] , I7 = [⌈7
+4p휈⌉, 2p휈) . Next, we denote a few expressions. Here, the 
+terms b1ij,b2ij,b3ij are the same as they were previously defined in Section 3.2.
+To make the clarity of the number of constacyclic codes corresponding to each btij 
+belongs to the interval Iδ, we introduce a new notation N훼ij|btij∈I훿 for Nαij, where 1 ≤ α 
+≤ 14,1 ≤ t ≤ 3 and 1 ≤ δ ≤ 7. Let H(L) = {((b1ij), (b2ij), (b3ij)) ∣
+3
+∑
+t=1
+∑
+j∈Dt
+βt(j)
+∑
+i=1
+ordj(q) ⋅btij = L} 
+where (btij) denotes a vector whose entries are btij such that 0 ≤btij ≤⌊atp휈
+2 ⌋ and j ∈ Dt, 1 
+≤ i ≤βt(j).
+Let a1 = 1, a2 = 2, a3 = 4. Then by using the same notations as used in Sections 3.1 
+and 3.2, we have the following result for the number of constacyclic codes for the given 
+Galois hull dimension of the form as given in Theorem 3.
+Theorem 4  Let n = np휈 be a positive integer and 픽q be the field with q = pe number of 
+elements. Let L be the dimension of k-Galois hulls of λ-constacyclic codes over 픽q as given 
+Let, N1ij = |{b1ij, p휈−b1ij}|, N2ij = 2(b2ij + 1), N3ij = b2ij + 1,
+N4ij =
+1
+3 (p휈+ 1)(p휈+ 2)(p휈+ 3) + (p휈+ 1)(b3ij −p휈)(b3ij + 3) −(b3ij −p휈)(b3ij −p휈+ 1)(b3ij −p휈+ 2),
+dij = 12(b3ij −p휈+ 1)(p휈+ 1)2 −32(b3ij −p휈+ 1)(p휈+ 1) −12(b3ij −p휈+ 1)2
++43(b3ij −p휈+ 1) + 1
+3 (p휈+ 1)(p휈+ 2)(p휈+ 3) + (p휈+ 1)(b3ij −p휈)(b3ij + 3)
+−(b3ij −p휈)(b3ij −p휈+ 1)(b3ij −p휈+ 2),
+N5ij = dij −4(b3ij −p휈+ 1)2 −4(b3ij −p휈+ 1)(p휈+ 1) −2(b3ij −p휈)(b3ij −p휈+ 1)(3p휈−dij) + (dij + 2),
+N6ij = dij −4(b3ij −p휈+ 1)2 −2(b3ij −p휈+ 1)2(3p휈−b3ij + 1), N7ij = N5ij + 3(3b3ij −4p휈+ 2),
+d∗
+ij = dij −24(2b3ij −3p휈+ 1)(p휈+ 1) −8(2b3ij −3p휈+ 1)(b3ij −p휈+ 1) + 90(2b3ij −3p휈+ 1)
++3(3b3ij −4p휈+ 2) + (b3ij + 2),
+N8ij = d∗
+ij −(p휈+ 2)2 −(2b3ij −3p휈)(5p휈−2b3ij) −4(2p휈−b3ij + 1)(2b3ij −3p휈+ 2)(b3ij −p휈+ 1)
+−2(b3ij −p휈+ 1)(2p휈−b3ij −2)(b3ij + 2) −4
+3 (2b3ij −3p휈)(2b3ij −3p휈+ 1)(2b3ij−
+3p휈+ 2) −4(b3ij −p휈+ 1)(p휈+ 1),
+N9ij = d∗
+ij −(p휈+ 2)2 −(2b3ij −3p휈)(5p휈−2b3ij) −4(2p휈−b3ij + 1)(2b3ij −3p휈+ 2)(b3ij −p휈+ 1)
+−2(b3ij −p휈+ 1)(2p휈−b3ij −1)(b3ij + 3) −4
+3 (2b3ij −3p휈)(2b3ij −3p휈+ 1)(2b3ij −3p휈+ 2)
+−3(3b3ij −4p휈+ 2) −(b3ij + 2),
+N10ij = N8ij + 10(3b3ij −5p휈+ 1), N11ij = N9ij + 10(3b3ij −5p휈+ 1),
+N12ij = N10ij + 15(4b3ij −7p휈+ 1), N13ij = N11ij + 15(4b3ij −7p휈+ 1),
+N
+5ij = N6ij + (b3ij + 2), N
+6ij = N5ij −(b3ij + 2), N
+7ij = N
+5ij + 3(3b3ij −4p휈+ 2),
+N
+8ij = d∗
+ij −(p휈+ 1)2 −(2b3ij −3p휈+ 1)(5p휈−2b3ij + 1) −4(2p휈−b3ij + 1)(2b3ij −3p휈+ 1)(b3ij −p휈)
+−2(b3ij −p휈+ 1)(2p휈−b3ij)(b3ij + 2) −4
+3 (2b3ij −3p휈−1)(2b3ij −3p휈)(2b3ij −3p휈+ 1),
+N
+9ij = d∗
+ij −(p휈+ 1)2 −(2b3ij −3p휈+ 1)(5p휈−2b3ij + 1) −4(2p휈−b3ij + 1)(2b3ij −3p휈+ 1)(b3ij −p휈)
+−2(b3ij −p휈+ 1)(2p휈−b3ij −1)(b3ij + 1) −4
+3 (2b3ij −3p휈−1)(2b3ij −3p휈)(2b3ij −3p휈+ 1)
+−4(b3ij −p휈+ 1)(p휈+ 1) −3(3b3ij −4p휈+ 2) −(b3ij + 2),
+N
+10ij = N
+8ij + 10(3b3ij −5p휈+ 1), N
+11ij = N
+9ij + 10(3b3ij −5p휈+ 1),
+N
+12ij = N
+10ij + 15(4b3ij −7p휈+ 1), N
+13ij = N
+11ij + 15(4b3ij −7p휈+ 1), N14ij = (p휈+ 1).
+123
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 14>>>
+1 3
+in Theorem 3. Let e∣4(e − k) but e ∤2(e −k) . Then the number of λ-constacyclic codes of 
+length n over 픽q whose hulls having dimension L is
+Proof  From our constructions of l′ , l in Section 3.1 and from the given conditions e∣4(e − 
+k), e ∤2(e −k) , we have l = 4(e −k) and l = 4. Thus, the positive divisors of l are a1 = 1, 
+a2 = 2, a3 = 4. Also, from the proof of Theorem 3, we have
+To calculate the number of constacyclic codes of a fixed Galois hull dimension, we need 
+to find the total number of distinct generator polynomials g(x) in the form of (5) such that
+ Towards this, we search for all the possible choices of values of u1ij,0, all distinct pairs 
+(u2ij,0,u2ij,1) and all distinct 4-tuples (u3ij,0,u3ij,1,u3ij,2,u3ij,3) where b1ij,b2ij and b3ij are fixed.
+First, we consider the case when b1ij ∈ I1. From (6), we get u1ij,0 ∈{b1ij,pν − b1ij}. There-
+fore, the total number of choices of values of u1ij,0 is N1ij.
+Next, we consider the case when b2ij ∈ I2. Again, from (6) we get,
+ Therefore,
+ and hence the total number of distinct pairs (u2ij,0,u2ij,1) is 2(b2ij + 1) = N2ij when b2ij ∈ I2. 
+For the case when b2ij = pν, we have
+(1) ∑
+((b1ij),(b2ij),(b3ij))∈H(L)
+ ∏
+j∈D1
+∏β1(j)
+i=1 N1ijb1ij∈I1
+
+⋅
+∏
+j∈D2
+∏β2(j)
+i=1 N2ijb2ij∈I2 ⋅N3ijb2ij=p휈
+
+⋅
+∏
+j∈D3
+∏β3(j)
+i=1 N4ijb3ij∈I2 ⋅(N5ijb3ij∈I3 ⋅N7ijb3ij∈I4 ⋅N8ijb3ij∈I5
+⋅
+N10ijb3ij∈I6 ⋅N12ijb3ij∈I7)b3ij is even ⋅(N6ijb3ij∈I3∪I4
+⋅
+N9ijb3ij∈I5 ⋅N11ijb3ij∈I6 ⋅N13ijb3ij∈I7)b3ij is odd
+⋅
+N14ijb3ij=2p휈
+
+if q is even.
+(2) ∑
+((b1ij),(b2ij),(b3ij))∈H(L)
+
+∏
+j∈D1
+∏β1(j)
+i=1 N1ijb1ij∈I1
+
+⋅
+∏
+j∈D2
+∏β2(j)
+i=1 N2ijb2ij∈I2 ⋅N3ijb2ij=p휈
+
+⋅
+∏
+j∈D3
+∏β3(j)
+i=1 N4ijb3ij∈I2 ⋅(N
+5ijb3ij∈I3 ⋅N
+7ijb3ij∈I4 ⋅N
+8ijb3ij∈I5
+⋅
+N
+10ijb3ij∈I6 ⋅N
+12ijb3ij∈I7)b3ij is even ⋅(N
+6ijb3ij∈I3∪I4
+⋅
+N
+9ijb3ij∈I5 ⋅N
+11ijb3ij∈I6 ⋅N
+13ijb3ij∈I7)b3ij is odd
+⋅
+N14ijb3ij=2p휈
+
+if q is odd.
+(6)
+btij = atp휈−[ max{utij,0, p휈−utij,at−1} + max{utij,1, p휈−utij,0} +
+⋯
++ max{utij,at−1, p휈−utij,at−2}].
+3
+∑
+t=1
+∑
+j∈Dt
+훽t(j)
+∑
+i=1
+ordj(q) ⋅btij = L.
+2p휈−b2ij = max{u2ij,0, p휈−u2ij,1} + max{u2ij,1, p휈−u2ij,0}.
+(u2ij,0, u2ij,1) ∈{(p휈−b2ij + k0, p휈−k0), (b2ij −k0, k0) | k0 ∈{0, 1, … , b2ij}}
+124
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 15>>>
+1 3
+ and thus there are (b2ij + 1) = N3ij number of distinct pairs (u2ij,0,u2ij,1).
+Finally, we find the number of distinct 4-tuples (u3ij,0,u3ij,1,u3ij,2,u3ij,3) for a particular 
+value of b3ij. Here, we have from (6),
+Let us denote
+ If b3ij = 2pν, then we have from (7),
+ In this case the left hand side of (7) is 2pν. Thus, from above four inequalities together 
+with (7), we have
+ This implies that u3ij,0 = u3ij,2, u3ij,1 = u3ij,3 and u3ij,0 + u3ij,1 = pν. Hence, there are (pν + 1) 
+= N14ij number of distinct 4-tuples (u3ij,0,u3ij,1,u3ij,2,u3ij,3).
+Now, we consider the case when b3ij≠ 2pν. Then from (7), we have the following 
+possibilities:
+One possibility is that the values of M0, M1, M2 and M3 can be respectively the four first 
+members of the four sets, considering them as ordered sets as {u3ij,0,pν − u3ij,3}, {u3ij,1,pν − 
+u3ij,0}, {u3ij,2,pν − u3ij,1} and {u3ij,3,pν − u3ij,2}. Then we have
+ Corresponding to the above equation, we define a set
+such that the number of 4-tuples (u3ij,0,u3ij,1,u3ij,2,u3ij,3) satisfying the equation is the car-
+dinality of the set A1. Similarly, if we explore the other possibilities then the values of 
+M0, M1, M2 and M3 can also be three first members and one second member or, two first 
+members and two second members or, one first member and three second members or, four 
+second members of the four sets {u3ij,0,pν − u3ij,3}, {u3ij,1,pν − u3ij,0}, {u3ij,2,pν − u3ij,1} and 
+{u3ij,3,pν − u3ij,2}. Due to these different possibilities, we can define some more sets
+(u2ij,0, u2ij,1) ∈{(b2ij −k0, k0) | k0 ∈{0, 1, … , b2ij}}
+(7)
+4p휈−b3ij = max{u3ij,0, p휈−u3ij,3} + max{u3ij,1, p휈−u3ij,0}
++ max{u3ij,2, p휈−u3ij,1} + max{u3ij,3, p휈−u3ij,2}.
+M0 = max{u3ij,0, p휈−u3ij,3}, M1 = max{u3ij,1, p휈−u3ij,0},
+M2 = max{u3ij,2, p휈−u3ij,1} and M3 = max{u3ij,3, p휈−u3ij,2}.
+M0 + M1 ≥p휈, M2 + M3 ≥p휈, M0 + M3 ≥p휈, M1 + M2 ≥p휈.
+u3ij,0 = p휈−u3ij,3, u3ij,1 = p휈−u3ij,0,
+u3ij,2 = p휈−u3ij,1, u3ij,3 = p휈−u3ij,2.
+u3ij,0 + u3ij,1 + u3ij,2 + u3ij,3 = 4p휈−b3ij.
+A1 = {
+(p휈−b3ij + k1 + k2 + k3, p휈−k1, p휈−k2, p휈−k3) ∣0 ≤k1, k2, k3 ≤p휈,
+b3ij −p휈≤k1 + k2 + k3 ≤b3ij}
+A2 = {(3p휈−b3ij −k1, k1, k2, k3) ∣2p휈−b3ij ≤k1 ≤p휈, 0 ≤k2, k3 ≤p휈},
+125
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 16>>>
+1 3
+ Now, to calculate the number of distinct 4-tuples (u3ij,0,u3ij,1,u3ij,2,u3ij,3), we need to find 
+the cardinality of the set ∪14
+i=1Ai . We apply the principle of inclusion and exclusion to cal-
+culate | ∪14
+i=1 Ai| . According to this principle, to calculate | ∪14
+i=1 Ai| , we require the values of 
+|A1|, |A2|, |A1 ∩ A2|, |A3|, |A1 ∩ A3|, |A2 ∩ A3|, |A1 ∩ A2 ∩ A3| and so on. For 0 ≤ b3ij < pν, we 
+observe that |A1| = |A2| = |A3| = ⋯ = |A12| = 0. Also, we have |A13 ∩ A14| = 0. Thus, for b3ij 
+∈ I2, there are |A13| + |A14| = 2|A13| = N4ij number of distinct 4-tuples (u3ij,0,u3ij,1,u3ij,2,u3ij,3). 
+For the remaining cases, we have
+From these calculations, the terms such as N5ij,N6ij,…,N13ij emerge out for the case when 
+q is even and the terms such as N
+5ij, N
+6ij, … , N
+13ij emerge out for the case when q is odd. 
+Finally, once we obtain the sum by varying ((b1ij),(b2ij),(b3ij)) over H(L), we get the total 
+number of constacyclic codes of length n over 픽q for the fixed Galois hull dimension L. □
+A3 = {(k1, k2, k3, 3p휈−b3ij −k1) ∣2p휈−b3ij ≤k1 ≤p휈, 0 ≤k2, k3 ≤p휈},
+A4 = {(k2, k3, 3p휈−b3ij −k1, k1) ∣2p휈−b3ij ≤k1 ≤p휈, 0 ≤k2, k3 ≤p휈},
+A5 = {(k2, 3p휈−b3ij −k1, k1, k3) ∣2p휈−b3ij ≤k1 ≤p휈, 0 ≤k2, k3 ≤p휈},
+A6 = {(2p휈−b3ij + k1, k2, k1, k3) ∣0 ≤k1 ≤b3ij −p휈, 0 ≤k2, k3 ≤p휈},
+A7 = {(k1, k2, 2p휈−b3ij + k1, k3) ∣0 ≤k1 ≤b3ij −p휈, 0 ≤k2, k3 ≤p휈},
+A8 = {(k2, k1, k3, 2p휈−b3ij + k1) ∣0 ≤k1 ≤b3ij −p휈, 0 ≤k2, k3 ≤p휈},
+A9 = {(k2, 2p휈−b3ij + k1, k3, k1) ∣0 ≤k1 ≤b3ij −p휈, 0 ≤k2, k3 ≤p휈},
+A10 = {(b3ij −p휈−k1, k1, k2, k3) ∣0 ≤k1 ≤b3ij −p휈, 0 ≤k2, k3 ≤p휈},
+A11 = {(k2, b3ij −p휈−k1, k1, k3) ∣0 ≤k1 ≤b3ij −p휈, 0 ≤k2, k3 ≤p휈},
+A12 = {(k2, k3, b3ij −p휈−k1, k1) ∣0 ≤k1 ≤b3ij −p휈, 0 ≤k2, k3 ≤p휈},
+A13 = {(k1, k2, k3, b3ij −p휈−k1) ∣0 ≤k1 ≤b3ij −p휈, 0 ≤k2, k3 ≤p휈},
+A14 = {(b3ij −k1 −k2 −k3, k1, k2, k3) ∣0 ≤k1, k2, k3 ≤p휈, b3ij −p휈≤k1 + k2 + k3 ≤b3ij}.
+|A1| = (b3ij −p휈+ 1)(p휈+ 1)2, |A2| = (b3ij −p휈+ 1)(p휈+ 1)2,
+|A1 ∩A2| = (b3ij −p휈+ 1)(p휈+ 1), |A3| = (b3ij −p휈+ 1)(p휈+ 1)2,
+|A1 ∩A3| = (b3ij −p휈+ 1)2, |A2 ∩A3| = (b3ij −p휈+ 1)(p휈+ 1),
+|A1 ∩A2 ∩A3| = (b3ij −p휈+ 1) and so on.
+126
+Cryptography and Communications (2023) 15:111–127
+
+<<<PAGE 17>>>
+1 3
+4  Conclusion
+We have studied the Galois hulls of constacyclic codes over finite fields. More specifically, 
+we have proposed a formula for the dimensions of the Galois hulls of a certain class of 
+constacyclic codes. Further, we have also calculated the number of constacyclic codes of 
+a given Galois hull dimension under certain restrictions on alphabet size. Therefore, as an 
+open problem, the dimensions of the Galois hulls of all families of constacyclic codes are 
+yet to be formulated. One can also look into the problem of enumeration of constacyclic 
+codes of any given Galois hull dimension over all finite fields.
+Acknowledgements  The authors would like to thank the CSIR, Govt. of India (under grant no. 
+09/1023(0030)/2019-EMR-I) and DST, Govt. of India (under CRG/2020/005927, vide Diary No. 
+SERB/F/6780/ 2020-2021 dated 31 December, 2020) for providing financial support.
+References
+	 1.	 Assmus, E.F. Jr., Key, J.D.: Affine and projective planes. Discrete Math. 83(2-3), 161–187 (1990)
+	 2.	 Carlet, C., Guilley, S.: Complementary dual codes for counter-measures to side-channel attacks. Adv. 
+Math. Commun. 10(1), 131–150 (2016)
+	 3.	 Chen, B., Fan, Y., Lin, L., Liu, H.: Constacyclic codes over finite fields. Finite Fields Appl. 18(6), 
+1217–1231 (2012)
+	 4.	 Ding, Y., Lu, X.: Galois hulls of cyclic codes over finite fields. IEICE Transactions on Fundamentals 
+of Electronics, Communications and Computer Sciences 103-A(1), 370–375 (2020)
+	 5.	 Fan, Y., Zhang, L.: Galois self-dual constacyclic codes. Des. Codes Cryptogr. 84(3), 473–492 (2017)
+	 6.	 Guenda, K., Jitman, S., Gulliver, T.A.: Constructions of good entanglement-assisted quantum error 
+correcting codes. Des. Codes Cryptogr. 86(1), 121–136 (2018)
+	 7.	 Islam, H., Prakash, O., Bhunia, D.K.: Quantum codes obtained from constacyclic codes. Internat. J. 
+Theoret. Phys. 5(11), 3945–3951 (2019)
+	 8.	 Jitman, S., Sangwisut, E.: The average dimension of the Hermitian hull of constacyclic codes over 
+finite fields of square order. Adv. Math. Commun. 12(3), 451–463 (2018)
+	 9.	 Jitman, S., Sangwisut, E.: The average dimension of the Hermitian hull of cyclic codes over finite 
+fields of square order. AIP Proceedings of ICoMEIA 2016, 1775, Article ID 030026 (2016)
+	10.	 Leon, J.S.: Permutation group algorithms based on partitions, I: theory and algorithms. J. Symbolic 
+Comput. 12(4–5), 533–583 (1991)
+	11.	 Leon, J.S., Pless, V., Sloane, N.J.A.: On ternary self-dual codes of length 24. IEEE Trans. Inform. 
+Theory 27(2), 176–180 (1981)
+	12.	 Lidl, R., Niederreiter, H.: Finite Fields. Cambridge University Press, Cambridge (1997)
+	13.	 Liu, X., Fan, Y., Liu, H.: Galois LCD codes over finite fields. Finite Fields Appl. 49, 227–242 (2018)
+	14.	 Liu, H., Pan, X.: Galois hulls of linear codes over finite fields. Des. Codes Cryptogr. 88(2), 241–255 (2020)
+	15.	 Petrank, E., Roth, R.M.: Is code equivalence easy to decide? IEEE Trans. Inform. Theory 43(5), 1602–
+1604 (1997)
+	16.	 Prakash, O., Yadav, S., Islam, H., Sol´e, P.: On Z4Z4[u3]-additive constacyclic codes. Adv. Math. 
+Commun. (2022). https://​doi.​org/​10.​3934/​amc.​20220​17
+	17.	 Sangwisut, E., Jitman, S., Udomkavanich, P.: Constacyclic and quasi-twisted Hermitian self-dual 
+codes over finite fields. Adv. Math. Commun. 11(3), 595–613 (2017)
+	18.	 Sangwisut, E., Jitman, S., Ling, S., Udomkavanich, P.: Hulls of cyclic and negacyclic codes over finite 
+fields. Finite Fields Appl. 33, 232–257 (2015)
+	19.	 Sendrier, N.: Finding the permutation between equivalent binary codes. In: Proceedings of IEEE ISIT 
+1997, Ulm, Germany, pp. 367. https://​doi.​org/​10.​1109/​ISIT.​1997.​613303 (1997)
+	20.	 Sendrier, N.: Finding the permutation between equivalent codes: the support splitting algorithm. IEEE 
+Trans. Inform. Theory 46(4), 1193–1203 (2000)
+	21.	 Sendrier, N.: On the dimension of the hull. SIAM J. Discrete Math. 10(2), 282–293 (1997)
+	22.	 Skersys, G.: The average dimension of the hull of cyclic codes. Discrete Appl. Math. 128(1), 275–292 (2003)
+Publisher’s note  Springer Nature remains neutral with regard to jurisdictional claims in published maps and 
+institutional affiliations.
+127
+Cryptography and Communications (2023) 15:111–127

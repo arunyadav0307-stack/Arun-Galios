@@ -1,0 +1,39 @@
+# P0 environment manifest for the Arun-Galios execution plan.
+#
+# Produced during P0 (commit of docs/P0_REPORT.md). This file is a DECLARATIVE
+# record of the environment in which P0 was verified. It is NOT a conda
+# environment that has been exercised: no conda is installed in this sandbox.
+# The authoritative, exercised installation path is scripts/setup_env.sh
+# (pip + requirements.txt). environment.yml is provided for reproducibility on
+# hosts that do use conda/mamba, and is UNTESTED here.
+#
+# See docs/P0_REPORT.md §B for the verified version table.
+
+name: galois-hull-enum
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11.2
+  - pip=23.0.1
+  - pip:
+      - sympy==1.14.0        # exact Z[z] / Q arithmetic  (T3, T4, T7)
+      - numpy==2.4.6         # acceleration of the brute-force oracle only
+      - matplotlib==3.11.2   # P8 figures (Q-Q, KS distance)
+      - pymupdf==1.28.2      # PDF text extraction for provenance (P0)
+      - pytest==9.1.1        # regression suite runner (P1 onward)
+      - mpmath==1.3.0        # sympy dependency, pinned explicitly
+
+# NOT available in this sandbox and NOT required:
+#   magma   -> OPEN-01, replaced by a self-written F_q kernel (P1)
+#   sagemath-> OPEN-02, needed only for P9 (CAS recheck) and P11 (code tables)
+#   scipy   -> not required by any phase
+#   gmpy2   -> optional speed-up only, absent
+#
+# AVAILABLE and relevant to P1 as an INDEPENDENT CROSS-CHECK (never as the
+# implementation, see P1 item 12):
+#   galois==0.4.11  (Matt Hostetter, MIT licence, github.com/mhostetter/galois)
+#   -> provides GF(p^m) independently of our own kernel.
+#      It is deliberately NOT listed as a runtime dependency above: the
+#      released artefact must be self-contained per OPEN-01 / L8.

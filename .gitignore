@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments (scripts/setup_env.sh may create .venv)
+.venv/
+venv/
+
+# Sandbox / editor scratch
+.ipynb_checkpoints/
+.DS_Store
+
+# NOTE: results/ IS committed.
+# Per EXECUTION_PLAN.md §6.1, galois_hull_enum/results/*.csv and *.json are
+# the paper's evidence artefacts and must be version-controlled. Do not add
+# results/ here. Large regenerable figures belong in results/*_figures/ and
+# are committed only when small (< ~2 MB).
