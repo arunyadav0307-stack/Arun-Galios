@@ -1,0 +1,60 @@
+{
+  "phase": "P1",
+  "status_authoritative": {
+    "p1_core_implementation": "PASS",
+    "new_5670_instance_validation_suite": "PASS",
+    "original_385_instance_regression_reproducibility": "OPEN / NOT RECONSTRUCTIBLE",
+    "OPEN-28": "retained as the provenance label for newly chosen odd-q inputs"
+  },
+  "OPEN-22": {
+    "status": "OPEN / NOT RECONSTRUCTIBLE",
+    "resolved": false,
+    "reason": "exact lambda and k assignments, and odd-characteristic q and n assignments, are absent from the frozen Blueprint",
+    "absent_fields": [
+      {"field": "lambda", "scope": "all 385 instances"},
+      {"field": "k", "scope": "all 385 instances"},
+      {"field": "q", "scope": "the 176 odd instances"},
+      {"field": "n", "scope": "the 176 odd instances"},
+      {"field": "expected_results", "scope": "all 385 instances", "note": "only the aggregate '385 instances, 0 failures' is recorded"}
+    ],
+    "inferred_from_totals_209_176": false,
+    "invented_values": 0,
+    "mitigation": "regression_suite_v1 is a REPLACEMENT, not a recovery"
+  },
+  "instance_categories_never_mixed": {
+    "a_inherited_probe_derived": {
+      "definition": "computed during blueprinting by the throwaway prototype",
+      "provenance": "BLUEPRINT.md Annex A - counts and outcomes only, no per-instance data",
+      "status": "NOT RECONSTRUCTIBLE / OPEN-22",
+      "used_as_p1_acceptance_gate": false
+    },
+    "b_newly_constructed_validation": {
+      "definition": "defined in P1 by an explicit closed-form rule over stated q/n grids and all of F_q^*",
+      "provenance": "regression_385.yaml -> regression_suite_v1; odd-q inputs labelled OPEN-28",
+      "instances": 5670,
+      "passed": 5670,
+      "failed": 0,
+      "status": "PASS",
+      "is_recovery_of_the_385_suite": false
+    },
+    "c_published_paper_benchmark": {
+      "definition": "expected outcome printed in a published paper",
+      "provenance": "P1 Ex.4 / Ex.5 / Ex.6, P3 Ex.3.6 (BLUEPRINT 5.5, CP1)",
+      "passed": 4,
+      "total": 4,
+      "status": "PASS"
+    }
+  },
+  "retained_open_items": {
+    "OPEN-22": "OPEN / NOT RECONSTRUCTIBLE",
+    "OPEN-28": "retained - provenance label for newly chosen odd-q inputs",
+    "OPEN-29": "CP1-3/CP1-4 are shape-comparison only; primitive elements in F_25/F_81 not recoverable from the mangled PDFs",
+    "OPEN-30": "galois fails on x^21+1 over F_16 and F_256 (RuntimeError after 1000 tries); our factoriser succeeds and is certified intrinsically; 2 oracle tests skipped"
+  },
+  "closure_audit": {
+    "commit_applying_this_audit": null,
+    "supersedes_status_wording_of_commit": "1a70750",
+    "recomputation_performed": false,
+    "numbers_altered": 0
+  }
+}

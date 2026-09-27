@@ -7,14 +7,23 @@
 **Branch:** `arena/01a0e2d5-arun-galios`
 **Scope:** `galois_hull_enum/core/` — fields, polynomials, factorisation, the
 frozen $f^{\#}$ map and Algorithm E1 cycle detection. **No P2+ work.**
+**Closure audit applied:** metadata/status correction only (see
+`docs/P1_CLOSURE_AUDIT.md`). No computation re-run, no research added.
 
-> **Gate result: P1 = PASS.** 5 670 regression instances pass (0 failures);
-> the four published CP1 factorisations are reproduced; 375 unit and oracle
-> tests pass; independence from the throwaway prototype is machine-checked.
-> **OPEN-22 is resolved in the only way available without inventing data** —
-> the inherited 385-instance suite is unreconstructible and is recorded as
-> OPEN, and P1 executes a **newly defined** fully-specified suite instead.
-> See §B.
+> ## P1 STATUS (authoritative)
+>
+> | Item | Status |
+> |---|---|
+> | **P1 Core Implementation** | **PASS** |
+> | **New 5 670-instance validation suite** | **PASS** |
+> | **Original 385-instance regression reproducibility** | **OPEN / NOT RECONSTRUCTIBLE** |
+> | **OPEN-28** | **retained** as the provenance label for newly chosen odd-$q$ inputs |
+>
+> **OPEN-22 is NOT resolved.** The original inherited 385-instance regression
+> suite remains unreconstructible: its exact $\lambda$ and $k$ assignments, and
+> its odd-characteristic $q$ and $n$ assignments, are absent from the frozen
+> Blueprint. The 5 670 / 5 670 result below is the **newly defined** validation
+> suite and is **not** a recovery of the original 385 suite. See §B.
 
 ---
 
@@ -138,14 +147,48 @@ TOTAL INSTANCES  : 5670
 *coverage* (14 fields, all $\lambda$, all defect cases) chosen by an explicit
 rule, because the inherited suite cannot be recovered.
 
-### B.4 OPEN-22 disposition
+### B.4 OPEN-22 STATUS — **OPEN / NOT RECONSTRUCTIBLE** (not resolved)
 
-> **RESOLVED by redefinition, not by reconstruction.** The inherited suite is
-> recorded as OPEN with per-field reasons; P1's gate is the newly defined
-> `regression_suite_v1`. **No instance count, $\lambda$, $k$, $q$, $n$ or
-> expected result was invented.** Residual OPEN: the odd $q$-grid in §B.2(2) is
-> a *choice of test inputs* by me, not a recovery of the inherited suite, and
-> is labelled as such in the YAML.
+> **The original 385-instance regression suite is NOT recovered and NOT
+> reconstructible.** It stays OPEN. What was absent, and remains absent:
+>
+> | Missing field | Scope | Why unrecoverable |
+> |---|---|---|
+> | $\lambda$ | all 385 instances | recorded nowhere in the frozen Blueprint |
+> | $k$ | all 385 instances | recorded nowhere; and not even an input to the two A.7.1 checks |
+> | $q$ | the 176 odd instances | no $q$ value recorded for any of them |
+> | $n$ | the 176 odd instances | no $n$ value recorded for any of them |
+> | expected results | all 385 instances | only the aggregate "0 failures" is recorded |
+>
+> Reconstructing $\lambda$ or $k$ from the totals 209/176 would be inference
+> from a reported total, which is forbidden; inventing them is forbidden. So
+> neither was done. **No instance count, $\lambda$, $k$, $q$, $n$ or expected
+> result was invented, and none was inferred from the reported totals.**
+>
+> P1's validation gate is the **newly defined** `regression_suite_v1`, which is
+> a *replacement* for the unreconstructible suite, **not** a recovery of it.
+> The odd $q$-grid inside it is a *choice of test inputs* by me, retained under
+> the provenance label **OPEN-28**, and is not a recovery of the inherited odd
+> half.
+
+### B.5 Instance provenance categories — kept strictly separate
+
+Three categories of instance exist in this phase. **They are never mixed, and a
+result from one category is never reported as a result from another.**
+
+| Category | Definition | Provenance | Where recorded | Status |
+|---|---|---|---|---|
+| **(a) Inherited / probe-derived** | instances computed during blueprinting by the throwaway prototype | `BLUEPRINT.md` Annex A — counts and outcomes only, no per-instance data | `regression_385.yaml` → `inherited_probe_suite` (audit, fields `null`) | **NOT RECONSTRUCTIBLE / OPEN-22**; never used as a P1 acceptance gate |
+| **(b) Newly constructed validation** | instances defined in P1 by an explicit closed-form rule over stated $q$/$n$ grids and all of $\mathbb F_q^*$ | `regression_385.yaml` → `regression_suite_v1`; odd-$q$ inputs labelled **OPEN-28** | `results/regression_manifest.csv`, `results/phase1_factorisation.csv` | **PASS 5 670 / 5 670** |
+| **(c) Published-paper benchmark** | instances whose expected outcome is printed in a published paper | P1 Ex. 4 / Ex. 5 / Ex. 6, P3 Ex. 3.6 (Blueprint §5.5, CP1) | §C.3 of this report | **PASS 4 / 4** |
+
+Cross-checks against category (a) — the 7 §5.5 cycle instances re-agreeing with
+the A.3 [PROBE-DONE] reference (§C.6) — are reported as **corroboration of the
+new implementation**, never as a reproduction of the 385-instance suite.
+
+The A.3 reference values themselves remain **[PROBE-DONE]**: real sandbox
+computations, but not paper results, not reproducible from this repository, and
+not to be quoted in the manuscript until regenerated by committed code.
 
 ---
 
@@ -167,7 +210,12 @@ tests/test_independence.py   6 passed
 The 3 `k out of range` skips are parametrisation artefacts ($k>e-1$); the 2
 oracle skips are documented below.
 
-### C.2 P1 factorisation regression — **5 670 / 5 670 PASS**
+### C.2 Newly defined validation suite — **5 670 / 5 670 PASS**
+
+> This is `regression_suite_v1` (category (b) of §B.5), defined in P1 by an
+> explicit rule. It is **not** the original 385-instance suite (category (a)),
+> which remains **OPEN / NOT RECONSTRUCTIBLE** (OPEN-22), and it is **not** a
+> recovery of it.
 
 ```
 PASS: 5670    FAIL: 0        (77.0 s, 73.7 inst/s)
@@ -376,45 +424,64 @@ docs/P1_REPORT.md     (this file)
 Every number below came from an executed run in this session. Nothing is
 carried over from memory or from the probe.
 
+**Category (b) — newly defined validation suite** (NOT the original 385 suite):
+
 | Quantity | Value |
 |---|---|
-| Regression instances run | **5 670** |
-| Regression instances passed | **5 670** |
-| Regression failures | **0** |
+| Validation-suite instances run | **5 670** |
+| Validation-suite instances passed | **5 670** |
+| Validation-suite failures | **0** |
 | Per-instance checks passed | 5 670 × 4 (structure, $\mu^P$, product, irreducibility) |
 | Even-characteristic instances (defect a) | 3 750 / 3 750 |
 | Odd-characteristic instances | 1 920 / 1 920 |
 | $\nu>e$ instances (defect b) | 6 / 6 |
 | Repeated-root instances ($P>1$) | 720 / 720 |
 | Distinct factor-degree profiles seen | 64 |
-| CP1 quartet reproduced | **4 / 4** |
-| Unit + oracle tests | **375 passed**, 5 skipped, 0 failed |
-| Regression runtime | 77.0 s (73.7 inst/s) |
+| Validation-suite runtime | 77.0 s (73.7 inst/s) |
 | Pilot | 200 inst / 0.4 s / 493.6 inst/s → projected 11.5 s (biased low; real 77.0 s) |
 | Reproducibility | two runs byte-identical over 5 670 rows |
+| **Original 385-instance suite reproduced** | **0 / 385 — OPEN / NOT RECONSTRUCTIBLE (OPEN-22)** |
+
+**Category (c) — published-paper benchmark (CP1 quartet):**
+
+| Quantity | Value |
+|---|---|
+| CP1 quartet reproduced | **4 / 4** (2 EXACT, 2 SHAPE — see OPEN-29) |
+
+**Cycle detection on the 7 frozen §5.5 instances** (Blueprint-frozen $k$;
+X1–X4 are the published-paper benchmarks, X5–X7 are Blueprint-frozen):
+
+| Quantity | Value |
+|---|---|
 | Cycle shapes, 7 §5.5 instances | agree with A.3 on $B$, shapes, and $(P{+}1)^{\sum a}$ |
 | Maximum cycle length observed | **4** ($\mathbb F_{81}$, $n=5,17,25$, $k=3$) |
 | Fields constructed | $\mathbb F_{2,3,4,5,8,9,16,25,27,32,49,64,81,256}$ |
+| Unit + oracle tests | **375 passed**, 5 skipped, 0 failed |
 
-Cycle shapes for the 7 frozen instances are in §C.6. Full per-instance data:
-`results/phase1_factorisation.csv`.
+Cycle shapes for the 7 frozen instances are in §C.6. Full per-instance data for
+the validation suite: `results/phase1_factorisation.csv`.
 
 ---
 
 ## G. OPEN ITEMS
 
-### G.1 Resolved in P1
+### G.1 Closed in P1
 
 | ID | Item | Disposition |
 |---|---|---|
-| **OPEN-22** | The 385-instance regression list is not recorded in the Blueprint | ✅ **RESOLVED by redefinition** — recorded as OPEN with per-field reasons; P1 executes the newly defined, fully specified `regression_suite_v1` (5 670 instances). No $\lambda$, $k$, $q$, $n$ or expected result invented. See §B. |
-| — | Squarefree decomposition in small characteristic | ✅ New defect found by P1's own tests (Yun invalid for small $p$); fixed with Musser's algorithm. Not a Blueprint defect. |
+| — | Squarefree decomposition in small characteristic | ✅ Closed — new defect found by P1's own tests (Yun invalid for small $p$); fixed with Musser's algorithm. Not a Blueprint defect. |
 
-### G.2 Carried / newly raised
+### G.2 **STILL OPEN** — the original 385-instance suite
+
+| ID | Item | Status | Impact | Owner |
+|---|---|---|---|---|
+| **OPEN-22** | The original 385-instance regression suite is **not reconstructible**: its exact $\lambda$ and $k$ assignments, and its odd-characteristic $q$ and $n$ assignments, are absent from the frozen Blueprint. Only the aggregate "385 instances, 0 failures" is recorded. | **OPEN / NOT RECONSTRUCTIBLE** | The original suite cannot be re-run or verified from committed inputs. Mitigated (not resolved) by `regression_suite_v1`, which is a *replacement*, not a recovery. | **P4/P9** — would need the original instance list; if it cannot be recovered, the paper must not cite the 385-instance figure as reproducible |
+
+### G.3 Carried / newly raised
 
 | ID | Item | Impact | Owner |
 |---|---|---|---|
-| **OPEN-28** | The 7 odd $q$-values in `regression_suite_v1` are a **choice of test inputs** by me, not a recovery of the inherited suite. They are labelled as such in the YAML. | None on correctness; recorded for transparency. | closed (documented) |
+| **OPEN-28** | **Retained as the provenance label for newly chosen odd-$q$ inputs.** The 7 odd $q$-values in `regression_suite_v1` are a *choice of test inputs* by me, not a recovery of the inherited suite. They are labelled as such in the YAML and must stay labelled. | None on correctness; provenance only. | retained (documented) |
 | **OPEN-29** | CP1-3 / CP1-4 use **shape** comparison only: the source papers' primitive elements $\omega\in\mathbb F_{25},\mathbb F_{81}$ are not recoverable from the PDFs (extracted text mangles the field-definition displays), and $\lambda$ is only determined up to Frobenius conjugacy. | Two of four CP1 checks are shape-level, not coefficient-level. Matches how A.1 records them ("identical shape"). | **P4** (re-read the source PDFs; XC-11 needs a second transcription of PA-1 Table 2 anyway) |
 | **OPEN-30** | `galois` cannot factor $x^{21}+1$ over $\mathbb F_{16}$ / $\mathbb F_{256}$ (`RuntimeError` after 1000 tries). Our factoriser succeeds and is certified intrinsically. | 2 oracle tests skipped. | none — oracle limitation |
 | **OPEN-23** | `instances/instances.yaml` (X1–X15 grid) not yet machine-readable | blocks P3/P4/P6/P8 | P3 |
@@ -436,27 +503,44 @@ Cycle shapes for the 7 frozen instances are in §C.6. Full per-instance data:
 | 2 | Independent implementation exists under `core/` | ✅ 4 modules, ~1 250 lines |
 | 3 | No dependency on `/tmp/probe/` | ✅ **machine-checked** (§D) |
 | 4 | Core tests pass | ✅ 279 core tests (field+poly+factor+cycles) |
-| 5 | Independent oracle checks pass | ✅ 90 passed, 2 skipped (documented oracle limitation) |
-| 6 | All required P1 identities verified by actual computation | ✅ 5 670 × 4 checks + CP1 4/4 + A.3 7/7 |
+| 5 | Independent oracle checks pass | ✅ 90 passed, 2 skipped (OPEN-30, documented oracle limitation) |
+| 6 | All required P1 identities verified by actual computation | ✅ 5 670 × 4 checks (validation suite) + CP1 4/4 + A.3 7/7 corroboration |
 | 7 | Results reproducible from a clean invocation | ✅ two runs byte-identical |
 | 8 | No claim marked PASS without executed evidence | ✅ every PASS traces to a logged run |
 
 ### H.2 Verdict
 
-> ## **P1 = PASS**
+> ## **P1 Core Implementation: PASS**
+> ## **New 5 670-instance validation suite: PASS**
+> ## **Original 385-instance regression reproducibility: OPEN / NOT RECONSTRUCTIBLE**
 >
 > The core is implemented independently from scratch, is free of any dependency
 > on the throwaway prototype (machine-checked), and passes **5 670 / 5 670**
-> factorisation regression instances with **0 failures**, reproduces all
-> **four** published CP1 factorisations, agrees with the A.3 probe reference on
-> all 7 cycle instances, and passes **375** unit and oracle tests.
+> instances of the **newly defined** validation suite with **0 failures**,
+> reproduces all **four** published CP1 factorisations, agrees with the A.3
+> probe reference on all 7 cycle instances, and passes **375** unit and oracle
+> tests.
 >
-> **OPEN-22 is resolved without fabrication.** The inherited 385-instance suite
-> is genuinely unreconstructible from the frozen Blueprint ($\lambda$ and $k$
-> are recorded nowhere; the odd half has no $q$ or $n$ at all), so it is
-> recorded as OPEN with per-field reasons, and P1 executes a **newly defined**,
-> fully specified, provenance-labelled suite instead. No instance count,
-> $\lambda$, $k$, $q$, $n$ or expected result was invented.
+> **OPEN-22 is NOT resolved and remains OPEN.** The original inherited
+> 385-instance regression suite is not reconstructible from the frozen
+> Blueprint — its exact $\lambda$ and $k$ assignments, and its
+> odd-characteristic $q$ and $n$ assignments, are absent — so it is recorded
+> as OPEN with per-field reasons. The 5 670 / 5 670 result is the **newly
+> defined** validation suite and is **not** a recovery of the original 385
+> suite. No instance count, $\lambda$, $k$, $q$, $n$ or expected result was
+> invented, and none was inferred from the reported totals. The newly chosen
+> odd-$q$ inputs carry the provenance label **OPEN-28**.
+>
+> **Three instance categories are kept strictly separate** (§B.5):
+> (a) inherited/probe-derived — **NOT RECONSTRUCTIBLE**;
+> (b) newly constructed validation — **PASS 5 670 / 5 670**;
+> (c) published-paper benchmark — **PASS 4 / 4**. A result from one category
+> is never reported as a result from another.
+>
+> **Retained OPEN items:** **OPEN-29** (CP1-3/CP1-4 are shape-only, because the
+> sources' primitive elements in $\mathbb F_{25}$/$\mathbb F_{81}$ are not
+> recoverable from the mangled PDFs) and **OPEN-30** (`galois` fails on
+> $x^{21}+1$ over $\mathbb F_{16}$/$\mathbb F_{256}$; 2 oracle tests skipped).
 >
 > **New defect found and fixed in P1:** Yun's squarefree decomposition is
 > invalid in small characteristic; replaced with Musser's algorithm.

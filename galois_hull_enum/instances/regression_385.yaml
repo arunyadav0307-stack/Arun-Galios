@@ -19,7 +19,48 @@
 #       ASSERTED ANYWHERE IN THIS FILE — they are computed by
 #       scripts/run_phase1.py and written to results/.
 #
+# SEE `status` BELOW for the authoritative P1 status. OPEN-22 is NOT resolved.
+#
 # =====================================================================
+
+# ---------------------------------------------------------------------
+# AUTHORITATIVE P1 STATUS (set by the P1 closure audit)
+# ---------------------------------------------------------------------
+status:
+  p1_core_implementation: PASS
+  new_5670_instance_validation_suite: PASS
+  original_385_instance_regression_reproducibility: "OPEN / NOT RECONSTRUCTIBLE"
+  OPEN-28: "retained as the provenance label for newly chosen odd-q inputs"
+  OPEN-22_resolved: false
+  OPEN-22_note: >
+    The original 385-instance suite is NOT reconstructed. Its exact lambda and
+    k assignments, and its odd-characteristic q and n assignments, are absent
+    from the frozen Blueprint. regression_suite_v1 below is a REPLACEMENT, not
+    a recovery. Nothing was inferred from the totals 209/176 and nothing was
+    invented.
+  provenance_categories_never_mixed:
+    a_inherited_probe_derived: >
+      Computed during blueprinting by the throwaway prototype; recorded in
+      BLUEPRINT.md Annex A as counts and outcomes only, with no per-instance
+      data. Status NOT RECONSTRUCTIBLE / OPEN-22. Never used as a P1
+      acceptance gate.
+    b_newly_constructed_validation: >
+      Defined in P1 by an explicit closed-form rule over the stated q and n
+      grids, with lambda over ALL of F_q^*. The odd-q inputs carry the
+      provenance label OPEN-28. Status PASS 5670/5670.
+    c_published_paper_benchmark: >
+      Instances whose expected outcome is printed in a published paper: P1
+      Example 4 / Example 5 / Example 6 and P3 Example 3.6. Status PASS 4/4.
+  retained_open_items:
+    OPEN-29: >
+      CP1-3 / CP1-4 are shape-comparison only: the source papers' primitive
+      elements in F_25 and F_81 are not recoverable from the PDFs (the
+      extracted text mangles the field-definition displays), and lambda is
+      only determined up to Frobenius conjugacy.
+    OPEN-30: >
+      galois cannot factor x^21+1 over F_16 / F_256 (RuntimeError after 1000
+      tries); our factoriser succeeds and is certified intrinsically.
+
 
 meta:
   file: galois_hull_enum/instances/regression_385.yaml
