@@ -21,10 +21,13 @@
 | ID | File | Pages | Bibliographic identity (as printed in the PDF) |
 |----|------|-------|------------------------------------------------|
 | **P1** | `Galois hulls of constacyclic codes over finite fields.pdf` | 17 | I. Debnath, O. Prakash, H. Islam, *Cryptography and Communications* **15** (2023) 111–127. DOI `10.1007/s12095-022-00591-6`. MSC 94B05, 94B15, 94B60. |
-| **P2** | `Galios Hull over Affin Algebra.pdf` | 27 | I. Debnath, H. Islam, E. Martínez-Moro, O. Prakash, "Galois hulls of constacyclic codes over affine algebra rings", **arXiv:2412.08512v1 [cs.IT], 11 Dec 2024**. Header: "Preprint submitted to *Discrete Mathematics*". |
-| **P3** | `Average_dimensions_of_Galois_hulls_of_constacyclic.pdf` | 36 | I. Debnath, O. Prakash, *Advances in Mathematics of Communications*, `doi:10.3934/amc.2025010` (received Jun 2024; revised Dec 2024; early access Mar 2025). Communicated by Nian Li. |
+| **P2** | `Galios Hull over Affin Algebra.pdf` | 27 | I. Debnath, H. Islam, E. Martínez-Moro, O. Prakash, "Galois hulls of constacyclic codes over affine algebra rings", **arXiv:2412.08512v1 [cs.IT], 11 Dec 2024**; header: "Preprint submitted to *Discrete Mathematics*". **Now published:** *Discrete Mathematics* **349** (2026), 18 pp., `doi:10.1016/j.disc.2025.114750` (confirmed in the reference list of Debnath–Islam–Yadav–Prakash, *AMC* 2026). |
+| **P3** | `Average_dimensions_of_Galois_hulls_of_constacyclic.pdf` | 36 | I. Debnath, O. Prakash, *Advances in Mathematics of Communications* **19** (2025) 1569–1604, `doi:10.3934/amc.2025010` (received Jun 2024; revised Dec 2024; early access Mar 2025). Communicated by Nian Li. |
 
 Total: 80 pages, ~195,000 characters of extracted text. All three are by the same core author group and form a single lineage: **P1 → P3 → P2**.
+
+> **A published Correction to P1 exists and was NOT in the ZIP.**
+> Debnath, Prakash & Islam, *Correction to: Galois hulls of constacyclic codes over finite fields*, **Cryptography and Communications 15** (2023) 129–130, `doi:10.1007/s12095-022-00602-6` (published 22 July 2022). Verified content: it corrects only (i) two missing bibliography entries, (ii) "the primitive element" → "a primitive element", (iii) a font-size inconsistency in the displayed definition of $B_i$, (iv) three "for some" → "for an", (v) the field listing in Example 3, (vi) "$1\le i_1\le i_2\le a_i$" → "$1\le i_1<i_2\le a_i$", (vii) two reference titles. **It does not touch Theorem 3, Theorem 4, or Examples 4–6.** This is decisive for audit flag F1 (§C below).
 
 ## 0.1 What each source paper establishes (verbatim-grounded)
 
@@ -92,7 +95,45 @@ The deeper structural gap: **in P1/P2/P3 the hull dimension is always manipulate
 
 # §2. Genuine Novelty Beyond the Source Work
 
-The novelty is **structural, not incremental**. It consists of one reformulation (§2.1) that unlocks four consequences (§2.2–2.5) none of which appear in, or are reachable from, P1/P2/P3.
+> **REVISION NOTE (audit round).** The first version of this Blueprint claimed the enumeration problem was unattacked. The prior-art audit (§2.0) shows that is **overstated**: generating-function-based hull enumeration for cyclic/negacyclic codes already exists (Sangwisut et al., 2015), and one of our headline corollaries specialises exactly to one of their results. The novelty claim below has been **narrowed and made precise**. No result is claimed that is not distinguished from the prior art.
+
+## 2.0 Prior-art audit and the novelty boundary
+
+Method: targeted searches on (a) enumeration of cyclic/constacyclic codes by hull dimension, (b) hull-dimension generating functions, (c) transfer-matrix/trace methods for hulls, (d) enumeration over affine-algebra/ring settings, (e) small Galois hull dimensions.
+
+### 2.0.1 Works found — with overlap assessment
+
+| ID | Work | Year / venue / status | What it proves | Genuine overlap? |
+|----|------|----------------------|----------------|------------------|
+| **PA-1** | E. Sangwisut, S. Jitman, S. Ling, P. Udomkavanich, *Hulls of cyclic and negacyclic codes over finite fields* | **2015**, *Finite Fields and Their Applications* **33**, 232–257 | Dimensions of **Euclidean and Hermitian** hulls of cyclic & negacyclic codes; **enumeration** of such codes with a hull of given dimension. Enumerative form: $\#\{\dim=\ell\}=2^{\,s+t}\cdot|h(\ell)|$, where $s$ = #monic irreducible self-reciprocal factors and $t$ = #monic irreducible reciprocal **pairs** in $x^n-1$; $|h(\ell)|$ is **the coefficient of $X^{\ell}$ in a generating function**. | **SUBSTANTIAL, PARTIAL — must be credited.** (i) *Goal* overlap: yes, they enumerate cyclic codes by hull dimension. (ii) *Technique* overlap: **partial** — they do use coefficient extraction from a generating function, but theirs is a bookkeeping device for counting integer solutions to a linear condition on exponent vectors; they have **no** cycle polynomials $W_a^{(P)}$, **no** transfer matrix, **no** trace formula, **no** closed form, **no** limit law. (iii) *Result* overlap: **their $2^{s+t}$ (for $\ell=0$) is exactly our $2^{B}$ specialised** to Euclidean/Hermitian, $\lambda=\pm1$, $P=1$ (then cycles have length only 1 or 2, so $B=s+t$). (iv) *Scope gap they cannot reach*: $k$-Galois inner products postdate them (Fan–Zhang 2017), general $\lambda$, and cycle lengths $>2$ (our $a_t$ ranges over **all** divisors of $l$, e.g. $3,4,6$). |
+| **PA-2** | I. Debnath, H. Islam, S. Yadav, O. Prakash, *Study of small Galois hull dimensions of constacyclic codes* | **2026**, *Adv. Math. Commun.* **22**, 1–18, `doi:10.3934/amc.2025054` (early access 6 Nov 2025) | Conditions for **existence** of constacyclic codes with Galois hull dimension $1$ and $2$ (Thm 3.9, Thm 3.20); conditions quoted involve $p\mid n$, $\operatorname{ord}(\alpha)\mid(1+p^{e-\ell})$, $\alpha^{n}=\lambda$, and $n=p^{m}$. Plus EAQECC tables. | **ADJACENT, probably complementary, NOT FULLY VERIFIABLE.** They give *existence conditions*; our T2/T4 give *counts*. Their stated regime is $p\mid n$ (repeated roots); our small-dimension counts are most natural for $P=1$. **Full text is paywalled** — see OPEN-14. |
+| **PA-3** | Gao et al., *Hulls of double cyclic codes over $\mathbb Z_2$* | **2023**, *Finite Fields Appl.*, 102189 | Generators, dimensions, and enumeration of double-cyclic-code hulls **using a generating function**. | **LOW.** Same technique *label*, different code family (double cyclic), Euclidean, over $\mathbb Z_2$. |
+| **PA-4** | S. Talbi, A. Batoul, A. Fotue Tabue, E. Martínez-Moro, *Galois hulls of cyclic serial codes over a finite chain ring* | **2022**, *Finite Fields Appl.* **77**, 101950 (arXiv:2102.06995) | Cyclic serial codes over a finite **chain** ring; Cor. 4 gives $\wp(n,\tau;R)$ = number with Euclidean hull of $q$-dimension $\tau$; average $p^r$-dimension. | **LOW–MODERATE.** Despite the title, the enumeration and average are for **Euclidean** hulls over a **chain** ring (different ring class from $A$ and $R_{m,q}$). No transfer matrix. |
+| **PA-5** | Jitman, Sangwisut, Udomkavanich, *Hulls of cyclic codes over $\mathbb Z_4$* | **2020**, *Discrete Math.* **343**, 111621 | Types/2-dimensions and enumeration over $\mathbb Z_4$; average $E(n)=\tfrac59 n-\tfrac29 B_n$. | **LOW.** Different ring; no transfer matrix. |
+| **PA-6** | Sendrier, *On the dimension of the hull* | **1997**, *SIAM J. Discrete Math.* **10**, 282–293 | Number of (unstructured) $q$-ary linear codes of given hull dimension; hull dimension is $O(1)$ in probability. | **NONE (it is the contrast).** Used for §2.7. |
+| **PA-7** | Enbin Zhang et al., *Quantum Codes from Galois Hulls of Constacyclic Codes over a Finite Non-Chain Ring* | **2026**, *Entropy* **28**(4), 407 | $\ell$-Galois hull **dimensions** over a new non-chain ring + quantum codes. | **LOW.** Dimensions only, no enumeration. |
+| **PA-8** | Debnath & Prakash, *Hulls of separable double cyclic codes over $\mathbb Z_{p^2}$* | **2025**, *Comput. Appl. Math.* **44**, 255 | Enumeration of separable double cyclic codes by hull $p$-dimension. | **LOW.** Different family. |
+| **PA-9** | Cao et al., *Construction and enumeration of left dihedral codes satisfying certain duality properties* | **2022**, *Discrete Math.* | Enumeration of LCD / self-orthogonal dihedral codes. | **LOW.** Different family; shows enumeration of LCD/SO classes is an active theme (so T6 must be positioned carefully). |
+
+### 2.0.2 What the audit did **not** find
+
+After targeted search, **no** work was found that:
+1. expresses a hull dimension as a **sum of independent local weights** over Galois-reciprocal cycles;
+2. introduces **cycle polynomials** $W_a^{(P)}$ or a **transfer matrix** $T_P(z)$ with $W_a^{(P)}=\operatorname{tr}(T_P^a)$;
+3. gives a **closed form** such as $W_a^{(1)}=(1+\sqrt z)^a+(1-\sqrt z)^a$;
+4. enumerates $k$-**Galois** hulls of **general $\lambda$**-constacyclic codes (P1's own open problem);
+5. enumerates Galois hulls over the **affine algebra ring $A$** (P2's own open problem, still quoted as open in the 2026 literature review of P2);
+6. studies the **limit law** of a hull dimension.
+
+### 2.0.3 Revised novelty statement (supersedes §2.8-v1)
+
+**Novelty is REAL but NARROWER than originally claimed.** The defensible claims are:
+
+- **NEW (uncontested):** the transfer-matrix/trace structure (T3), the cycle-polynomial family $W_a^{(P)}$, the $P=1$ closed form (T4), the additive local-weight decomposition (T1) *as the organising principle*, arbitrary cycle lengths $a_t>2$ arising from $k$-Galois duality, exact moments and the unrestricted average (T7), the CLT/$\Theta(n)$ contrast (T8), and the ring enumerators over $A$ and $R_{m,q}$ (§3.7) which settle P2's stated open problem.
+- **GENERALISATION, NOT FIRST:** the LCD count $2^{B}$ (T5) and the enumerator-with-coefficient-extraction idea (T2) **reduce to Sangwisut et al. (2015)** in the special case Euclidean/Hermitian, $\lambda=\pm1$, $P=1$. **PA-1 must be cited as the origin of that case, and the specialisation must be exhibited in the paper.**
+- **Must NOT be claimed:** that hull enumeration is a new problem, or that $2^{B}$ is new *in general*.
+
+**Reframing (positive):** the agreement with PA-1 is an **independent external validation** — our machinery, run on their instance ($q=2$, $n=21$, $\lambda=1$, $k=0$), reproduces $s+t=4$, $\#\mathrm{LCD}=16$, and $\#\{\dim=6\}=16$ exactly (Annex A.7). A framework that independently reproduces a 2015 published count by a different method is *corroborated*, not merely novel.
 
 ## 2.1 N1 — The local "min-form" and additive splitting (the key move)
 
@@ -134,7 +175,8 @@ Verified for $a=1,\dots,6$: coefficient lists $[2],[2,2],[2,6],[2,12,2],[2,20,10
 **[VERIFIED-IN-PROBE; proof in §4.2]**
 - **LCD.** $[z^0]W_a^{(P)}=2$ for every $a\ge1$, $P\ge1$; the only weight-0 words are $0^{a}$ and $P^{a}$. Hence
 $$\#\{k\text{-Galois LCD } \lambda\text{-constacyclic codes of length }n\}=2^{B},\qquad B=\sum_{t=1}^{s}\sum_{j\in D_t}\beta_t(j).$$
-  Verified on 7 instances (see Annex A.3). This is a clean closed-form count that P1 could only obtain in the $l=4$ case through its inclusion–exclusion machinery, and that P2/P3 never obtain at all (they give only sufficient conditions: P2 Thm 9, P3 Thm 4.14).
+  Verified on 13 instances (Annex A.3, A.7). This is a clean closed-form count that P1 could only obtain in the $l=4$ case through its inclusion–exclusion machinery, and that P2/P3 never obtain at all (they give only sufficient conditions: P2 Thm 9, P3 Thm 4.14).
+  > **OVERLAP DISCLOSURE (mandatory).** In the specialisation Euclidean/Hermitian, $\lambda=\pm1$, $P=1$, cycles have length only $1$ or $2$ and $B=s+t$; then $2^{B}$ **is exactly the factor $2^{s+t}$ of Sangwisut–Jitman–Ling–Udomkavanich, *Finite Fields Appl.* 33 (2015) 232–257 (PA-1)**. T5 is therefore a *generalisation* of their count to $k$-Galois duality, arbitrary $\lambda$, arbitrary cycle length $a_t$, and $P>1$ — **not a first**. The specialisation must be exhibited and PA-1 credited. Verified: our run on their instance reproduces $2^{s+t}=2^{4}=16$ (Annex A.7).
 - **Self-orthogonal / dual-containing.** $C\subseteq C^{\perp_k}\iff h^{\#}\mid g\iff u_{m-1}+u_m\ge P$ for all $m$; $C^{\perp_k}\subseteq C\iff g\mid h^{\#}\iff u_{m-1}+u_m\le P$ for all $m$. Both are *local* conditions, so the counts are $\prod_{\text{cycles}}\operatorname{tr}(S_{\ge}^{a})$ and $\prod_{\text{cycles}}\operatorname{tr}(S_{\le}^{a})$ with $S_{\ge}[x,y]=[x+y\ge P]$, $S_{\le}[x,y]=[x+y\le P]$.
 - **Quantum consequence (free of any minimum-distance computation).** In P2 Thm 10 the entanglement is $c=nN-k-\dim_q\operatorname{hull}_k(C)$, so $c=0$ **iff** the code is dual-containing. N5 therefore yields the **exact number of entanglement-free** ($c=0$) quantum codes obtainable from $\lambda$-constacyclic codes over $A$ and over $R_{m,q}$ — a new result requiring no Magma and no minimum-distance search.
 
@@ -152,9 +194,9 @@ $$\#\{k\text{-Galois LCD } \lambda\text{-constacyclic codes of length }n\}=2^{B}
 
 This contrast is, to our knowledge, not drawn anywhere in P1/P2/P3 and is a genuine conceptual contribution.
 
-## 2.8 Novelty statement (one paragraph, for the introduction)
+## 2.8 Novelty statement (one paragraph, for the introduction) — *revised after audit*
 
-*We show that P1's hull-dimension formula, rewritten in the equivalent "min" form, decomposes the $k$-Galois hull dimension of a $\lambda$-constacyclic code into a sum of independent bounded contributions indexed by the Galois-reciprocal cycles of $x^n-\lambda$. This single observation converts every counting question about Galois hulls into the study of one two-parameter family of polynomials $W_a^{(P)}$, which we show are traces of powers of an explicit $(P+1)\times(P+1)$ transfer matrix. We obtain: a uniform enumerator for the hull-dimension distribution (solving the enumeration problem left open in P1 for $l=4$ and in P2 over $A$); the closed form $W_a^{(1)}=(1+\sqrt z)^a+(1-\sqrt z)^a$; exact counts $2^{B}$ of Galois LCD constacyclic codes and exact counts of self-orthogonal and dual-containing ones; exact moments recovering and correcting the average-dimension formulas of P3; and a central limit theorem exhibiting $\Theta(n)$ growth, contrasting with Sendrier's $O(1)$ law for unstructured linear codes.*
+*We show that the hull-dimension formula of Debnath–Prakash–Islam, rewritten in the equivalent "min" form, decomposes the $k$-Galois hull dimension of a $\lambda$-constacyclic code into a sum of independent bounded contributions indexed by the Galois-reciprocal cycles of $x^n-\lambda$. This converts every counting question about Galois hulls into the study of one two-parameter family of polynomials $W_a^{(P)}$, which we show are traces of powers of an explicit $(P+1)\times(P+1)$ transfer matrix. We obtain: a uniform enumerator for the hull-dimension distribution, valid for all $l$ (the problem left open in P1 beyond $l=4$) and over the affine algebra ring $A$ (the problem left open in P2); the closed form $W_a^{(1)}=(1+\sqrt z)^a+(1-\sqrt z)^a$; exact counts of Galois LCD, self-orthogonal and dual-containing constacyclic codes; exact moments recovering and correcting the average-dimension formulas of P3; and a central limit theorem exhibiting $\Theta(n)$ growth, contrasting with Sendrier's $O(1)$ law for unstructured linear codes. In the intersection of our scope with that of Sangwisut–Jitman–Ling–Udomkavanich (Euclidean/Hermitian hulls of cyclic and negacyclic codes), our enumerator reduces to theirs and our LCD count $2^{B}$ specialises to their factor $2^{s+t}$; our contribution there is the extension to $k$-Galois duality, arbitrary $\lambda$, cycle lengths greater than two, and repeated-root lengths.*
 
 ---
 
@@ -318,7 +360,12 @@ The grid is chosen so that **every** cell is either a source-paper example (dire
 | X12 | 16 / 81 | — | 2 / 3 | 28 / 7 | $\lambda$ units | — | — | **P3 Ex. 4.12 / 4.15** ($R_{4,16}$, $R_{3,81}$) | TBD by E1 |
 | X13 | 9 / 25 | 3,2 / 5,2 | 1 | 7 / 13 | $e_1+\omega^2e_2$ / $e_1+\omega^8e_2$ | — | — | **P2 Ex. 2 / Ex. 3** (ring $A$) | TBD by E1 |
 
-Additional sweep (X14): all $(q,n,\lambda,k)$ with $q\in\{4,8,9,16,25,27,32,49,64,81,121,125,128\}$, $n\le 60$, $\gcd(n',r)=1$, $r\mid(1+p^{e-k})$ — as many as E3 can certify (target $\ge300$ verified instances). This produces the paper's main validation table and the corpus for the CLT numerics.
+Additional sweep (X14): all $(q,n,\lambda,k)$ with $q\in\{4,8,9,16,25,27,32,49,64,81,121,125,128,256\}$, $n\le 60$, $\gcd(n',r)=1$, $r\mid(1+p^{e-k})$ — as many as E3 can certify (target $\ge300$ verified instances). This produces the paper's main validation table and the corpus for the CLT numerics.
+
+**Validation-scope amendments from the audit (both now verified, see Annex A.7):**
+- **Even characteristic is in scope.** The equal-degree-splitting defect that previously failed on $\mathbb F_{16}$ is repaired; $209$ even-characteristic factorisation instances across $q\in\{2,4,8,16,32,64,256\}$ now pass with **0 failures**. Grid rows X8 and X14-even are therefore valid.
+- **Instances with $\nu>e$ (i.e. $p^{\nu}>q$) require the $\sigma^{\nu}=\sigma^{\nu\bmod e}$ correction** in the $p^{\nu}$-th-root step $\mu^{p^{\nu}}=\lambda$. Previously these crashed (e.g. $q=3$, $n=9$). After correction, $176$ odd-characteristic instances pass with **0 failures**.
+- **Excluded from validation scope:** instances where $|\mathscr C|>10^{5}$ cannot be checked by the E3 oracle (enumerator only, flagged as such); ring instances (X11–X13) are not yet run.
 
 **Growth/asymptotics sweep (X15):** $\lambda=1$, $q\in\{9,25,27,81\}$, $n$ over all integers $\le N_{\max}$ coprime to $q$ (target $N_{\max}=2000$), computing the **exact** distribution via E2 (which is polynomial-time), and recording $\mathbb E$, $\operatorname{Var}$, standardised skewness/kurtosis, and the Kolmogorov–Smirnov distance to the fitted normal. No brute force needed here — this is the payoff of T9.
 
@@ -412,6 +459,8 @@ Only if §8.2 is resolved: minimum-distance certification, then EAQECC/LCD param
 | Hull dimension over $R_{m,q}$ | P3 Ex. 4.11–4.13, 4.15, 4.22 | single-code evaluation |
 | LCD criterion | P3 Thm 4.17 | our T5 must be *equivalent* to it (proved in §4.2 — already a cross-validation) |
 | LCD code table | P3 Table 2 (18 rows) | recomputed hull dimension $=0$ for each listed $(g_1,g_2)$ |
+| **EXTERNAL — cyclic hull enumeration (Euclidean)** | **Sangwisut–Jitman–Ling–Udomkavanich, *Finite Fields Appl.* 33 (2015) 232–257 (PA-1)** | Run our machinery at $k=0$, $\lambda=1$, $P=1$: recover their $s+t$, their $2^{s+t}$, and their stated count **"16 cyclic codes of length 21 over $\mathbb F_2$ have hull dimension 6"**. **[VERIFIED-IN-PROBE — exact agreement, Annex A.7.]** This is the single most important external benchmark: it is a different paper, a different method, a different inner product. |
+| External — Euclidean/Hermitian hull dimension tables | PA-1 Table 2 (cyclic codes over $\mathbb F_2$, $n\le40$) | reproduce the full $(n,\dim,\#\text{codes})$ triples. Target: $\ge30$ lengths. |
 
 ## 7.2 Secondary / qualitative comparisons
 
@@ -447,6 +496,8 @@ Three such candidate discrepancies have already surfaced in probing — they are
 - **L4 — CLT is conditional** unless §4.6 step 2 succeeds; otherwise it is numerical evidence.
 - **L5 — Minimum distances / record codes are conditional** on tooling (Magma unavailable). **Mitigation:** the headline application (§8.1.8) needs *no* minimum-distance computation. Any table of $[n,k,d]$ parameters is only reported where $d$ is certified by exhaustive search or by an open-source CAS; otherwise omitted.
 - **L6 — Palindromicity / unimodality are NOT claimed**; probe data shows $W_a^{(P)}$ is not palindromic in general.
+- **L7 — Novelty boundary (added by audit).** The paper is **not** the first to enumerate codes by hull dimension. Sangwisut–Jitman–Ling–Udomkavanich (*Finite Fields Appl.* 33 (2015) 232–257) enumerate cyclic/negacyclic codes by Euclidean/Hermitian hull dimension using coefficient extraction from a generating function, and their factor $2^{s+t}$ equals our $2^{B}$ in the overlap of the two scopes. Our contributions in that intersection are **extension and unification only**; the uncontested novelties are the transfer-matrix/trace structure, the cycle polynomials and their closed form, $k$-Galois duality with cycle lengths $>2$, the moments, the limit law, and the ring enumerators.
+- **L8 — Validation is computational, not CAS-certified at scale.** The released validator is a self-written $\mathbb F_{p^e}$/factorisation stack (Magma is unavailable). It reproduces four published factorisations from P1/P3 exactly, one published enumeration count from PA-1 exactly, and passes $385$ internal factorisation instances; but it is not a substitute for a certified CAS in the final artifact. Anything that will appear as a *table* in the paper should ideally be re-checked in SageMath before submission (OPEN-02).
 
 ---
 
@@ -472,7 +523,7 @@ Fit: this is **structural enumerative coding theory over finite fields/rings** �
 
 **Title (working):** *The $k$-Galois Hull Enumerator of Constacyclic Codes: Cyclic Transfer Matrices, Exact Counts, and Limit Laws*
 
-1. **Introduction** — hulls, applications (permutation equivalence/automorphism complexity, EAQECC, LCD/side-channel); the three-paper lineage; the two verbatim open problems (P1 Conclusion; P2 Conclusion); the one-paragraph novelty statement (§2.8); organisation. *No results claimed beyond those proved later.*
+1. **Introduction** — hulls, applications (permutation equivalence/automorphism complexity, EAQECC, LCD/side-channel); the three-paper lineage; the two verbatim open problems (P1 Conclusion; P2 Conclusion); **relation to prior art — Sangwisut–Jitman–Ling–Udomkavanich (2015) stated up front, with the explicit acknowledgement that our enumerator and LCD count reduce to theirs in the Euclidean/Hermitian cyclic case**; the one-paragraph novelty statement (§2.8); organisation. *No results claimed beyond those proved later.*
 2. **Preliminaries** — constacyclic codes over $\mathbb F_q$; $k$-Galois inner product, dual, hull; $f^{\#}$; the factorisation of $x^n-\lambda$ (P1 (4)/(5)) with full notation $A,B_i,D_t,\beta_t,\Delta_t$; the rings $A$ and $R_{m,q}$. *(Compulsory: every item cited to P1/P2/P3, nothing imported from outside without citation.)*
 3. **Cycle decomposition of the Galois hull** — Defs 1–2; Lemma (min-form); **T1**; the index set $\mathfrak C$ and the identities $|\mathfrak C|=B$, $\sum a(\mathfrak c)=\#$irreducible factors.
 4. **The hull enumerator** — Def 4; **T2**; corollaries: total count, LCD count (**T5**), support $\Rightarrow$ **P2 Cor 3.5**.
@@ -500,12 +551,15 @@ Fit: this is **structural enumerative coding theory over finite fields/rings** �
 | **OPEN-03** | Live access to **Grassl's codetables.de** | Blocks MDS/Optimal labels in CP8 | Verify access; else compare only to Singleton/Griesmer-type bounds and to P2 Table 1 |
 | **OPEN-05** | **No code, scripts, notebooks, datasets or results files in the ZIP** | Nothing to reuse; everything built from scratch | Full implementation under `galois_hull_enum/` (§6.1) |
 | **OPEN-06** | **No project structure / README / build spec in the ZIP** (repo has only a 29-byte `README.md`) | Conventions unknown | Adopt standard Python layout; confirm with user |
-| **OPEN-07** | **No DOI/journal metadata for P2** (arXiv preprint, "submitted to Discrete Mathematics") — published status unknown | Citation form may change | Verify at submission; cite as arXiv:2412.08512v1 meanwhile |
+| ~~**OPEN-07**~~ | **No DOI/journal metadata for P2** | Citation form | **RESOLVED by audit.** P2 is published: *Discrete Mathematics* **349** (2026), 18 pp., `doi:10.1016/j.disc.2025.114750`. P3: *Adv. Math. Commun.* **19** (2025) 1569–1604. |
 | **OPEN-08** | **No bibliography file**; all references are free text inside the PDFs | Risk of citation error | Build `references.bib` **only** from the printed reference lists of P1/P2/P3; verify each entry |
 | **OPEN-09** | **No licence / reuse terms** for any source artefact | — | Do not redistribute the PDFs extracted text beyond private use |
 | **OPEN-10** | **No author/affiliation/ORCID metadata block**, no target-venue statement from the user | Journal choice is inferred (§9) | Confirm with user before submission |
 | **OPEN-11** | External literature **not** in the ZIP (Sendrier, Skersys, Cao, Guenda et al., Grassl) is known only through the sources' citations | Cannot independently verify their statements | Cite as "cited in [P1/P2/P3]"; verify before making any quantitative claim about them |
 | **OPEN-12** | No prior **numerical tables** from P1/P2/P3 in machine-readable form | Comparison is by manual transcription | Transcribe with an independent second check; log any transcription doubt |
+| **OPEN-14** | **PA-2 (Debnath–Islam–Yadav–Prakash, *AMC* 2026, `10.3934/amc.2025054`) full text is paywalled.** Only the abstract and the Thm 3.9 / Thm 3.20 summary table were reachable. | **Cannot confirm whether it counts** constacyclic codes of Galois hull dimension 1 and 2, or only gives existence conditions. If it *counts*, our T4-corollary (explicit $N(0),N(1),N(2)$) partially overlaps and must be re-scoped. | Obtain the full text (institutional access / author preprint) **before** finalising §2.0 and before writing §5. Do not assume complementarity. |
+| **OPEN-15** | **PA-1 (Sangwisut et al. 2015) full text not obtained** — only the abstract, several quoted theorems, and Table 1/Table 2 fragments via search snippets. | The precise definition of their set $h(\ell)$ and of their generating function is inferred, not read. Our "specialises exactly to $2^{s+t}$" claim is corroborated by a numerical match on their own worked instance but not by a line-by-line reading. | Obtain the full text before writing §2.0 / §7; verify the specialisation symbolically, not only numerically. |
+| **OPEN-16** | No search of **non-English** or **thesis** literature; no Google Scholar cited-by crawl of PA-1 | Residual risk of a missed overlap | Run a cited-by crawl of PA-1 and of P1 before submission |
 
 ---
 
@@ -517,7 +571,8 @@ Fit: this is **structural enumerative coding theory over finite fields/rings** �
 |------|-------|-------------------------|
 | R-N1. The min-form / additive splitting is "obvious once seen" and a referee may call it a corollary of P1 Thm 3 | **Medium** | Genuine risk. **Mitigation:** the paper's novelty is not the identity per se but that it is *the* organising principle that yields T2–T9, two of which solve explicitly stated open problems (P1 Conclusion, P2 Conclusion). The introduction must concede the identity is elementary and pivot immediately to its consequences. The independent cross-validation against P3 Thm 4.17 (§4.2) should be foregrounded as evidence the framework is *right*, not merely *new*. |
 | R-N2. The transfer-matrix step is a standard trick | **Medium-Low** | Standard in combinatorics, **unused** in this literature (P1's alternative is a 14-set inclusion–exclusion covering only $l=4$). Frame as "importing the right tool into a field that had been using the wrong one", and quantify the gain (a one-line product vs 14 sub-formulas $\times$ 7 intervals $\times$ 2 parities). |
-| R-N3. A prior paper already has the enumerator | **Low-Medium** | Not present in P1/P2/P3 or in their bibliographies as printed. **Mandatory action before writing:** a focused literature check on "hull dimension distribution / enumeration of constacyclic codes / generating function of hulls". **[OPEN-13]** — cannot be completed from the ZIP alone. If found, the contribution must be re-scoped to the ring extensions + CLT + LCD/SO/DC counts. |
+| ~~R-N3. A prior paper already has the enumerator~~ | **RESOLVED — PARTIALLY MATERIALISED** | The audit was run (§2.0). **No** transfer-matrix/trace/cycle-polynomial formulation exists anywhere; **no** $k$-Galois or general-$\lambda$ enumeration exists; the ring enumeration of P2 is still open. **But** PA-1 (Sangwisut et al. 2015) *does* enumerate Euclidean/Hermitian cyclic/negacyclic hulls by coefficient extraction, and its $2^{s+t}$ equals our $2^{B}$ in the overlap. **Disposition:** novelty claim narrowed (§2.0.3); T5 and T2 re-labelled as *generalisations*; PA-1 added as a mandatory citation and as an external benchmark. **[OPEN-15/OPEN-16]** remain before this risk can be closed completely. |
+| **R-N6 (new).** PA-2 (*AMC* 2026, small Galois hull dimensions) may already count codes of hull dimension 1 and 2 | **Medium** | Full text paywalled (OPEN-14). If it counts, our explicit $N(1),N(2)$ corollaries overlap and the small-dimension material must be repositioned as a unified/general treatment rather than a new count. **Action:** obtain full text before §5 is finalised. |
 | R-N4. Incremental-perception: "just counting" | **Medium** | Countered by: the CLT (conceptual, §2.7), the $2^B$ LCD count, the exact dual-containing count with its $c=0$ quantum corollary, and the polynomial-time algorithm. |
 | R-N5. The CLT fails to be provable unconditionally | **Medium** | Pre-agreed fallback ladder (§4.6): conditional theorem $\to$ variance lower bound on one family $\to$ numerical section. The paper survives on T1–T7, T9 alone. |
 
@@ -526,7 +581,7 @@ Fit: this is **structural enumerative coding theory over finite fields/rings** �
 | Risk | Level | Assessment & mitigation |
 |------|-------|-------------------------|
 | R-F1. Cycle data $(A,B_i,D_t,\beta_t)$ hard to compute | **Low** | Sidestepped entirely: E1 derives cycles **directly** from the factorisation (iterate $\#$), never constructing $A/B_i/D_t$. Proven in the probe for $q\le81$, $n\le85$. |
-| R-F2. Factorisation over $\mathbb F_{p^e}$ without Magma | **Low-Medium** | A working prototype exists (Annex A.1) and reproduces four published factorisations exactly. Known gap: the even-$q$ equal-degree-splitting branch failed on some $\mathbb F_{16}$ inputs during probing (`EDF failed` on $n=7,9,21,25,\dots$). **Action:** replace the ad-hoc even-characteristic trace loop by a correct Cantor–Zassenhaus-for-even-$q$ (or by trial division for small $n$). Must be fixed before CP1 is signed off. |
+| ~~R-F2. Factorisation over $\mathbb F_{p^e}$ without Magma~~ | **RESOLVED (both defects repaired & verified)** | Two defects, both now fixed: **(a) even characteristic** — the trace-map equal-degree splitting omitted the $i=0$ term $h^{2^{0}}$ of the absolute trace $T(h)=\sum_{i=0}^{ed-1}h^{2^{i}}$; repaired and verified on **209** instances, $q\in\{2,4,8,16,32,64,256\}$, **0 failures**. **(b) $\nu>e$** — $x^{n}-\lambda$ factorisation computed $\mu=\lambda^{p^{e-\nu}}$, giving a fractional exponent when $\nu>e$; corrected to $\sigma^{\nu}=\sigma^{\nu\bmod e}$, verified on **176** odd-characteristic instances, **0 failures**. Note a *third* bug was in my own validator (irreducibility test compared the remainder against $x$ instead of $x\bmod f$, which breaks for $\deg f=1$) — **not** a factoriser defect. |
 | R-F3. Brute-force oracle too slow | **Low** | $|\mathscr C|=(P+1)^{\sum a(\mathfrak c)}$; the plan only brute-forces up to $10^{5}$ ($10^{7}$ with NumPy). Larger instances are covered by E2 (polynomial-time) alone, so the *oracle* is not on the critical path beyond CP3. |
 | R-F4. Minimum distances unavailable (no Magma) | **Medium** | **Architectural mitigation already in place:** the headline application (§8.1.8) needs no $d$. Code tables are quarantined in CP8 and reported only with certified $d$. |
 | R-F5. CLT arithmetic control | **High** | Highest-risk item. Fallback ladder §4.6; the reusable machinery is P3 §3.2 (Thm 3.12 / Cor 3.13 for $\Delta_1\neq0$), which is directly applicable in the $\lambda=1$, $P=1$ regime. |
@@ -536,11 +591,15 @@ Fit: this is **structural enumerative coding theory over finite fields/rings** �
 
 ## 12.3 Overall verdict
 
-**GO, with two gating conditions.**
-1. **Gate A (before any writing):** run the OPEN-13 prior-art check on hull-dimension enumeration/generating functions. If R-N3 materialises, re-scope.
-2. **Gate B (before CP1 sign-off):** fix the even-characteristic equal-degree factorisation (R-F2).
+**GO on feasibility; HOLD on finalisation.** *(Amended after the audit round.)*
 
-Feasibility is **high**: the decisive end-to-end validation (enumerator vs independent polynomial-level brute force) has already been executed successfully on 7 instances including the $l=4$ regime — the technical heart of the plan is de-risked, in the sandbox, with open-source tooling only. The mathematical heart (T1–T5) is elementary and already verified. The only genuinely open mathematics is T8, and it has a pre-agreed fallback.
+- **Gate A (prior art) — RUN, partially cleared.** No blocking prior art for the transfer-matrix/$k$-Galois/ring material. **PA-1 (Sangwisut et al. 2015)** overlaps on the Euclidean/Hermitian cyclic case; novelty claim narrowed (§2.0.3) and PA-1 adopted as an external benchmark. Residual: OPEN-14, OPEN-15, OPEN-16.
+- **Gate B (even characteristic) — CLEARED.** Repaired and verified on 385 instances, 0 failures.
+- **Gate C (P1 Example 6) — CLEARED.** Discrepancy confirmed genuine; the correct value is $5$.
+
+Feasibility is **high**: the decisive end-to-end validation (enumerator vs independent polynomial-level brute force) has been executed successfully on **13** instances including the $l=4$ regime, **even characteristic**, and a $32\,768$-code instance — the technical heart of the plan is de-risked, in the sandbox, with open-source tooling only. It also reproduces an **external published enumeration count** (PA-1). The mathematical core (T1–T5) is elementary and verified. The only genuinely open mathematics is T8, which has a pre-agreed fallback ladder.
+
+The remaining blockers are **literature access, not mathematics or code**: OPEN-14 and OPEN-15 must be closed before the novelty and contribution wording is frozen and before any manuscript writing. See the FINAL / NOT FINAL decision block at the end of this document.
 
 ---
 ---
@@ -601,7 +660,12 @@ Note the last three rows are in the **$l=4$ regime** (genuine 4-cycles) — prec
 
 > Each flag is a **question raised by the probe**, recorded per the §7.3 protocol. None is asserted as an error in the literature until steps 1–4 of the protocol are completed.
 
-- **F1 — P1 Example 6.** For $\mathbb F_{27}$, $n=15$, $\lambda=\alpha^{13}$, $k=2$, $g=(x+1)^2(x^4+2x^3+x^2+2x+1)$: P1 prints "the dimension of the 2-Galois hull of C is **2**". Our computation (both by cycle sum *and* by the independent polynomial oracle) gives the attainable dimension set $\{0,1,4,5\}$ and the value **5** for this code; $2$ is **not attainable** by any code in this instance. Note P1's *own* Thm 3 formula gives $1\cdot b_{1,2}+4\cdot b_{1,10}=1\cdot1+4\cdot1=5$, i.e. P1's formula and P1's example disagree with each other. **Settled by:** CP3, instance X3, with both pipelines. If confirmed: a Remark correcting the example.
+- ~~**F1 — P1 Example 6**~~ — **RESOLVED BY THE AUDIT: the discrepancy is GENUINE.** For $\mathbb F_{27}$, $n=15$, $\lambda=\alpha^{13}$, $k=2$, $g=(x+1)^2 Q$ with $Q=x^4+2x^3+x^2+2x+1$: P1 prints "the dimension of the 2-Galois hull of C is **2**". The correct value is **5**. Established by **four** independent routes (audit round §C):
+  1. **Linear algebra** (new, structurally independent of everything else): generator matrices of $C$ and $C^{\perp_k}$, $\dim(C\cap C^{\perp_k})=\dim C+\dim C^{\perp_k}-\operatorname{rank}[G_C;G_{C^{\perp_k}}]=9+6-10=\mathbf{5}$.
+  2. **Polynomial oracle**: $n-\deg\operatorname{lcm}(g,h^{\#})=15-10=\mathbf{5}$.
+  3. **Cycle sum (T1)**: $1\cdot\min\{2,3-2\}+4\cdot\min\{1,3-1\}=1+4=\mathbf{5}$.
+  4. **Exhaustive enumeration** of all $16$ codes in the instance: the attainable hull dimensions are exactly $\{0,1,4,5\}$ — **$2$ is not attainable by any code**.
+  Additionally: P1's *own* Theorem 3 gives $1\cdot b_{1,2}+4\cdot b_{1,10}=1+4=5$, so P1's formula and P1's example contradict each other; and the published **Correction** to P1 (`10.1007/s12095-022-00602-6`) does **not** touch Example 6. **Disposition:** this may now be asserted, and should appear as a Remark in the new paper, with the certificate reproduced.
 - **F2 — P3 Lemma 3.2.** Two sub-flags, both from *elementary* direct enumeration (no algebra system involved):
   - (a) The branch labelled "for $u\neq v$", $\frac{p^{\nu}(4p^{\nu}+5)}{6(p^{\nu}+1)}$, evaluates to the **unconditional** mean $\mathbb E_{u,v\ \mathrm{iid}}[\max\{u,P-v\}]$. For $P=3$: the formula gives $34/16=2.125$, while the conditional mean over $\{(u,v):u\neq v\}$ is $24/12=2.000$. (Derivation: $\sum_{x,y}\max\{y,P-x\}=\tfrac{P(P+1)^2}{2}+\tfrac{P(P+1)(P+2)}{6}$, giving mean $\tfrac{P(4P+5)}{6(P+1)}$; checked $P=2\Rightarrow13/9$, $P=3\Rightarrow34/16$.)
   - (b) The branch labelled "for $u=v$", $\frac{3P+1}{4}-\frac{\delta_P P}{4(P+1)}$, matches direct enumeration for odd $P$ ($P=3\Rightarrow 10/4=2.5$ ✔; $P=1\Rightarrow1$ ✔) but for $P=2$ gives $19/12$ while direct enumeration gives $5/3=20/12$. A corrected unified form is $P-\frac{1}{P+1}\sum_{u=0}^{P}\min\{u,P-u\}$, i.e. $\frac{3P+1}{4}$ ($P$ odd) and $\frac{P(3P+4)}{4(P+1)}$ ($P$ even).
@@ -613,5 +677,78 @@ Note the last three rows are in the **$l=4$ regime** (genuine 4-cycles) — prec
 - No ring ($A$ or $R_{m,q}$) instance was run — CP6 is untested.
 - No minimum distance was computed anywhere (no Magma/Sage); CP8 is untested.
 - No asymptotics/limit law was run (X15 not executed).
-- No prior-art search was performed (OPEN-13).
-- The even-characteristic factorisation branch is **known-defective** (R-F2).
+- No cited-by crawl and no non-English/thesis search (OPEN-16).
+
+## A.7 Audit-round results (gate evidence) — all **[VERIFIED-IN-PROBE]**
+
+### A.7.1 Gate B — even-characteristic factorisation: REPAIRED
+
+| Item | Result |
+|---|---|
+| Root cause | The even-characteristic equal-degree splitting computed the absolute trace $\mathbb F_{2^{ed}}\!\to\!\mathbb F_2$ as $\sum_{i=1}^{ed-1}h^{2^{i}}$ — **omitting the $i=0$ term $h^{2^{0}}=h$**. Hence $\gcd(t,f)$ was taken with the wrong polynomial and no non-trivial split occurred. |
+| Affected formula | `equal_degree_factor`, even-$q$ branch. **No theorem of the Blueprint depends on it** — it is tooling (Algorithm E1), not mathematics. |
+| Repair | $T(h)=\sum_{i=0}^{ed-1}h^{2^{i}}\pmod f$ (initialise $t$ to $h$, then add $ed-1$ squarings). |
+| Verification | **209** instances, $q\in\{2,4,8,16,32,64,256\}$, $n\in\{3,5,7,9,15,17,21,25,31,35\}$ — product $\prod f_i^{m_i}=x^n-\lambda$ holds and **every** factor passes an independent irreducibility test. **0 failures.** |
+| Secondary bug ($\nu>e$) | $\mu=\lambda^{p^{e-\nu}}$ gave a fractional exponent when $\nu>e$ (e.g. $q=3$, $n=9$). Corrected to $\sigma^{\nu}=\sigma^{\nu\bmod e}$. **176** odd-characteristic instances, **0 failures.** |
+| Third bug (validator only) | The irreducibility test compared $\operatorname{powmod}(x,q^m,f)$ against $x$ instead of $x\bmod f$; differs for $\deg f=1$. Fixed. **Not** a factoriser defect. |
+| End-to-end in even characteristic | Enumerator $\equiv$ brute force on $q=16$ ($n=5,15,17$), $q=8$ ($n=7$), $q=4$ ($n=15$) — including a $32\,768$-code instance. $\#\mathrm{LCD}=2^{B}$ in all. |
+
+### A.7.2 Gate C — P1 Example 6: RESOLVED, discrepancy is genuine
+
+| Route | Value |
+|---|---|
+| P1 printed | $2$ |
+| P1's own Theorem 3 | $1\cdot b_{1,2}+4\cdot b_{1,10}=5$ |
+| Linear algebra: $\dim C+\dim C^{\perp_k}-\operatorname{rank}[G_C;G_{C^{\perp_k}}]=9+6-10$ | $\mathbf{5}$ |
+| $n-\deg\operatorname{lcm}(g,h^{\#})=15-10$ | $\mathbf{5}$ |
+| Cycle sum T1 | $\mathbf{5}$ |
+| Exhaustive enumeration of the instance | attainable set $=\{0,1,4,5\}$; $2$ unattainable |
+| Published Correction to P1 (`10.1007/s12095-022-00602-6`) | does **not** mention Example 6 |
+
+Also verified: $\lambda=\alpha^{13}=2=-1$ in $\mathbb F_{27}$ (so this is the negacyclic case), and $x^{15}+1=(x+1)^3(x^4+2x^3+x^2+2x+1)^3$ reproduces P1's printed factorisation **exactly**.
+
+### A.7.3 New external benchmark — Sangwisut et al. (2015), PA-1
+
+Instance: $q=2$, $n=21$, $\lambda=1$, $k=0$ (Euclidean), $P=1$.
+
+| Quantity | PA-1 (published) | Our computation |
+|---|---|---|
+| irreducible factors of $x^{21}-1$ | — | degrees $1,2,3,3,6,6$ (6 factors) |
+| cycles | — | $(a,d)=(1,1),(1,2),(2,3),(2,6)$ |
+| $s$ (length-1 cycles) / $t$ (length-2 cycles) | $s+t=4$ | $s=2$, $t=2$, $B=4$ ✔ |
+| $\#\mathrm{LCD}=2^{s+t}$ | $2^{4}=16$ | $16$ ✔ |
+| $\#\{C:\dim\mathrm{Hull}=6\}$ | **$16$** | **$16$** ✔ |
+| complete distribution | — | $\{0{:}16,\ 3{:}16,\ 6{:}16,\ 9{:}16\}$ over $64$ codes; brute force $\equiv$ enumerator ✔ |
+
+This is the strongest single piece of evidence in the Blueprint: our machinery, built for $k$-Galois hulls, reproduces a **published 2015 enumeration count obtained by a different method and a different inner product**.
+
+---
+
+# FINAL / NOT FINAL DECISION
+
+## **DECISION: NOT FINAL**
+
+A Blueprint is FINAL only if no material novelty, mathematical-validity, or validation issue remains unresolved. Two material issues remain.
+
+### Resolved in this round (no longer blocking)
+1. **Even-characteristic defect (Gate B)** — root cause identified, repaired with a verified derivation, and validated on 209 + 176 = 385 instances with 0 failures. Even characteristic is back in scope.
+2. **P1 Example 6 (Gate C)** — resolved against the original PDF mathematics, the published Correction, and four independent computational routes. The printed value $2$ is wrong; the correct value is $5$. Established, not merely flagged.
+3. **Prior art (Gate A)** — searched; **PA-1 (Sangwisut et al. 2015)** found to overlap materially. Novelty claim narrowed accordingly and the Blueprint rewritten. No transfer-matrix/trace/$k$-Galois/ring enumeration prior art found.
+4. **P2 / P3 publication status** — resolved (OPEN-07 closed).
+
+### Still OPEN and material (blocking FINAL)
+| # | Issue | Why material | Resolution |
+|---|-------|--------------|------------|
+| **OPEN-14** | PA-2 (*AMC* 2026, small Galois hull dimensions) full text paywalled | Directly adjacent to our explicit small-dimension counts $N(1),N(2)$. If it *counts* rather than merely characterises existence, our contribution statement for §8.1 item 4 must be re-scoped. | Obtain full text; then either close or re-scope. |
+| **OPEN-15** | PA-1 (Sangwisut et al. 2015) full text not read | Our central disclosure — "our $2^{B}$ specialises exactly to their $2^{s+t}$" — is currently corroborated **numerically** on their own worked instance but not verified line-by-line against their definitions of $h(\ell)$ and their generating function. A mis-stated specialisation in the paper would be a correctness and a fairness failure. | Obtain full text; verify the specialisation symbolically. |
+
+### Required before FINAL (in order)
+1. Obtain and read **PA-2 full text** (OPEN-14) → confirm or re-scope the small-dimension contribution.
+2. Obtain and read **PA-1 full text** (OPEN-15) → verify the specialisation claim symbolically; draft the citation and the specialisation subsection.
+3. Run **OPEN-16** (cited-by crawl of PA-1 and P1) to close residual novelty risk.
+4. Re-issue this Blueprint as **v2 / FINAL** with the decision block flipped.
+
+### What is safe to do now (non-blocking)
+Nothing in Phases CP1–CP8 is gated by OPEN-14/15/16 **except** the final wording of the novelty and contribution claims. The mathematics (T1–T5, T7, T9) is verified and the validation tooling is repaired. If the user wishes, CP1 (kernel hardening + the 385-instance regression suite) can be started without waiting — but **manuscript writing must not begin** until OPEN-14 and OPEN-15 are closed.
+
+**Summary of Blueprint status:** mathematically sound and computationally corroborated; novelty real but narrower than first claimed; two literature-access items block FINAL.
