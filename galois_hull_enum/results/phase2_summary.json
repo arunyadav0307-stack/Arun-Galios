@@ -1,0 +1,460 @@
+{
+  "phase": "P2",
+  "blueprint_commit": "076f9109142f7965242c365aa90f664e4acfb56b",
+  "plan_commit": "96c78859cf2ec77763ef6bf1adc8e5f11260dcec",
+  "p0_commit": "076f97770c802d9af205bea2224ed44eb4b0c043",
+  "p1_commit": "7d467652718eb78b33120c37650ccdbd96e22e90",
+  "elapsed_seconds": 4.11,
+  "checks_total": 32,
+  "checks_passed": 32,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "T3 trace == brute-force local-state enumeration (24 (P,a) pairs)",
+      "pass": true,
+      "detail": "24/24"
+    },
+    {
+      "name": "deg_t det(I - t T_P(z)) = P+1  for P = 0..5",
+      "pass": true,
+      "detail": "{0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 6}"
+    },
+    {
+      "name": "det(I - t T_P(1)) = 1 - (P+1) t   (T_P(1) = J_{P+1})",
+      "pass": true,
+      "detail": "P = 0..5"
+    },
+    {
+      "name": "W_a^{(P)} satisfies an order-(P+1) recurrence in a over Z[z] (Cayley-Hamilton on T_P)",
+      "pass": true,
+      "detail": "P = 0..5"
+    },
+    {
+      "name": "deg W_a^{(P)} = floor(aP/2)",
+      "pass": true,
+      "detail": "21/21"
+    },
+    {
+      "name": "W_a^{(P)}(1) = (P+1)^a  (total word count)",
+      "pass": true,
+      "detail": "6/6"
+    },
+    {
+      "name": "c_{a,0}^{(P)} = 2 with extremal words 0^a and P^a",
+      "pass": true,
+      "detail": "13/13"
+    },
+    {
+      "name": "closed form == trace for a = 1..14 at P = 1",
+      "pass": true,
+      "detail": "14/14"
+    },
+    {
+      "name": "coefficient lists match the frozen Blueprint section 2.4 verbatim (a = 1..6)",
+      "pass": true,
+      "detail": "6/6"
+    },
+    {
+      "name": "restricted trace == brute force over words with no cyclically adjacent equal exponents (8 pairs)",
+      "pass": true,
+      "detail": "8/8"
+    },
+    {
+      "name": "tilde W_1^{(P)} := W_1^{(P)} (Definition 5 special case; tr(tilde T_P) = 0)",
+      "pass": true,
+      "detail": "10/10"
+    },
+    {
+      "name": "T1 verified on 126 (instance, word) checks",
+      "pass": true,
+      "detail": "126/126 agree, 14 skipped (hypothesis (H) fails)"
+    },
+    {
+      "name": "a >= 3: trace == brute-force word enumeration (6 (P,a) pairs)",
+      "pass": true,
+      "detail": "6/6"
+    },
+    {
+      "name": "a real instance with a cycle of length >= 3 was constructed from the P1 core",
+      "pass": true,
+      "detail": "F_81 n=5 k=3 lambda=1, shapes=[(1, 1), (4, 1)]"
+    },
+    {
+      "name": "W_4^{(P=1)}(z) by local-state brute force == trace == closed form",
+      "pass": true,
+      "detail": "W = 2z^2+12z+2"
+    },
+    {
+      "name": "T1 verified on the real 4-cycle instance (F_81, n=5, k=3, lambda=1)",
+      "pass": true,
+      "detail": "7/7 words"
+    },
+    {
+      "name": "local weight computed by the cyclic formula matches the term-by-term evaluation on one a=4 word",
+      "pass": true,
+      "detail": "u=(1, 0, 1, 0), w=2"
+    },
+    {
+      "name": "a = 3 with P = 2 > 1 (repeated roots): brute force == trace",
+      "pass": true,
+      "detail": "W = z^3+18z^2+6z+2"
+    },
+    {
+      "name": "W_1^{(P)} == PA-1's per-cycle object sum_b ||{b,P-b}|| z^b, P = 1..7",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "W_2^{(P)} == PA-1's per-cycle object sum_a 2^{1-floor(a/P)}(a+1) z^a, P = 1..7",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pointwise identity P - max{u_m, P-u_{m-1}} = min{P-u_m, u_{m-1}} = phi(u_{m-1},u_m)  (BLUEPRINT section 4.1, step 1)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "P = 1: W_1^{(1)} = 2 and W_2^{(1)} = 2(1+z), so N(y) = 2^B prod_{a(c)=2} (1 + y^{d(c)})",
+      "pass": true,
+      "detail": "W_1=2, W_2=2z+2"
+    },
+    {
+      "name": "for k = 0 every cycle has length <= 2 (PA-1's scope: f -> f* is an involution)",
+      "pass": true,
+      "detail": "8/8 instances"
+    },
+    {
+      "name": "for k = 3 (k not in {0, e/2}) cycle lengths >= 3 occur",
+      "pass": true,
+      "detail": "lengths seen = [1, 4]"
+    },
+    {
+      "name": "all edge cases satisfy trace == brute force, W(1)=(P+1)^a, c_0=2, deg=floor(aP/2)",
+      "pass": true,
+      "detail": "12/12"
+    },
+    {
+      "name": "P = 0 (degenerate, single state) is handled without error",
+      "pass": true,
+      "detail": "W_3^0 = 1"
+    },
+    {
+      "name": "sympy confirms tr(T_P(z)^a) for 16 (P,a) pairs over Q[z]",
+      "pass": true,
+      "detail": "16/16"
+    },
+    {
+      "name": "sympy confirms W_a^{(1)} = (1+sqrt z)^a + (1-sqrt z)^a, a = 1..10",
+      "pass": true,
+      "detail": "10/10"
+    },
+    {
+      "name": "sympy confirms G_P(z,t) = tr(tT_P(I-tT_P)^{-1}) = sum_{a=1..7} W_a t^a for P = 1,2,3",
+      "pass": true,
+      "detail": "3/3"
+    },
+    {
+      "name": "sympy confirms deg_t det(I - t T_P(z)) = P+1 for P = 1..5",
+      "pass": true,
+      "detail": "5/5"
+    },
+    {
+      "name": "sympy confirms tr(tilde T_P^a) for a >= 2 (Definition 5)",
+      "pass": true,
+      "detail": "5/5"
+    },
+    {
+      "name": "sympy confirms the Cayley-Hamilton recurrence for P = 1,2,3",
+      "pass": true,
+      "detail": "3/3"
+    }
+  ],
+  "T1": {
+    "total": 126,
+    "agreed": 126,
+    "skipped": 14
+  },
+  "a_ge_3": {
+    "local_states_P1_a4": [
+      {
+        "u": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "w": 0
+      },
+      {
+        "u": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "w": 1
+      },
+      {
+        "u": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "w": 1
+      },
+      {
+        "u": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "w": 1
+      },
+      {
+        "u": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "w": 1
+      },
+      {
+        "u": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "w": 2
+      },
+      {
+        "u": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "w": 1
+      },
+      {
+        "u": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "w": 1
+      },
+      {
+        "u": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "w": 1
+      },
+      {
+        "u": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "w": 1
+      },
+      {
+        "u": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "w": 2
+      },
+      {
+        "u": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "w": 1
+      },
+      {
+        "u": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "w": 1
+      },
+      {
+        "u": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "w": 1
+      },
+      {
+        "u": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "w": 1
+      },
+      {
+        "u": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "w": 0
+      }
+    ],
+    "histogram_P1_a4": {
+      "0": 2,
+      "1": 12,
+      "2": 2
+    },
+    "T1_on_4cycle_instance": [
+      {
+        "instance": "F_81 n=5 k=3 lambda=1",
+        "words": [
+          [
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "lhs_polynomial_route": 0,
+        "rhs_local_weight_route": 0,
+        "agree": true
+      },
+      {
+        "instance": "F_81 n=5 k=3 lambda=1",
+        "words": [
+          [
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "lhs_polynomial_route": 0,
+        "rhs_local_weight_route": 0,
+        "agree": true
+      },
+      {
+        "instance": "F_81 n=5 k=3 lambda=1",
+        "words": [
+          [
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "lhs_polynomial_route": 2,
+        "rhs_local_weight_route": 2,
+        "agree": true
+      },
+      {
+        "instance": "F_81 n=5 k=3 lambda=1",
+        "words": [
+          [
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "lhs_polynomial_route": 0,
+        "rhs_local_weight_route": 0,
+        "agree": true
+      },
+      {
+        "instance": "F_81 n=5 k=3 lambda=1",
+        "words": [
+          [
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ]
+        ],
+        "lhs_polynomial_route": 1,
+        "rhs_local_weight_route": 1,
+        "agree": true
+      },
+      {
+        "instance": "F_81 n=5 k=3 lambda=1",
+        "words": [
+          [
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ]
+        ],
+        "lhs_polynomial_route": 1,
+        "rhs_local_weight_route": 1,
+        "agree": true
+      },
+      {
+        "instance": "F_81 n=5 k=3 lambda=1",
+        "words": [
+          [
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ]
+        ],
+        "lhs_polynomial_route": 1,
+        "rhs_local_weight_route": 1,
+        "agree": true
+      }
+    ],
+    "W_P2_a3": "z^3+18z^2+6z+2"
+  },
+  "PA1_boundary": {
+    "cycle_lengths_k3_F81": [
+      1,
+      4
+    ]
+  },
+  "verdict": "PASS"
+}

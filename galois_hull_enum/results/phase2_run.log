@@ -1,0 +1,82 @@
+
+============================================================================
+T3  W_a^{(P)}(z) = tr(T_P(z)^a)  --  brute force over local states vs trace
+============================================================================
+  [PASS] T3 trace == brute-force local-state enumeration (24 (P,a) pairs)   24/24
+
+============================================================================
+T3 corollaries
+============================================================================
+  [PASS] deg_t det(I - t T_P(z)) = P+1  for P = 0..5   {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 6}
+  [PASS] det(I - t T_P(1)) = 1 - (P+1) t   (T_P(1) = J_{P+1})   P = 0..5
+  [PASS] W_a^{(P)} satisfies an order-(P+1) recurrence in a over Z[z] (Cayley-Hamilton on T_P)   P = 0..5
+  [PASS] deg W_a^{(P)} = floor(aP/2)   21/21
+  [PASS] W_a^{(P)}(1) = (P+1)^a  (total word count)   6/6
+
+============================================================================
+T5  c_{a,0}^{(P)} = 2, extremal words 0^a and P^a
+============================================================================
+  [PASS] c_{a,0}^{(P)} = 2 with extremal words 0^a and P^a   13/13
+
+============================================================================
+T4  W_a^{(1)}(z) = (1+sqrt z)^a + (1-sqrt z)^a = 2 sum_i C(a,2i) z^i
+============================================================================
+  [PASS] closed form == trace for a = 1..14 at P = 1   14/14
+  [PASS] coefficient lists match the frozen Blueprint section 2.4 verbatim (a = 1..6)   6/6
+
+============================================================================
+Definition 5  tilde W_a^{(P)} = tr(tilde T_P^a), tilde T_P = T_P o (J-I)
+============================================================================
+  [PASS] restricted trace == brute force over words with no cyclically adjacent equal exponents (8 pairs)   8/8
+  [PASS] tilde W_1^{(P)} := W_1^{(P)} (Definition 5 special case; tr(tilde T_P) = 0)   10/10
+
+============================================================================
+T1  dim hull_k(C) = sum_c ord_j(q) w_a^{(P)}(u^{(c)})   (polynomial route vs local-weight route)
+============================================================================
+  [PASS] T1 verified on 126 (instance, word) checks   126/126 agree, 14 skipped (hypothesis (H) fails)
+
+============================================================================
+a >= 3 -- independently constructed example, verified by brute-force enumeration of local states
+============================================================================
+  [PASS] a >= 3: trace == brute-force word enumeration (6 (P,a) pairs)   6/6
+  [PASS] a real instance with a cycle of length >= 3 was constructed from the P1 core   F_81 n=5 k=3 lambda=1, shapes=[(1, 1), (4, 1)]
+  [PASS] W_4^{(P=1)}(z) by local-state brute force == trace == closed form   W = 2z^2+12z+2
+  [PASS] T1 verified on the real 4-cycle instance (F_81, n=5, k=3, lambda=1)   7/7 words
+  [PASS] local weight computed by the cyclic formula matches the term-by-term evaluation on one a=4 word   u=(1, 0, 1, 0), w=2
+  [PASS] a = 3 with P = 2 > 1 (repeated roots): brute force == trace   W = z^3+18z^2+6z+2
+
+============================================================================
+PA-1 specialisation and the novelty boundary
+============================================================================
+  [PASS] W_1^{(P)} == PA-1's per-cycle object sum_b ||{b,P-b}|| z^b, P = 1..7
+  [PASS] W_2^{(P)} == PA-1's per-cycle object sum_a 2^{1-floor(a/P)}(a+1) z^a, P = 1..7
+  [PASS] pointwise identity P - max{u_m, P-u_{m-1}} = min{P-u_m, u_{m-1}} = phi(u_{m-1},u_m)  (BLUEPRINT section 4.1, step 1)
+  [PASS] P = 1: W_1^{(1)} = 2 and W_2^{(1)} = 2(1+z), so N(y) = 2^B prod_{a(c)=2} (1 + y^{d(c)})   W_1=2, W_2=2z+2
+  [PASS] for k = 0 every cycle has length <= 2 (PA-1's scope: f -> f* is an involution)   8/8 instances
+  [PASS] for k = 3 (k not in {0, e/2}) cycle lengths >= 3 occur   lengths seen = [1, 4]
+
+============================================================================
+Edge cases: a = 1, a = 2, P = 1, a >= 3
+============================================================================
+  [PASS] all edge cases satisfy trace == brute force, W(1)=(P+1)^a, c_0=2, deg=floor(aP/2)   12/12
+  [PASS] P = 0 (degenerate, single state) is handled without error   W_3^0 = 1
+
+============================================================================
+Independent symbolic verification (sympy, over Q[z] and Q[z,t])
+============================================================================
+  [PASS] sympy confirms tr(T_P(z)^a) for 16 (P,a) pairs over Q[z]   16/16
+  [PASS] sympy confirms W_a^{(1)} = (1+sqrt z)^a + (1-sqrt z)^a, a = 1..10   10/10
+  [PASS] sympy confirms G_P(z,t) = tr(tT_P(I-tT_P)^{-1}) = sum_{a=1..7} W_a t^a for P = 1,2,3   3/3
+  [PASS] sympy confirms deg_t det(I - t T_P(z)) = P+1 for P = 1..5   5/5
+  [PASS] sympy confirms tr(tilde T_P^a) for a >= 2 (Definition 5)   5/5
+  [PASS] sympy confirms the Cayley-Hamilton recurrence for P = 1,2,3   3/3
+
+============================================================================
+P2 SUMMARY
+============================================================================
+  checks : 32 passed, 0 failed   (4.1 s)
+
+  summary -> results/phase2_summary.json
+  detail  -> results/phase2_cycle_polys.csv
+
+  P2 VERDICT: PASS
