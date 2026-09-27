@@ -122,9 +122,27 @@ def test_I3b_record_prototype_hashes_if_present():
     # write the record so the report can cite it
     out_dir = os.path.join(ROOT, "results")
     os.makedirs(out_dir, exist_ok=True)
+    rec_path = os.path.join(out_dir, "independence_record.json")
     import json
-    with open(os.path.join(out_dir, "independence_record.json"), "w",
-              encoding="utf-8") as fh:
+
+    # The prototype lives OUTSIDE the persisted workspace root, so it does not
+    # survive a sandbox reset.  If it is gone but a record with real hashes
+    # already exists, that record is the only surviving P1 provenance evidence
+    # and must NOT be overwritten with an empty one: doing so silently destroys
+    # the evidence that the core implementation is not a copy of the prototype.
+    if not rec["present"]:
+        existing = {}
+        if os.path.exists(rec_path):
+            try:
+                with open(rec_path, encoding="utf-8") as fh:
+                    existing = json.load(fh)
+            except (ValueError, OSError):
+                existing = {}
+        if existing.get("files"):
+            rec["files"] = existing["files"]
+            rec["recorded_when_prototype_present"] = True
+
+    with open(rec_path, "w", encoding="utf-8") as fh:
         json.dump(rec, fh, indent=2)
     # this test documents; it does not fail merely because the dir exists
     assert isinstance(rec["present"], bool)

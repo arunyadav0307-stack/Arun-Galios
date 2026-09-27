@@ -390,6 +390,36 @@ duplicating any.
 
 ### G.1 Environment changes (recorded, not mathematical)
 
+**P1 defect found and fixed during this audit (no P1 result changes).**
+`tests/test_independence.py::test_I3b_record_prototype_hashes_if_present`
+unconditionally **overwrote** `results/independence_record.json` on every run.
+The throwaway blueprinting prototype lives at `/tmp/probe`, *outside* the
+persisted workspace root, so it did not survive the sandbox reset. Once it was
+gone, merely running the test suite rewrote the record to
+`"present": false, "files": {}` — silently destroying the P1 provenance
+evidence that the core implementation is not a copy of the prototype.
+
+Fixed minimally: when the prototype is absent *and* a record with real hashes
+already exists, that record is preserved and flagged
+`recorded_when_prototype_present: true`, while `present` still honestly
+reports `false`. All 7 prototype hashes are now retained (verified), the test
+still passes, and no P1 result, formula or criterion was touched. The restored
+record is byte-identical to the one committed at `p2` (`bde43fc`).
+
+**Git history.** The sandbox was re-cloned mid-phase and local history was reset
+to `00fefba`, discarding the local P0–P3 commits. The remote branch was still at
+`bde43fc` (P2) and authenticated correctly, so the original history — including
+tags `p0`, `p1`, `p2` — was fetched back and the P3 work rebased onto it. Two
+intermediate commits (`0fa28f5`, P3a pilot + P3b estimate; `1d13d3e`, driver
+fixes) were created after the last successful push and were therefore never on
+the remote; **their content is fully preserved** in `ee0fac2`/`ef354df`, only
+the commit granularity is lost. The frozen Blueprint and Execution Plan are
+byte-identical throughout (sha256 re-verified).
+
+**Blocking issue resolved.** GitHub authentication, which failed earlier in this
+session, now works; `git push` succeeded (`bde43fc..ef354df`). Tag `p3` points
+at `ef354df`.
+
 The sandbox lost two packages mid-session: `pytest` and `galois`. Both were
 reinstalled (`pytest 9.1.1`, `galois 0.4.11`, plus `numpy 2.4.6`). The full
 suite returns to **605 passed / 5 skipped**, matching P2's 566 + 39 new P3

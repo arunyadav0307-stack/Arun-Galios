@@ -1,6 +1,6 @@
 {
   "prototype_dir": "/tmp/probe",
-  "present": true,
+  "present": false,
   "files": {
     "ff.py": {
       "sha256": "91604e34df6b745d52795db2ecc85ee1cd550e24298d015409fab984cb68fcfb",
@@ -30,5 +30,6 @@
       "sha256": "7dda4c2594eaf90c61dcf85c8f7b0c3775559a67554c29076bddad2887283140",
       "bytes": 2282
     }
-  }
+  },
+  "recorded_when_prototype_present": true
 }
