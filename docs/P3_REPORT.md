@@ -192,9 +192,22 @@ They are *not* counted as passes anywhere in this report.
 | max hull dimension seen | 30 |
 | verified per field | F_4:158 · F_8:174 · F_9:200 · F_16:351 · F_25:217 · F_27:255 · F_32:285 · F_49:214 · F_64:452 · F_81:440 · F_121:248 · F_125:249 · F_128:406 · F_256:728 |
 
-**376 candidates rejected**, every one written to
-`results/phase3_full_rejected.csv` with its reason (hypothesis failure, or
-$\lvert\mathscr C\rvert>10^{5}$). Coverage is auditable, not implied.
+**Candidate accounting (audited end to end).** Of **17,760** candidate
+$(q,n,k,r)$ tuples examined by the frozen filter:
+
+| stage | count | disposition |
+|---|---|---|
+| $r\nmid(1+p^{e-k})$ | 11,820 | excluded by the frozen standing hypothesis |
+| $\gcd(n',r)\ne1$ | 1,187 | excluded by the frozen standing hypothesis |
+| admitted to instance construction | **4,753** | -- |
+| $\lvert\mathscr C\rvert>10^{5}$ | 376 | **rejected**; each written to `results/phase3_full_rejected.csv` with its reason |
+| **verified** | **4,377** | 4,753 - 376 |
+
+The two hypothesis exclusions are applied as *pre-filters* inside
+`sweep_instances` (a `continue` before instance construction), so those
+candidates never appear in the rejected CSV -- they are excluded by the frozen
+filter, not by a failure. Every one of the 376 recorded rejections is an
+over-bound instance. Coverage is auditable, not implied.
 
 **$\lambda$ sampling (recorded).** $\lambda$ is sampled **by multiplicative
 order** — one representative per order — rather than exhaustively over
@@ -303,6 +316,77 @@ fixed.
 
 **No frozen formula was altered.** The Blueprint and execution plan are
 byte-identical to `076f910` / `96c7885` before and after.
+
+## G.0 CHECKPOINT-INTEGRITY AND RESUME AUDIT (requested on resume)
+
+The sandbox terminated the background run at 2,643 / 4,377 instances. Before
+trusting any checkpointed record, the following audit was run. **No completed
+instance was recomputed**, because integrity verification passed.
+
+### G.0.1 Checkpoint integrity
+
+| check | result |
+|---|---|
+| file | `results/phase3_sweep_checkpoint.jsonl` |
+| bytes | 7,700,128 |
+| sha256 | `b02e83f45435cdd395cdc90a9eccb7270faab36dac3ca7a1b19b72f9462b2b51` |
+| lines | 4,377 |
+| blank or corrupt lines | 0 |
+| every line valid JSON | yes |
+| records missing a required field | 0 |
+
+### G.0.2 Duplicate / missing-instance audit
+
+| check | result |
+|---|---|
+| records | 4,377 |
+| distinct `key` values | 4,377 |
+| duplicate keys | 0 |
+| duplicate `(q, n, k, lam)` tuples | 0 |
+| verified | 4,377 |
+| failed | 0 |
+
+### G.0.3 Remaining-sweep verification (the set difference)
+
+The frozen validation set was rebuilt from scratch (547.3 s, independent of the
+checkpoint) and differenced against the completed keys:
+
+```
+frozen validation set size : 4,377
+completed in checkpoint    : 4,377
+MISSING (frozen - done)    : 0
+EXTRA   (done - frozen)    : 0
+REMAINING SWEEP IS EMPTY   : True
+```
+
+The remaining sweep is exactly the empty set. There was therefore nothing to
+resume: the earlier `--resume` had already carried the run to completion
+(2,643 recovered + 1,734 computed after resume = 4,377), and no instance was
+recomputed during this audit.
+
+### G.0.4 Runtime independence check (the critical one)
+
+The oracle must not derive its answer from the transfer-matrix enumerator. This
+was verified **dynamically**, not just by reading imports: every entry point of
+`enumeration/enumerator.py` **and** of `core/cycle_poly.py` (`enumerator_poly`,
+`enumerator_distribution`, `cycle_factor`, `run_e2`, `structural_checks`,
+`cycle_poly_trace`, `cycle_poly_bruteforce`, `transfer_matrix`,
+`closed_form_P1`, `local_weight`) was replaced with a function that raises.
+With the enumerator and the whole cycle-polynomial module **sabotaged**, both
+oracles still ran and still reproduced the stored E2 distributions exactly on
+10 hard instances (including $a\ge3$ with $P>1$, and $P=9$).
+
+Static confirmation: `oracle/brute.py` imports only `core.poly`, `core.field`
+and `core.factor`. The strings `T_P` and `transfer matrix` appear in it solely
+inside docstrings. There is no code path from the oracle to the enumerator.
+
+### G.0.5 Why the checkpoint survived
+
+Each instance record is written to the JSONL file and then `flush()`ed and
+`os.fsync()`ed, so a kill cannot lose an already-written record. The sandbox
+termination produced **no mathematical traceback** — the log simply stopped
+mid-sweep — and `--resume` folded all 2,643 recovered records back in without
+duplicating any.
 
 ### G.1 Environment changes (recorded, not mathematical)
 
