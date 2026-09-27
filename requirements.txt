@@ -11,3 +11,9 @@ matplotlib==3.11.2
 pymupdf==1.28.2
 pytest==9.1.1
 mpmath==1.3.0
+pyyaml==6.0.3
+
+# NOTE: `galois` is deliberately NOT listed. It is an ORACLE used only by
+#       tests/test_oracle.py and must never become a runtime dependency
+#       (the released artefact must stay self-contained; see OPEN-01 / L8).
+#       PyYAML is read by scripts/gen_regression_suite.py (instance spec).

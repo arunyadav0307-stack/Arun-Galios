@@ -1,0 +1,49 @@
+==========================================================================
+P1 -- factorisation regression (Algorithm E1 steps 1-3)
+==========================================================================
+manifest          : results/regression_manifest.csv
+instances in file : 5670
+instances to run  : 5670  (FULL)
+  [checkpoint] 500/5670  ok=500  elapsed=    1.8s  rate=  281.5 inst/s  eta=   18.4s
+  [checkpoint] 1000/5670  ok=1000  elapsed=    3.5s  rate=  286.9 inst/s  eta=   16.3s
+  [checkpoint] 1500/5670  ok=1500  elapsed=    6.1s  rate=  244.5 inst/s  eta=   17.1s
+  [checkpoint] 2000/5670  ok=2000  elapsed=    6.5s  rate=  305.8 inst/s  eta=   12.0s
+  [checkpoint] 2500/5670  ok=2500  elapsed=    7.3s  rate=  342.3 inst/s  eta=    9.3s
+  [checkpoint] 3000/5670  ok=3000  elapsed=   10.4s  rate=  287.5 inst/s  eta=    9.3s
+  [checkpoint] 3500/5670  ok=3500  elapsed=   18.5s  rate=  189.4 inst/s  eta=   11.5s
+  [checkpoint] 4000/5670  ok=4000  elapsed=   24.4s  rate=  163.9 inst/s  eta=   10.2s
+  [checkpoint] 4500/5670  ok=4500  elapsed=   34.9s  rate=  128.8 inst/s  eta=    9.1s
+  [checkpoint] 5000/5670  ok=5000  elapsed=   47.5s  rate=  105.2 inst/s  eta=    6.4s
+  [checkpoint] 5500/5670  ok=5500  elapsed=   51.2s  rate=  107.4 inst/s  eta=    1.6s
+
+ran 5670 instances in 77.6s (73.1 inst/s)
+  PASS: 5670    FAIL: 0
+
+  breakdown by characteristic:
+    even : 3750/3750 pass
+    odd  : 1920/1920 pass
+  breakdown by defect coverage:
+    defect_a_even_char    : 3750/3750 pass
+    defect_b_nu_gt_e      : 6/6 pass
+    repeated roots (P>1)    : 720/720 pass
+
+==========================================================================
+CP1 gate -- the four published factorisations
+==========================================================================
+  CP1-1 P1 Ex.4      F_9   n=3   lambda=2              [EXACT] PASS
+      got      : [('x+1', 3)]
+      expected : [('x+1', 3)]
+  CP1-2 P1 Ex.6      F_27  n=15  lambda=2              [EXACT] PASS
+      got      : [('x+1', 3), ('x^4+2x^3+x^2+2x+1', 3)]
+      expected : [('x+1', 3), ('x^4+2x^3+x^2+2x+1', 3)]
+  CP1-3 P1 Ex.5      F_25  n=7   lambda=g^8 (ord 3)    [SHAPE] PASS
+      got      : [1, 3, 3]
+      expected : [1, 3, 3]
+  CP1-4 P3 Ex.3.6    F_81  n=21  lambda=g^8 (ord 10)   [SHAPE] PASS
+      got      : [1, 3, 3]
+      expected : [1, 3, 3]
+
+summary -> results/phase1_summary.json
+detail  -> results/phase1_factorisation.csv
+
+P1 REGRESSION VERDICT: PASS
