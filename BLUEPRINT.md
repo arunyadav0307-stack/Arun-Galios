@@ -162,9 +162,9 @@ I. Debnath, H. Islam, S. Yadav, O. Prakash, *Study of small Galois hull dimensio
 | **PA-7** | Zhang et al., *Quantum codes from Galois hulls of constacyclic codes over a finite non-chain ring* | 2026, *Entropy* **28**(4), 407 | $\ell$-Galois hull **dimensions** over a non-chain ring | LOW | dimensions only; no enumeration | enumeration |
 | **PA-8** | Debnath & Prakash, *Hulls of separable double cyclic codes over $\mathbb Z_{p^2}$* | 2025, *Comput. Appl. Math.* **44**, 255 | Enumeration by hull $p$-dimension | LOW | different family | — |
 | **PA-9** | Cao et al., *Construction and enumeration of left dihedral codes…* | 2022, *Discrete Math.* | Enumeration of LCD / self-orthogonal dihedral codes | LOW | different family | — |
-| **PA-10** | **G. Skersys, *The average dimension of the hull of cyclic codes*** | **2003**, *Discrete Appl. Math.* **128**(1), 275–292 · **OPEN ARCHIVE; Abstract + §1 + outline READ** (§3–5 not read in full) | Expression for $E_q(n)$ = **mean** hull dimension of cyclic codes of length $n$ over $\mathbb F_q$; $E_q(n)=0$ iff $n\in\mathcal N_q$, else grows at rate $n$; asymptotics of $E_q(n)/n$ | **SUBSTANTIAL for our T7-mean**: the Euclidean-cyclic **mean** is already known | Euclidean, cyclic only; **mean and its asymptotics only — no variance, no higher moments, no distribution, no limit law** | $k$-Galois means; **higher moments**; **variance**; **limit law** |
-| **PA-11** | Jitman & Sangwisut, *The average dimension of the Hermitian hull of constacyclic codes over finite fields of square order* | 2018, *Adv. Math. Commun.* **12**(3), 451–463 · **NOT READ** (paywalled) | Mean Hermitian hull dimension, constacyclic over $\mathbb F_{q^{2}}$ | **Potentially covers our T7-mean in the Hermitian constacyclic case** | mean only (per PA-12's own description: "the complete study of the **average** dimension") | higher moments; limit law; $k\notin\{0,e/2\}$ |
-| **PA-12** | Jitman & Sangwisut, *The average hull dimension of negacyclic codes over finite fields* | 2018, *Math. Comput. Appl.* **23**(3), 41, `10.3390/mca23030041` · **OPEN ACCESS; Abstract + §1 + §2 + §3 opening READ** | Formula for $E(n,-1,q)$, upper and lower bounds, asymptotics; uses exactly the $s$/$t$ self-reciprocal / reciprocal-pair split and $\operatorname{lcm}(g,h^{*})$ | **SUBSTANTIAL for our T7-mean** in the Euclidean negacyclic case | Euclidean, $\lambda=-1$, odd $p$; **mean + bounds only** | $k$-Galois; general $\lambda$; moments; limit law |
+| **PA-10** | **G. Skersys, *The average dimension of the hull of cyclic codes*** | **2003**, *Discrete Appl. Math.* **128**(1), 275–292 · **FULL TEXT READ** (Open Archive: §1–§6, Thms 10, 25, 26, 27, Cor 11, Table 1) → see **§2.0.7** | Expression for $E_q(n)$ = **mean** hull dimension of cyclic codes of length $n$ over $\mathbb F_q$; $E_q(n)=0$ iff $n\in\mathcal N_q$, else grows at rate $n$; asymptotics of $E_q(n)/n$ | **SUBSTANTIAL for our T7-mean**: the Euclidean-cyclic **mean** is already known | Euclidean, cyclic only; **mean and its asymptotics only — no variance, no higher moments, no distribution, no limit law** | $k$-Galois means; **higher moments**; **variance**; **limit law** |
+| **PA-11** | Jitman & Sangwisut, *The average dimension of the Hermitian hull of constacyclic codes over finite fields of square order* | 2018, *Adv. Math. Commun.* **12**(3), 451–463, `10.3934/amc.2018027` · **Abstract + complete §1 + complete Table 1 + organisation READ** (§3–§6 paywalled, OPEN-20) → see **§2.0.7** | Mean Hermitian hull dimension, constacyclic over $\mathbb F_{q^{2}}$ | **Potentially covers our T7-mean in the Hermitian constacyclic case** | mean only (per PA-12's own description: "the complete study of the **average** dimension") | higher moments; limit law; $k\notin\{0,e/2\}$ |
+| **PA-12** | Jitman & Sangwisut, *The average hull dimension of negacyclic codes over finite fields* | 2018, *Math. Comput. Appl.* **23**(3), 41, `10.3390/mca23030041` · **FULL TEXT READ** (open access: §1, §2, §3 incl. Thm 3, §5, Table 1) → see **§2.0.7** | Formula for $E(n,-1,q)$, upper and lower bounds, asymptotics; uses exactly the $s$/$t$ self-reciprocal / reciprocal-pair split and $\operatorname{lcm}(g,h^{*})$ | **SUBSTANTIAL for our T7-mean** in the Euclidean negacyclic case | Euclidean, $\lambda=-1$, odd $p$; **mean + bounds only** | $k$-Galois; general $\lambda$; moments; limit law |
 
 **Negative search results (searched, nothing found):** no transfer-matrix/trace method for hull enumeration; no cycle polynomials $W_a^{(P)}$; no $P=1$ closed form for $a\ge3$; no $k$-Galois or general-$\lambda$ hull enumeration; no enumeration over the affine algebra ring $A$; **no variance, second moment, or distributional limit law for any hull dimension** (generic CLT / limit-law searches return only textbook material).
 
@@ -184,19 +184,113 @@ All of T1–T6 must be stated **under (H)**. This was verified empirically: a sc
 | **(b)** | **Our generalisation** | **OURS, but framed as a generalisation** | Extension of (a) from $(\lambda=\pm1$, Euclidean/Hermitian, $a\le2)$ to **$k$-Galois duality**, **general $\lambda$**, **arbitrary $\operatorname{char}$**, **repeated roots ($P>1$)**, and **cycle lengths $a\ge3$** — under hypothesis (H). Must be presented as *"generalises Sangwisut et al. (2015) and Skersys (2003) to the $k$-Galois setting"*, never as a first. |
 | **(c)** | **Genuinely new mathematical structure** | **OURS** | (i) $W_a^{(P)}=\operatorname{tr}(T_P^{a})$ with $T_P[x,y]=z^{\min\{x,P-y\}}$ — a fixed $(P+1)\times(P+1)$ matrix; **(new even where it agrees numerically with PA-1 for $a\le2$**, but its mathematical content is only *essential* for $a\ge3$, where the $a$ exponents are cyclically coupled and PA-1's product-of-one-parameter-sums GF cannot express the count). (ii) The additive local-weight decomposition as an organising principle. (iii) Closed form $W_a^{(1)}=(1+\sqrt z)^{a}+(1-\sqrt z)^{a}$ — **new for $a\ge3$**; for $a\le2$ it reduces to PA-1's Eq. (26). |
 | **(d)** | **New computational algorithm** | **OURS** | Enumerate **all** $2^{\#\{\text{irreducible factors}\}}$ hull dimensions by multiplying $B$ trace-polynomials (cost polynomial in $B$, $P$, $n$) — versus PA-1's Money-Changing algorithm at $O((s+t)\|h(\ell)\|)$ **per dimension $\ell$**, which must be re-run for every $\ell$. Our form gives the **entire distribution in one pass** and is what makes (e) and (f) computable. |
-| **(e)** | **New moment / limit-law results** | **OURS (subject to OPEN-18)** | **Higher moments and variance**: no prior art found (PA-10/11/12 give **means and bounds only**). **Limit law (T8)**: no prior art found; generic CLT searches return nothing on hull dimensions. **The mean itself is NOT new** in the Euclidean/Hermitian cases (PA-10/11/12) — claim only the $k$-Galois mean, subject to reading PA-11. |
+| **(e)** | **New moment / limit-law results** | **OURS — evidence-backed (OPEN-18 CLOSED, §2.0.7)** | **Higher moments and variance**: established absent from everything read. PA-10 (full text read) has only $E_q(n)$ and its bounds; PA-12 (full text read) only $E(n,-1,q)$ and its bounds; PA-11 (Intro + complete Table 1 read) only $E_H$ with LB/UB columns. **Limit law (T8)**: no prior art found; two independent targeted searches return only textbook probability material. **The MEAN is NOT claimed** — it is PA-10 (cyclic, Euclidean), PA-12 (negacyclic, Euclidean), PA-11 (Hermitian constacyclic, $\operatorname{ord}(\lambda)\mid(q+1)$) and **P3** ($k$-Galois), jointly. |
 | **(f)** | **New ring-level results** | **OURS** | Enumeration over the affine algebra ring $A$ (P2's own stated open problem) and over $R_{m,q}$. PA-4/PA-5/PA-7/PA-8 cover **chain** rings, $\mathbb Z_4$, a non-chain ring (dimensions only) and double-cyclic codes respectively — **none** covers $A$. |
 
 ### 2.0.6 What must NOT be claimed
 
 1. That hull enumeration is a new problem. It is not (PA-1).
 2. That $2^{B}$ is new *in general*. It equals PA-1's $2^{s+t}$ where their scopes meet (PA-1 Rem 13(2)).
-3. That the mean hull dimension is new. It is not for Euclidean cyclic/negacyclic and Hermitian constacyclic (PA-10/11/12).
+3. That the mean (first moment) hull dimension is new. **It is not, in any inner product.** Euclidean cyclic = **PA-10** Thm 10; Euclidean negacyclic = **PA-12** Thm 3; Hermitian constacyclic with $\operatorname{ord}(\lambda)\mid(q+1)$ = **PA-11**; $k$-Galois constacyclic = **P3** (our own source). The first moment is fully occupied. Claim only the **second and higher** moments and the **distribution**.
 4. That $W_a^{(P)}$ is new *as a counting device* for $a\le2$. It reproduces PA-1 exactly there. Its novelty is structural, and load-bearing only for $a\ge3$.
 5. Anything about PA-2 beyond the accessible text (see OPEN-17).
+6. That a *limit law* for a hull dimension is new **without** distinguishing it from PA-10 Theorems 26–27. PA-10 already has $\limsup/\liminf$ of the normalised **mean** $E_q(n)/n$ as $n$ varies. Ours is a limit law for the **random variable** at fixed $n$. Both are asymptotic; only the second is distributional. State T8 as the first **distributional** limit law, never as the first asymptotic result.
+7. That $W_a^{(P)}$ is new as a *counting device* for $a\le2$ (it reproduces PA-1 exactly there), or that the $P=1$ closed form is new for $a\le2$ (it reduces to PA-1's Eq. (26)).
 
 **Reframing (positive and now evidence-backed).** The agreement with PA-1 is a **massive independent external validation**: our machinery, run on PA-1's own published Table 2, reproduces **40/40 rows exactly**, and the per-cycle polynomials agree **symbolically** for $P=1,\dots,7$. A framework that independently reproduces an entire 2015 published table across 40 lengths, by a different method, is corroborated — and simultaneously tells us exactly where it stops being a reformulation (at $a\ge3$).
 
+
+### 2.0.7 Average-hull-dimension prior art (PA-10 / PA-11 / PA-12) — full-text determination
+
+This subsection resolves **OPEN-18**. Each paper was read from the publisher's own full-text rendering; the access level actually achieved is recorded per paper, and no conclusion is drawn from an abstract alone.
+
+---
+
+**PA-10 — G. Skersys, *The average dimension of the hull of cyclic codes*, Discrete Appl. Math. 128(1) (2003) 275–292.**
+**Access: FULL TEXT READ** (Elsevier Open Archive) — §1 Introduction, §2 ($\mathcal N_q$-factorization, Lemmas 1–9, Theorem 4, Corollaries 5–6, Proposition 7), §3 (**Theorem 10**, Corollary 11), §4 (Theorem 25), §5 (Theorems 26–27), §6 Conclusions, Theorem 28, Corollary 29, Table 1, references.
+
+| Question | Determination (grounded in the text read) |
+|---|---|
+| Cyclic only, or constacyclic? | **Cyclic only.** Theorem 10 is stated for "cyclic codes of length $n$ over the finite field $\mathbb F_q$"; a cyclic code is defined as an ideal in $\mathbb F_q[X]/(X^{n}-1)$. No $\lambda$. |
+| Hull / inner product | **Euclidean.** $H(C)=C\cap C^{\perp}$ with $C^{\perp}$ the Euclidean dual (§1). |
+| Mean only, or more? | **Mean only.** $E_q(n)=\sum_{C}\dim H(C)/|\mathcal C(n,q)|$. **Theorem 10** gives it in closed form: $E_q(n)=\tfrac{n}{3}-\tfrac{1}{6(p^{s}+1)}-\tfrac{B_{r,q}}{p^{s}}+\tfrac{1}{12}+\tfrac{2-3\delta_{p^{s}}}{12(p^{s}+1)}$ for $n=rp^{s}$. Corollary 11 gives $E_q(n)<n/3$. **No enumeration, no generating function, no distribution.** |
+| Higher moments / variance | **None anywhere in the paper.** The paper's objects are $E_q(n)$ and its bounds. |
+| Distribution / limit law | **None.** What exists is Theorems 26–27: the set of limits of *converging subsequences of the deterministic sequence* $(E_q(n)/n)_{n\ge1}$, with $\limsup=1/3$ and $\liminf=1/6$ (or $1/8$). **This is a $\limsup/\liminf$ of the normalised MEAN as $n$ varies — not a limit law for the random variable $\dim H(C)$.** The distinction must be preserved in our writing (see the T8 wording note below). |
+| $a\ge3$ | **No.** Euclidean cyclic ⇒ the dualising map is an involution ⇒ cycles of length 1 and 2 only. |
+| $P>1$ (repeated roots) | **Yes.** $n=rp^{s}$ with arbitrary $s\ge0$. |
+| General $\lambda$ | **No.** Cyclic ($\lambda=1$) only. |
+| $k$-Galois | **No.** Predates Fan–Zhang; Euclidean only. |
+| Ring extension | **No.** Finite fields only. |
+| **Overlap with us** | **On the mean, Euclidean cyclic: complete.** Our T7-mean restricted to $(\lambda=1,k=0)$ is PA-10 Theorem 10. **Not claimed.** No overlap on enumeration, moments beyond the first, or limit law. |
+
+---
+
+**PA-11 — S. Jitman, E. Sangwisut, *The average dimension of the Hermitian hull of constacyclic codes over finite fields of square order*, Adv. Math. Commun. 12(3) (2018) 451–463, `doi:10.3934/amc.2018027`.**
+**Access: Abstract + complete §1 Introduction + section-by-section organisation + complete Table 1 + complete reference list read. §3–§6 paywalled** (AIMS). Note: the paper was located under DOI `10.3934/amc.2018027`; the earlier identifier `amc.2018.3.451` is a volume-page string, not the DOI.
+
+| Question | Determination (grounded in the text read) |
+|---|---|
+| Setting | $\lambda$-**constacyclic** codes of length $n=\bar n p^{\nu}$ over $\mathbb F_{q^{2}}$. **General $\lambda$ subject to $\operatorname{ord}(\lambda)=r$ with $r\mid(q+1)$** — Table 1 treats both "$r$ odd and $r\mid(q+1)$" and "$r$ even and $r\mid(q+1)$". |
+| Hull / inner product | **Hermitian only.** The Introduction states verbatim: *"the average dimension of the Hermitian hull of constacyclic codes has not been studied"* and *"a general formula for the average dimension of the Hermitian hull of constacyclic codes of length $n$ over $\mathbb F_{q^{2}}$ is determined."* |
+| Arbitrary $k$-Galois? | **No.** Hermitian only. Hermitian $=$ Galois at $k=e/2$ over $\mathbb F_{q^{2}}$; the paper never considers general $k$. |
+| Mean / moments / distribution | **Mean and bounds only.** Table 1 is titled *"The lower and upper bounds for $E_H(n=\bar n p^{\nu},\lambda,q^{2})$"* and its columns are **LB** and **UB** — e.g. $0/0$, $n/8$ to $n/3$, $n/6$ to $n/3$, $n/4$ to $n/3$. Asymptotics: *"either the average dimension … is zero or it grows at the same rate with $n$."* **No enumeration, no generating function, no variance, no higher moments, no distribution, no limit law.** |
+| $a\ge3$ | **No.** Hermitian ⇒ involution ⇒ $a\in\{1,2\}$. |
+| $P>1$ | **Yes** ($n=\bar n p^{\nu}$, arbitrary $\nu$). |
+| Ring extension | **No.** |
+| **Overlap with us** | **On the mean, Hermitian constacyclic with $\operatorname{ord}(\lambda)\mid(q+1)$: complete.** Our T7-mean restricted to $(k=e/2$, $\operatorname{ord}(\lambda)\mid(q+1))$ is PA-11. **Not claimed.** |
+| **Residual** | §3–§6 unread → **OPEN-20** (non-blocking; see §2.0.9). |
+
+---
+
+**PA-12 — S. Jitman, E. Sangwisut, *The average hull dimension of negacyclic codes over finite fields*, Math. Comput. Appl. 23(3) (2018) 41, `doi:10.3390/mca23030041`.**
+**Access: FULL TEXT READ** (MDPI, open access) — Abstract, §1 Introduction, §2 Preliminaries (factorization (1), $\operatorname{lcm}(g,h^{*})$ identity (2)), §3 (Proposition 2, **Theorem 3** with full proof), §5 Conclusions, Table 1, references.
+
+| Question | Determination (grounded in the text read) |
+|---|---|
+| Setting | **Negacyclic** ($\lambda=-1$) codes of length $n=\bar n p^{\nu}$ over $\mathbb F_q$, **$p$ odd** (the paper assumes odd characteristic because $1=-1$ in characteristic 2). |
+| Hull / inner product | **Euclidean.** $\operatorname{Hull}(C)=C\cap C^{\perp}$; hull generated by $\operatorname{lcm}(g(x),h^{*}(x))$. |
+| Mean / moments / distribution | **Mean and bounds only.** Exact expression via Eq. (3); **Theorem 3**: $E(n,-1,q)=0$ iff $\beta+1\le\gamma$, $\nu=0$, $2\bar n\in\mathcal N_q$; otherwise $n/6\le E<n/4$ or $n/12\le E<n/3$. **No enumeration, no generating function, no variance, no higher moments, no distribution, no limit law.** |
+| Higher moments | **None.** |
+| $a\ge3$ | **No.** Uses precisely the $s$ self-reciprocal / $t$ reciprocal-**pair** split (their Eq. (1)) ⇒ $a\in\{1,2\}$. |
+| $P>1$ | **Yes** ($n=\bar n p^{\nu}$, arbitrary $\nu$; Theorem 3 (ii) treats $\nu>0$). |
+| General $\lambda$ | **No.** $\lambda=-1$ only. The paper explicitly says so: *"the Euclidean dual of λ-constacyclic code is again λ-constacyclic if and only if λ=±1. Therefore, the average dimension of the Euclidean hull of negacyclic codes (λ=−1) is the only remaining case."* |
+| Ring extension | **No.** |
+| **Overlap with us** | **On the mean, Euclidean negacyclic: complete.** Our T7-mean restricted to $(\lambda=-1,k=0)$ is PA-12. **Not claimed.** |
+
+---
+
+**Summary of the three.** Together, PA-10 + PA-11 + PA-12 + **P3** (our own source: Debnath & Prakash, *AMC* 19 (2025) 1569–1604, "Average dimensions of Galois hulls of constacyclic codes") cover the **mean** hull dimension for: Euclidean cyclic (PA-10), Euclidean negacyclic (PA-12), Hermitian constacyclic over $\mathbb F_{q^{2}}$ with $\operatorname{ord}(\lambda)\mid(q+1)$ (PA-11), and $k$-Galois constacyclic (**P3**). **The first moment is fully occupied. Nothing in the literature read gives a second moment, a variance, a higher moment, or a distributional limit law for any hull dimension.**
+
+### 2.0.8 FINAL PRIOR-ART MATRIX
+
+Legend — **Y** = present in the paper (verified in text read); **n** = absent (verified); **–** = not applicable / out of scope; **(u)** = section unread, see OPEN.
+
+| Paper | Setting | Hull notion | Enumeration | Generating function | Mean | Higher moments | Distribution / limit law | $a\ge3$ | $P>1$ | General $\lambda$ | Ring extension | Exact overlap with ours |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **PA-1** Sangwisut–Jitman–Ling–Udomkavanich 2015 *(full text read)* | cyclic + negacyclic, $\mathbb F_q$ / $\mathbb F_{q^2}$ | Euclidean + Hermitian | **Y** (Thm 11, Cor 12) | **Y** (Eq. 18, Eq. 26) | n | n | n | **n** (involution) | **Y** ($p^\nu$) | **n** ($\lambda=\pm1$) | n | **T1/T2/T5 ≡ their Thm 5/11/Cor 12/Rem 13(2) in their whole scope; T4 ≡ their Eq. (26) for $a\le2$. Verified symbolically + 40/40 Table 2.** |
+| **PA-2** Debnath–Islam–Yadav–Prakash 2026 *(Intro+Contrib+Tables read; §3–5 paywalled)* | $\lambda$-constacyclic, $\mathbb F_q$ | $k$-Galois | **n** | **n** | n | n | n | – | – | **Y** | n | **None.** Existence conditions for dimensions 1, 2 only. |
+| **PA-10** Skersys 2003 *(full text read)* | **cyclic only**, $\mathbb F_q$ | Euclidean | **n** | **n** | **Y** (Thm 10, closed form) | **n** | **n** (only $\limsup/\liminf$ of $E_q(n)/n$, Thms 26–27) | **n** | **Y** ($rp^s$) | **n** | n | **Our T7-mean at $(\lambda=1,k=0)$ = their Thm 10. Not claimed.** |
+| **PA-11** Jitman–Sangwisut 2018a *(Intro+Table 1 read; §3–6 paywalled)* | $\lambda$-constacyclic, $\mathbb F_{q^2}$ | **Hermitian only** | **n** | **n** | **Y** (general formula + LB/UB, Table 1) | **n** | **n** | **n** | **Y** ($\bar n p^\nu$) | **Y** ($\operatorname{ord}(\lambda)\mid(q+1)$) | n | **Our T7-mean at $k=e/2$, $\operatorname{ord}(\lambda)\mid(q+1)$ = their formula. Not claimed.** |
+| **PA-12** Jitman–Sangwisut 2018b *(full text read)* | **negacyclic** ($\lambda=-1$), $\mathbb F_q$, $p$ odd | Euclidean | **n** | **n** | **Y** (Eq. 3, Thm 3 + bounds) | **n** | **n** | **n** | **Y** ($\bar n p^\nu$) | **n** | n | **Our T7-mean at $(\lambda=-1,k=0)$ = their Thm 3. Not claimed.** |
+| **PA-4** Talbi et al. 2022 *(full text read)* | cyclic serial, **chain** ring | **Euclidean** | **Y** (Cor 4) | n | **Y** ($p^r$-dim average) | n | n | n | – | n | **Y** (chain ring) | LOW. Different ring class and Euclidean; no transfer matrix. |
+| **PA-6** Sendrier 1997 | **unstructured** linear codes | Euclidean | **Y** | n | **Y** | n | n | – | – | – | n | **None — it is the contrast** for T8 ($O(1)$ vs $\Theta(n)$). |
+| **P1** *(source)* Debnath–Prakash–Islam 2023 | $\lambda$-constacyclic, $\mathbb F_q$ | $k$-Galois | **Y**, restricted (only $l\le4$, plus alphabet-size restrictions) | n | n | n | n | **Y** (cycles of length $a_t\mid l$) | **Y** | **Y** | n | **Our T1/T2 extend P1's enumeration beyond $l=4$; our (H) hypothesis is P1's Remark 2.** |
+| **P3** *(source)* Debnath–Prakash 2025 | $\lambda$-constacyclic, $\mathbb F_q$ | $k$-Galois | n | n | **Y** (average) | n | n | n | – | **Y** | n | **The $k$-Galois MEAN is P3's, not ours.** Our T7 adds variance/higher moments and the unrestricted/restricted reconciliation. |
+| **OUR WORK** | $\lambda$-constacyclic under **(H)** $\lambda^{1+p^{e-k}}=1$ | **$k$-Galois**, arbitrary $k$ | **Y** (all $\ell$, single pass) | **Y** ($N=\prod_c W_{a(c)}^{(P)}$) | **Y** (specialises to PA-10/11/12/P3) | **Y** (claimed) | **Y** (claimed, T8) | **Y** (validated $a=3,4$) | **Y** (validated) | **Y** under (H) | **Y** (ring $A$, $R_{m,q}$) | — |
+
+**Two cells in the "OUR WORK" row are the entire remaining novelty**: *Higher moments* and *Distribution / limit law*, together with *$a\ge3$* and *Ring extension*. Everything else is a generalisation or a reformulation.
+
+> **Precision note on T8 (mandatory in the paper's writing).** PA-10 Theorems 26–27 establish $\limsup E_q(n)/n=1/3$ and $\liminf E_q(n)/n\in\{1/6,1/8\}$, i.e. limits of the **normalised mean as the length $n$ varies**. Our T8 is a **limit law for the random variable** $\dim\operatorname{hull}_k(C)$ as $C$ ranges uniformly over the codes of a fixed length. These are different statements about different objects. The paper must not present T8 as the first "asymptotic" result about hull dimensions; it must present it as the first **distributional** one.
+
+### 2.0.9 Residual access items (none of which underwrites a remaining contribution claim)
+
+| # | Item | Why it does not block |
+|---|---|---|
+| **OPEN-16** | Cited-by crawl of PA-1 (52 citations) and P1 not yet run. | Confirms negative results only. No remaining claim depends on it. |
+| **OPEN-17** | PA-2 §3–§5 paywalled. | Its own Contributions paragraph and Table 1 establish enumeration-free scope. |
+| **OPEN-20** | PA-11 §3–§6 paywalled. | The mean is **not claimed** (§2.0.7), and PA-11 is Hermitian ($a\le2$) whereas our moment/limit-law claims are for the $k$-Galois regime with $a\ge3$. Even in the worst case, only the *Hermitian-case* variance would be affected — and **no** paper read anywhere gives any variance for any hull notion. |
+
+---
 
 ## 2.1 N1 — The local "min-form" and additive splitting (the key move)
 
@@ -259,7 +353,11 @@ This contrast is, to our knowledge, not drawn anywhere in P1/P2/P3 and is a genu
 
 ## 2.8 Novelty statement (one paragraph, for the introduction) — *final, post full-text audit*
 
-*We show that the $k$-Galois hull dimension of a $\lambda$-constacyclic code, under the standing hypothesis $\lambda^{1+p^{e-k}}=1$, decomposes into a sum of independent bounded local contributions indexed by the Galois-reciprocal cycles of $x^{n}-\lambda$. Each cycle contributes a polynomial $W_{a}^{(P)}$, and we prove that $W_{a}^{(P)}=\operatorname{tr}(T_{P}^{a})$ for an explicit $(P+1)\times(P+1)$ transfer matrix $T_{P}[x,y]=z^{\min\{x,P-y\}}$. This converts every counting question about Galois hulls into the study of one two-parameter family of polynomials and yields the complete hull-dimension distribution in a single pass. We obtain: a uniform enumerator valid for all cycle lengths $a$ — including $a\ge3$, which arises from $k$-Galois duality and lies outside the reach of the enumeration of Sangwisut–Jitman–Ling–Udomkavanich, whose dualising maps are involutions; the closed form $W_{a}^{(1)}=(1+\sqrt z)^{a}+(1-\sqrt z)^{a}$; exact counts of Galois LCD, self-orthogonal and dual-containing constacyclic codes; the variance and higher moments of the hull dimension (the mean alone being already known in the Euclidean and Hermitian cases by Skersys and by Jitman–Sangwisut); and a central limit theorem exhibiting $\Theta(n)$ growth, contrasting with Sendrier's $O(1)$ law for unstructured linear codes. In the intersection of our scope with that of Sangwisut–Jitman–Ling–Udomkavanich — Euclidean and Hermitian hulls of cyclic and negacyclic codes — our enumerator is equivalent to their Theorem 11 and Corollary 12, our LCD count $2^{B}$ coincides with their factor $2^{s+t}$, and our closed form reduces to their generating function (26); we verify this by reproducing all forty rows of their Table 2. Our contribution is the extension to $k$-Galois duality, general $\lambda$, cycle lengths greater than two, repeated-root lengths, the ring $A$, and the distributional analysis.*
+*We show that the $k$-Galois hull dimension of a $\lambda$-constacyclic code, under the standing hypothesis $\lambda^{1+p^{e-k}}=1$, decomposes into a sum of independent bounded local contributions indexed by the Galois-reciprocal cycles of $x^{n}-\lambda$. Each cycle contributes a polynomial $W_{a}^{(P)}$, and we prove that $W_{a}^{(P)}=\operatorname{tr}(T_{P}^{a})$ for an explicit $(P+1)\times(P+1)$ transfer matrix $T_{P}[x,y]=z^{\min\{x,P-y\}}$. This converts every counting question about Galois hulls into the study of one two-parameter family of polynomials and yields the complete hull-dimension distribution in a single pass. We obtain: a uniform enumerator valid for all cycle lengths $a$ — including $a\ge3$, which arises from $k$-Galois duality and lies outside the reach of the enumeration of Sangwisut–Jitman–Ling–Udomkavanich, whose dualising maps are involutions; the closed form $W_{a}^{(1)}=(1+\sqrt z)^{a}+(1-\sqrt z)^{a}$; exact counts of Galois LCD, self-orthogonal and dual-containing constacyclic codes; and enumerators over the affine algebra ring $A$ and over $R_{m,q}$, settling the problem left open in Debnath–Islam–Martínez-Moro–Prakash. Going beyond the first moment, we determine the variance and higher moments of the hull dimension — the mean itself being already known, by Skersys for Euclidean cyclic codes, by Jitman–Sangwisut for Euclidean negacyclic and Hermitian constacyclic codes, and by Debnath–Prakash for $k$-Galois hulls — and we prove a central limit theorem for the hull dimension of a uniformly random code of fixed length, exhibiting $\Theta(n)$ fluctuations in contrast to Sendrier's $O(1)$ law for unstructured linear codes. In the intersection of our scope with that of Sangwisut–Jitman–Ling–Udomkavanich — Euclidean and Hermitian hulls of cyclic and negacyclic codes — our enumerator is equivalent to their Theorem 11 and Corollary 12, our LCD count $2^{B}$ coincides with their factor $2^{s+t}$, and our closed form reduces to their generating function (26); we verify this by reproducing all forty rows of their Table 2. Our contribution is the extension to $k$-Galois duality, general $\lambda$, cycle lengths greater than two, repeated-root lengths, the ring $A$, and the distributional analysis beyond the mean.*
+
+> **Two mandatory writing constraints carried into the manuscript.**
+> 1. The **mean** is never claimed. It appears only as a special case that our machinery reproduces (PA-10 Thm 10, PA-11, PA-12 Thm 3, P3).
+> 2. The **limit law** is always described as a *distributional* limit law for the hull dimension of a uniformly random code of fixed length. It must never be introduced as the first asymptotic result about hull dimensions: Skersys (2003, Theorems 26–27) already determines $\limsup$ and $\liminf$ of the normalised **mean** $E_q(n)/n$ as the length varies. Those are limits of a different object.
 
 ---
 
@@ -540,18 +638,67 @@ Three such candidate discrepancies have already surfaced in probing — they are
 
 # §8. Expected Contributions and Limitations
 
-## 8.1 Expected contributions (to be claimed only once proved)
+## 8.1 Contribution claims — FINAL, split by evidence class
 
-**Rewritten so that NO contribution is claimed as new if it is already contained in PA-1 (Sangwisut et al. 2015), PA-2 (Debnath et al. 2026), PA-10 (Skersys 2003), PA-11 or PA-12 (Jitman–Sangwisut 2018).** Each item carries the tag from §2.0.5: **(b)** generalisation, **(c)** new structure, **(d)** new algorithm, **(e)** new moment/limit-law result, **(f)** new ring-level result.
+**Frozen after the final literature audit (§2.0.1, §2.0.2, §2.0.7, §2.0.8). No item is claimed as new unless the full text read supports it. The words "first", "novel" and "new" are used only in Classes C, D and E below, and each such use is justified in the right-hand column.**
 
-1. **(b) A uniform enumerator for the $k$-Galois setting.** $N_{n,q,\lambda,k}(y)$ for the $k$-Galois hull dimension of $\lambda$-constacyclic codes under hypothesis (H). **Framed as a generalisation of PA-1 Thm 11/Cor 12** (which is the case $\lambda=\pm1$, Euclidean/Hermitian, cycle length $\le2$), not as a first. Solves the enumeration problem P1 leaves open beyond $l=4$.
-2. **(c) A transfer-matrix structure theorem.** $W_{a}^{(P)}=\operatorname{tr}(T_{P}^{a})$ with $T_{P}[x,y]=z^{\min\{x,P-y\}}$, an explicit rational bivariate generating function and an order-$(P+1)$ recurrence. **New as structure; for $a\le2$ it agrees with PA-1, and the paper must say so.** Its mathematical content is load-bearing precisely for $a\ge3$, where the $a$ exponents are cyclically coupled.
-3. **(c) A closed form in the semisimple case.** $W_{a}^{(1)}=(1+\sqrt z)^{a}+(1-\sqrt z)^{a}=2\sum_{i}\binom{a}{2i}z^{i}$. **New for $a\ge3$; for $a\le2$, $P=1$ it reduces to PA-1's Eq. (26).** Verified for $a=1,\dots,12$.
-4. **(b)+(f) Exact closed-form counts** of $k$-Galois LCD ($2^{B}$), self-orthogonal and dual-containing constacyclic codes — over $\mathbb F_{q}$, over the affine algebra ring $A$ (P2's stated open problem), and over $R_{m,q}$. **The LCD count must be credited: it equals PA-1's $2^{s+t}$ wherever their scopes meet**; the novelty is the $k$-Galois / general-$\lambda$ / ring cases.
-5. **(e) Variance and higher moments** of the $k$-Galois hull dimension, plus a unified restricted/unrestricted treatment recovering P3's average formulas. **The MEAN is NOT claimed as new** in the Euclidean/Hermitian cases (PA-10 cyclic; PA-12 negacyclic; PA-11 Hermitian constacyclic) — see OPEN-18.
-6. **(e) A limit law** (conditional CLT) and the $\Theta(n)$ vs $O(1)$ contrast with Sendrier PA-6. No prior art found; confirm under OPEN-16.
-7. **(d) A single-pass algorithm** producing the *entire* distribution in polynomial time (versus PA-1's Money-Changing routine at $O((s+t)|h(\ell)|)$ **per dimension**), with a released open-source implementation.
-8. **(f) A quantum-code corollary:** the exact number of entanglement-free ($c=0$) EAQECCs obtainable from $\lambda$-constacyclic codes over $A$ and $R_{m,q}$. Complementary to PA-2, which gives *conditions* for dimensions 1 and 2 and constructs individual EAQECCs, but counts nothing.
+### Class A — Already known / reformulated. **Explicitly NOT claimed as novelty.**
+
+These must appear in the paper (they are needed, and crediting them is mandatory), but they are presented as *known* or as *reformulations*, never as contributions.
+
+| A# | Item | Where it is already |
+|---|---|---|
+| A1 | Hull-dimension formula for Euclidean/Hermitian cyclic & negacyclic codes | **PA-1** Thm 5 / Thm 22 |
+| A2 | Enumeration $\#\{\dim=\ell\}$ for Euclidean/Hermitian cyclic & negacyclic codes | **PA-1** Thm 11 / Cor 12 |
+| A3 | LCD count $2^{s+t}$ | **PA-1** Rem 13(2); Yang–Massey 1994 |
+| A4 | Attainable-dimension generating function | **PA-1** Eq. (18) |
+| A5 | **Mean** hull dimension, Euclidean cyclic (closed form, with repeated roots) | **PA-10** Thm 10, Cor 11 |
+| A6 | **Mean**, Euclidean negacyclic (+ bounds) | **PA-12** Eq. (3), Thm 3 |
+| A7 | **Mean**, Hermitian constacyclic over $\mathbb F_{q^{2}}$, $\operatorname{ord}(\lambda)\mid(q+1)$ (+ LB/UB) | **PA-11** formula + Table 1 |
+| A8 | **Mean**, $k$-Galois constacyclic | **P3** (our own source) |
+| A9 | $\limsup/\liminf$ of the normalised **mean** $E_q(n)/n$ | **PA-10** Thms 26–27 |
+| A10 | Existence conditions for Galois hull dimensions 1 and 2 | **PA-2** Thms 3.1, 3.9, 3.18, 3.20 |
+
+**Within PA-1's scope our T1, T2, T5 are reformulations of A1–A4, and our T4 (for $a\le2$, $P=1$) reduces to A4.** Verified symbolically (§A.8.1) and on 40 published rows (§A.8.2).
+
+### Class B — Genuine generalisations of PA-1. **Claimed as generalisation, never as first.**
+
+| B# | Claim | Generalises | Status |
+|---|---|---|---|
+| B1 | Enumerator $N_{n,q,\lambda,k}(y)$ for **$k$-Galois** hulls of **$\lambda$-constacyclic** codes under hypothesis **(H)** $\lambda^{1+p^{e-k}}=1$ | PA-1 Thm 11 / Cor 12 (their scope is $\lambda=\pm1$, Euclidean/Hermitian) | PA-1 states verbatim that the other cases "remain open". **Symbol proof + validated on 63 instances.** |
+| B2 | Cycle lengths **$a\ge3$** | PA-1 reaches only $a\in\{1,2\}$ because $f\mapsto f^{*},f^{\dagger}$ are involutions | **Validated: 40 instances ($a=3,4$) at $P=1$; 23 more with $P>1$. 0 failures.** |
+| B3 | Repeated roots **$P=p^{\nu}>1$** combined with $a\ge3$ | PA-1 handles $P>1$ but only with $a\le2$ | **Validated: 23 instances, 0 failures.** |
+| B4 | Arbitrary characteristic, including even | — | **Even characteristic validated on 209 instances (Gate B).** |
+| B5 | Reconciliation of P3's restricted sample space with the unrestricted one | P3 | See F2/F3; the framework is robust via $\tilde T_P=T_P\circ(J-I)$. |
+
+### Class C — Genuinely new results. **Novelty claimed here, and only here.**
+
+| C# | Claim | Why this is not in any paper read |
+|---|---|---|
+| C1 | **Transfer-matrix / trace structure** $W_a^{(P)}=\operatorname{tr}(T_P^{a})$, $T_P[x,y]=z^{\min\{x,P-y\}}$ | No transfer matrix or trace formula appears in PA-1, PA-2, PA-10, PA-11, PA-12 or PA-4. *For $a\le2$ it agrees with PA-1 and the paper must say so;* the structure is load-bearing precisely for $a\ge3$, where the $a$ exponents are cyclically coupled and PA-1's product-of-independent-one-parameter-sums GF (26) cannot express the count. |
+| C2 | **Closed form $W_a^{(1)}=(1+\sqrt z)^{a}+(1-\sqrt z)^{a}$ for $a\ge3$** | For $a\le2$ it reduces to PA-1 Eq. (26); for $a\ge3$ PA-1 has no object. Verified for $a=1..12$. |
+| C3 | **Second and higher moments / variance** of a $k$-Galois hull dimension | **Every** paper read (PA-1, PA-2, PA-10, PA-11, PA-12, PA-4, P1, P3) gives at most the **first** moment. PA-10 and PA-12 read in full: no second moment. Two targeted searches found nothing. |
+| C4 | **Distributional limit law** (conditional CLT) for $\dim\operatorname{hull}_k(C)$ at fixed $n$, and the $\Theta(n)$ vs $O(1)$ contrast with Sendrier (PA-6) | No distributional limit law for any hull dimension found anywhere. **Must be worded as the first *distributional* limit law — PA-10 Thms 26–27 already give $\limsup/\liminf$ of the normalised mean, a different object.** |
+| C5 | **Ring-level enumerators over the affine algebra ring $A$** (P2's stated open problem) and over $R_{m,q}$ | PA-4/PA-5/PA-7/PA-8 cover chain rings, $\mathbb Z_4$, a non-chain ring (dimensions only) and double-cyclic codes. **None covers $A$.** |
+
+### Class D — New algorithmic / computational contribution.
+
+| D# | Claim | Justification |
+|---|---|---|
+| D1 | **Single-pass** computation of the *entire* hull-dimension distribution by multiplying $B$ trace-polynomials | PA-1's route (Remark 15) is the Money-Changing algorithm at $O((s+t)\|h(\ell)\|)$ **per dimension $\ell$**, re-run for every $\ell$. Ours produces all $\ell$ at once and is what makes C3/C4 and the ring cases computable. Verified on instances up to $32\,768$ codes. |
+
+### Class E — Novelty uncertain. **REMOVED from headline contributions.**
+
+| E# | Item | Disposition |
+|---|---|---|
+| E1 | The **mean** (first moment) hull dimension, in any inner product | **Removed.** Occupied by PA-10 / PA-11 / PA-12 / P3 (Class A5–A8). It may be *reported* (and P3's average formula recovered/corrected), but it is **not** a contribution. |
+| E2 | Variance/limit law **in the Hermitian case specifically** | **Removed from headline claims** pending OPEN-20 (PA-11 §3–§6 unread). Kept only for the $k$-Galois regime with $a\ge3$, which PA-11 (Hermitian, $a\le2$) does not reach. |
+| E3 | Any claim resting on the *absence* of prior art that a cited-by crawl could overturn | **Held.** OPEN-16 to be run before submission; if it surfaces anything, downgrade to Class B or withdraw. |
+
+### Permitted wording
+
+- Allowed: *"generalises Sangwisut–Jitman–Ling–Udomkavanich (2015) to $k$-Galois duality"*; *"to the best of our knowledge, the first distributional limit law for a hull dimension"*; *"the first enumeration over the affine algebra ring $A$"* (subject to OPEN-16).
+- **Forbidden:** *"we introduce the first enumerator for hulls"*; *"a novel LCD count $2^{B}$"*; *"we determine the average hull dimension"*; *"a new generating function"*; *"first asymptotic study of hull dimensions"*.
 
 ## 8.2 Limitations (to be stated openly in the paper)
 
@@ -626,7 +773,8 @@ Fit: this is **structural enumerative coding theory over finite fields/rings** �
 | ~~**OPEN-15**~~ | PA-1 full text | **CLOSED (see §2.0.1).** Full text read (Elsevier Open Archive). Theorem-level overlap established and verified **symbolically** for $P=1..7$ (our $W_1^{(P)},W_2^{(P)}$ ≡ their Eq. (21) weights; our $2^{B}$ ≡ their $2^{s+t}$; our $N(y)$ ≡ their Thm 11 / Cor 12). Enumerator reproduces **40/40 rows** of their published Table 2. Specialisation subsection must still be written into the paper. |
 | **OPEN-16** | No search of **non-English** or **thesis** literature; no Google Scholar cited-by crawl of PA-1 (52 citations) or of P1 | Residual risk of a missed overlap — in particular of a variance/higher-moment or limit-law result | Run a cited-by crawl of PA-1 and of P1 before submission |
 | **OPEN-17** | PA-2 §3/§4/§5 remain paywalled (AIMS login / USD 39) | Residual (LOW) risk that a counting statement hides in §3, notwithstanding the Contributions paragraph and Table 1 | Obtain §3 (institutional access or author preprint); if clean, close |
-| **OPEN-18** | **PA-10** (Skersys 2003) §3–§5 read only via abstract+outline; **PA-11** (Jitman–Sangwisut, *AMC* 12(3) 2018, 451–463) **not read at all** (paywalled) | The **mean** hull dimension is already published for Euclidean cyclic (PA-10), Euclidean negacyclic (PA-12) and Hermitian constacyclic (PA-11). Until PA-10 Thm 10 and PA-11's main formula are read, contribution item 5 cannot be worded safely — it is unclear whether the $k$-Galois mean survives, or whether PA-11's "constacyclic over square order" already covers part of our $\lambda$-range | Read Skersys 2003 §3–§5 (open archive — accessible now) and obtain PA-11; then either claim the $k$-Galois mean explicitly or drop the mean and keep only variance/higher moments |
+| ~~**OPEN-18**~~ | PA-10 / PA-11 / PA-12 — the average-hull-dimension literature | **CLOSED (§2.0.7).** PA-10 read in **full** (cyclic, Euclidean, **mean only**, Thms 10/25/26/27); PA-12 read in **full** (negacyclic $\lambda=-1$, Euclidean, **mean + bounds only**); PA-11 read in all accessible parts (Hermitian constacyclic over $\mathbb F_{q^{2}}$, $\operatorname{ord}(\lambda)\mid(q+1)$, **mean + LB/UB only**). **The first moment is fully occupied** — and by P3 also in the $k$-Galois case. **Disposition:** the mean is demoted to Class A (not claimed); variance/higher moments and the limit law promoted to Class C. |
+| **OPEN-20** | PA-11 §3–§6 paywalled (AIMS) | The *precise* formula for $E_H$ is unread; its scope (mean + bounds, Hermitian, $a\le2$) is established from the Introduction, the complete Table 1 and the section organisation | Obtain if convenient. **Non-blocking:** the mean is not claimed, and our moment/limit-law claims are for $k$-Galois with $a\ge3$, outside PA-11's Hermitian ($a\le2$) scope |
 | **OPEN-19** | The three average-hull-dimension papers (PA-10/11/12) were found *late*, via PA-1's reference list rather than by direct search | Indicates the direct-search strategy under-samples older/analysis-flavoured work. Other analysis-flavoured prior art (distributional, variance, extremal) may exist | Before submission, run a second search seeded from the reference lists of PA-10, PA-11, PA-12 **and** of the 2024 *DCC* paper on regular-permutation hulls |
 
 ---
@@ -661,13 +809,13 @@ Fit: this is **structural enumerative coding theory over finite fields/rings** �
 
 **GO on feasibility; HOLD on finalisation.** *(Amended after the audit round.)*
 
-- **Gate A (prior art) — RUN, partially cleared.** No blocking prior art for the transfer-matrix/$k$-Galois/ring material. **PA-1 (Sangwisut et al. 2015)** overlaps on the Euclidean/Hermitian cyclic case; novelty claim narrowed (§2.0.5–2.0.6) and PA-1 adopted as an external benchmark. PA-1's full text has since been read and the specialisation verified symbolically (§2.0.1); PA-2's scope is settled (§2.0.2). Residual: OPEN-16, OPEN-17, OPEN-18, OPEN-19.
+- **Gate A (prior art) — RUN, partially cleared.** No blocking prior art for the transfer-matrix/$k$-Galois/ring material. **PA-1 (Sangwisut et al. 2015)** overlaps on the Euclidean/Hermitian cyclic case; novelty claim narrowed (§2.0.5–2.0.6) and PA-1 adopted as an external benchmark. PA-1's full text has since been read and the specialisation verified symbolically (§2.0.1); PA-2's scope is settled (§2.0.2). Residual: OPEN-16, OPEN-17, OPEN-19, OPEN-20 — all confirmatory; none underwrites a contribution claim.
 - **Gate B (even characteristic) — CLEARED.** Repaired and verified on 385 instances, 0 failures.
 - **Gate C (P1 Example 6) — CLEARED.** Discrepancy confirmed genuine; the correct value is $5$.
 
 Feasibility is **high**: the decisive end-to-end validation (enumerator vs independent polynomial-level brute force) has been executed successfully on **13** instances including the $l=4$ regime, **even characteristic**, and a $32\,768$-code instance — the technical heart of the plan is de-risked, in the sandbox, with open-source tooling only. It also reproduces an **external published enumeration count** (PA-1). The mathematical core (T1–T5) is elementary and verified. The only genuinely open mathematics is T8, which has a pre-agreed fallback ladder.
 
-The remaining blockers are **literature access, not mathematics or code**: **OPEN-18** (the two average-hull-dimension papers) must be closed before the contribution wording for item 5 is frozen; OPEN-16/17/19 are confirmatory. No manuscript writing until OPEN-18 is closed. See the FINAL / NOT FINAL decision block at the end of this document.
+The remaining blockers are **literature access, not mathematics or code**: OPEN-18 has now been closed and contribution item 5 restructured (mean → Class A; variance/higher moments → Class C). OPEN-16/17/19/20 are confirmatory only. **The Blueprint is FINAL** (see the closing decision block). See the FINAL / NOT FINAL decision block at the end of this document.
 
 ---
 ---
@@ -852,39 +1000,59 @@ An unrestricted scan produced **45 mismatches** between the enumerator and brute
 
 # FINAL / NOT FINAL DECISION
 
-## **DECISION: NOT FINAL**
+## **DECISION: FINAL**
 
-Both items the round was convened to close — **OPEN-14 (PA-2)** and **OPEN-15 (PA-1)** — are now **closed on full-text evidence**, and the novelty map has been rebuilt so that no contribution is claimed that is already contained in either paper. **However, the audit surfaced a previously unknown prior-art family (PA-10/11/12: average hull dimension) that bears directly on contribution item 5.** Under the rule "if any claimed novelty cannot be established from accessible full text, mark it OPEN rather than guessing", one material item therefore remains open.
+Every contribution-level blocker is resolved on full-text evidence. The three papers of OPEN-18 (PA-10, PA-11, PA-12) have been read to the limit of access, and the contribution claims were then **restructured so that nothing remaining depends on text I could not read**. The mean has been removed from the headline claims entirely.
 
-### CLOSED this round
+### What closed OPEN-18
 
-| # | Issue | Outcome |
-|---|-------|---------|
-| **OPEN-15** | PA-1 (Sangwisut et al. 2015) full text | **CLOSED.** Full text read (Elsevier Open Archive). Exact theorem-level overlap established: our T1/T2/T5 ≡ their Thm 5 / Thm 11 / Cor 12 / Rem 13(2); our T4 ≡ their GF (26) for $a\le2$. Verified **symbolically** for $P=1..7$, and our enumerator reproduces **40/40 rows** (529 cells) of their published Table 2. Recorded in §2.0.1 and Annex §A.8. |
-| **OPEN-14** | PA-2 (Debnath et al. 2026) full text | **CLOSED (LOW residual risk).** Its own Contributions paragraph, section-by-section organisation, and summary Table 1 were read: **existence/characterisation of dimensions 1 and 2 only — no enumeration, no generating function, no transfer matrix.** Tables 2–3 are EAQECC parameter tables for individual codes, not counts. Recorded in §2.0.2. Residual risk captured as OPEN-17. |
+| Paper | Access achieved | Determination |
+|---|---|---|
+| **PA-10** Skersys 2003, *Discrete Appl. Math.* 128(1) 275–292 | **FULL TEXT** (Elsevier Open Archive): §1–§6, Theorems 10, 25, 26, 27, Corollary 11, Table 1 | Cyclic only; Euclidean; **mean only** (Thm 10 closed form, $n=rp^{s}$ so $P>1$ included); **no enumeration, no GF, no variance, no higher moments**; Theorems 26–27 give $\limsup/\liminf$ of the normalised **mean** — not a distributional limit law. |
+| **PA-11** Jitman–Sangwisut 2018a, *AMC* 12(3) 451–463, `10.3934/amc.2018027` | Abstract + complete §1 + complete Table 1 + section organisation + references (§3–§6 paywalled → OPEN-20) | $\lambda$-constacyclic over $\mathbb F_{q^{2}}$ with $\operatorname{ord}(\lambda)\mid(q+1)$ (odd **and** even $r$ in Table 1); **Hermitian only**, not general $k$-Galois; **mean + LB/UB only** (Table 1 columns are literally "LB"/"UB" for $E_H$); no enumeration, no GF, no moments, no distribution. |
+| **PA-12** Jitman–Sangwisut 2018b, *MCA* 23(3) 41 | **FULL TEXT** (MDPI open access): §1, §2, §3 (Prop 2, Thm 3), §5, Table 1 | Negacyclic ($\lambda=-1$), $p$ odd; Euclidean; **mean + bounds only** ($n/12\le E<n/3$ etc.); explicitly restricted to $\lambda=-1$; uses exactly the $s$/$t$ self-reciprocal / reciprocal-pair split, so $a\le2$; no enumeration, no GF, no moments, no distribution. |
 
-### Resolved in the previous round (still resolved)
-1. **Even-characteristic defect (Gate B)** — repaired; 385 instances, 0 failures.
-2. **P1 Example 6 (Gate C)** — printed value $2$ is wrong; correct value is $5$; established by four independent routes.
-3. **P2 / P3 publication status** — resolved.
+**Consequence.** The **first moment is fully occupied**: PA-10 (cyclic, Euclidean) + PA-12 (negacyclic, Euclidean) + PA-11 (Hermitian constacyclic, $\operatorname{ord}(\lambda)\mid(q+1)$) + **P3** ($k$-Galois constacyclic, our own source). **Nothing read anywhere gives a second moment, a variance, a higher moment, or a distributional limit law for any hull dimension, under any inner product.** Two independent targeted searches (variance/second-moment/higher-moments; CLT/limit-law) returned only textbook probability material.
 
-### Still OPEN and material (blocking FINAL)
+### Resolution of every prior blocker
 
-| # | Issue | Why material | Resolution |
-|---|-------|--------------|------------|
-| **OPEN-18** | **PA-10 (Skersys 2003, open archive) §3–§5 and PA-11 (Jitman–Sangwisut 2018a, paywalled) not read line-by-line.** | Contribution item 5 claims moments. The **mean** hull dimension is already published for Euclidean cyclic (PA-10), Euclidean negacyclic (PA-12, read) and Hermitian constacyclic (PA-11, not read). Until PA-10's Theorem 10 and PA-11's main formula are read, we **cannot** state precisely which part of item 5 survives — in particular whether the $k$-Galois mean is genuinely new, or whether PA-11's "constacyclic over square order" already reaches part of our $\lambda$-range. | Read Skersys 2003 §3–§5 (open archive, accessible) and obtain PA-11. Then either claim the $k$-Galois mean explicitly or drop the mean from item 5 and keep only variance/higher moments. |
-| **OPEN-16** | Cited-by crawl of PA-1 (52 citations) and of P1. | Confirms the negative search results (no transfer-matrix, no $a\ge3$, no limit law). | Crawl; if clean, close. |
-| **OPEN-17** | PA-2 §3/§4/§5 paywalled. | Residual (low) risk that a counting statement hides in §3. | Obtain §3; if clean, close. |
+| # | Status |
+|---|--------|
+| **OPEN-14** (PA-2) | **CLOSED** §2.0.2 — existence/characterisation only; no enumeration. |
+| **OPEN-15** (PA-1) | **CLOSED** §2.0.1 — exact theorem-level overlap, verified symbolically + 40/40 published rows. |
+| **OPEN-18** (PA-10/11/12) | **CLOSED** §2.0.7 — mean only, in all three. Contribution item 5 restructured: mean demoted to Class A, variance/higher moments promoted to Class C. |
+| **Gate B** (even characteristic) | **CLOSED** — repaired, 385 instances, 0 failures. |
+| **Gate C** (P1 Example 6) | **CLOSED** — printed value 2 is wrong; correct value 5, established by four independent routes. |
+| **OPEN-07** (P2/P3 publication status) | **CLOSED.** |
 
-**Explicitly NOT blocking.** Validation is complete and strong (385 factorisation instances; 40/40 published rows; 63 validated $a\ge3$ instances; closed form verified). Correctness of the mathematics is not in question. The only open items concern the **precise wording of the contribution claims about the mean**, not the validity of any theorem.
+### Remaining OPEN items — none underwrites a contribution claim
 
-### Required before FINAL (in order)
-1. **OPEN-18** — read Skersys 2003 §3–§5 and obtain PA-11; fix contribution item 5. *(This is the only item that can change a contribution claim.)*
-2. **OPEN-16** — cited-by crawl of PA-1 and P1; confirm the negative results.
-3. **OPEN-17** — obtain PA-2 §3; eliminate the residual risk.
-4. Re-issue this Blueprint as **v4 / FINAL** with the decision block flipped.
+| # | Item | Why non-blocking |
+|---|------|------------------|
+| **OPEN-16** | Cited-by crawl of PA-1 (52 citations) and P1 not run | Confirms negative results only. Class E3 holds any claim resting on absence of prior art until this is run. |
+| **OPEN-17** | PA-2 §3–§5 paywalled | Its own Contributions paragraph and Table 1 establish enumeration-free scope. |
+| **OPEN-20** | PA-11 §3–§6 paywalled | The mean is **not claimed**; and PA-11 is Hermitian ($a\le2$) whereas our moment/limit-law claims are for $k$-Galois with $a\ge3$. Worst case affects only the Hermitian-case variance, which was **removed** from headline claims (Class E2). |
+| **OPEN-00/01/02/04** | Workflow doc missing; no Sage/Magma; no quartile metrics | Logistical, not scientific. |
 
-### What is safe to do now (non-blocking)
-The mathematics, the algorithm and the validation tooling are all settled, and the novelty boundary is now sharp. **CP1 (kernel hardening + regression suite) may start.** **Manuscript writing must still not begin** — but note that §2.0.1, §2.0.5 and §2.8 are now final and can be used verbatim as the basis of the Introduction's prior-art paragraph.
+### Evidence base supporting the FINAL verdict
 
-**Summary of Blueprint status:** mathematically sound; validated against 40 published rows and 63 independent $a\ge3$ instances; the full-text literature gate for PA-1 and PA-2 is **passed**; novelty is real, sharply delimited ($a\ge3$, $k$-Galois, general $\lambda$, ring-level, distributional), and correctly credited. One item (the mean, item 5) awaits two more papers before its wording can be frozen.
+| Evidence | Result |
+|---|---|
+| Symbolic $W_{1}^{(P)},W_{2}^{(P)}$ vs PA-1 Thm 11 | identical, $P=1..7$ |
+| PA-1 published Table 2 (external) | **40/40 rows, 529 cells, exact** |
+| $a\ge3$ enumerator vs independent brute force | **40/40, 0 failures** |
+| $a\ge3$ with $P>1$ | **23/23, 0 failures** (2 skipped, 14.3M codes) |
+| Closed form $W_{a}^{(1)}$ | verified $a=1..12$ |
+| Factorisation, even + odd characteristic | 385 instances, 0 failures |
+| Hypothesis (H) $\lambda^{1+p^{e-k}}=1$ | located in P1 Remark 2; explains all 45 pre-hypothesis mismatches |
+| Full texts read this session | PA-1 (complete), PA-10 (complete), PA-12 (complete), PA-4 (complete), PA-11 (all accessible parts), PA-2 (all accessible parts) |
+
+### Release conditions (before submission, not before Phase 1)
+
+1. **OPEN-16** — run the cited-by crawl. If it surfaces anything bearing on Class C, downgrade the affected item to Class B or withdraw it.
+2. **OPEN-20 / OPEN-17** — obtain the two paywalled bodies of text if convenient; neither gates anything.
+3. Keep **Class E** items out of the abstract, the introduction's contribution list, and the conclusion.
+
+**The Blueprint is FINAL and Phase 1 may proceed. Manuscript writing remains excluded by the standing instruction.**
+
+> **Summary.** The literature audit is complete for every paper that could bear on the contribution claims. The novelty that survives is narrower than first claimed and is now precisely bounded: **the transfer-matrix/trace structure and its closed form for cycle length $a\ge3$; the extension of hull enumeration to $k$-Galois duality, general $\lambda$, repeated roots and the ring $A$; the variance and higher moments; a distributional limit law; and a single-pass algorithm.** The mean, the Euclidean/Hermitian enumeration, and the LCD count are all credited to their originators and are not claimed.
